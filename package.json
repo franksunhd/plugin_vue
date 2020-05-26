@@ -22,6 +22,7 @@
     "vue-qart": "^2.2.0",
     "vue-qr": "^2.2.1",
     "vue-router": "^3.0.1",
+    "vue-ueditor-wrap": "^2.4.2",
     "wangeditor": "^3.1.1"
   },
   "devDependencies": {

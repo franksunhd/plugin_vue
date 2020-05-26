@@ -15,6 +15,8 @@ import wangEditor from '../page/pages/wangEditor';
 import clipboard from '../page/pages/clipboard';
 // 二维码插件
 import qrCode from '../page/pages/qrCode';
+// vue-uEditor-warp 富文本插件
+import vueUEditor from '../page/pages/vueUEditor';
 
 Vue.use(Router);
 
@@ -35,6 +37,7 @@ export default new Router({
                 { path: '/' + companyName + '/wangEditor', name: 'wangEditor', component: wangEditor },
                 { path: '/' + companyName + '/clipboard', name: 'clipboard', component: clipboard },
                 { path: '/' + companyName + '/qrCode', name: 'qrCode', component: qrCode },
+                { path: '/' + companyName + '/vueUEditor', name: 'vueUEditor', component: vueUEditor },
             ]
         },
         { path: '*', component: ErrorPage }

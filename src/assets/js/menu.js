@@ -29,6 +29,12 @@ export default {
                     isSubMenu: false
                 },
                 {
+                    path: '/' + common.companyName + '/vueUEditor',
+                    name: 'vueUEditorWrap编辑器',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
+                },
+                {
                     path: '/' + common.companyName + '/clipboard',
                     name: '复制粘贴插件',
                     icon: 'el-icon-edit-outline',
