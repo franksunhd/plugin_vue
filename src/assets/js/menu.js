@@ -45,6 +45,12 @@ export default {
                     name: '二维码及条形码插件',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
+                },
+                {
+                    path: '/' + common.companyName + '/htmlToCanvas',
+                    name: 'html转canvas',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
                 }
             ]
         },

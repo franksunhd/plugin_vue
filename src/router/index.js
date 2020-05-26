@@ -17,6 +17,8 @@ import clipboard from '../page/pages/clipboard';
 import qrCode from '../page/pages/qrCode';
 // vue-uEditor-warp 富文本插件
 import vueUEditor from '../page/pages/vueUEditor';
+// html2canvas
+import htmlToCanvas from '../page/pages/htmlToCanvas';
 
 Vue.use(Router);
 
@@ -38,6 +40,7 @@ export default new Router({
                 { path: '/' + companyName + '/clipboard', name: 'clipboard', component: clipboard },
                 { path: '/' + companyName + '/qrCode', name: 'qrCode', component: qrCode },
                 { path: '/' + companyName + '/vueUEditor', name: 'vueUEditor', component: vueUEditor },
+                { path: '/' + companyName + '/htmlToCanvas', name: 'htmlToCanvas', component: htmlToCanvas },
             ]
         },
         { path: '*', component: ErrorPage }
