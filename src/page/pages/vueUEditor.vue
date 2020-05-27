@@ -1,5 +1,9 @@
 <template>
     <div class="vueUeditorBox">
+        <p class="marginBottom20">这是一个UEditor的编辑器, 可以配置部分参数,
+            <a style="color: #229399;font-weight: bold;" href="https://github.com/HaoChuan9421/vue-ueditor-wrap" target="_blank">API文档</a>
+            ,效果如下:
+        </p>
         <vue-ueditor-wrap v-model="msg" :config="config"/>
     </div>
 </template>

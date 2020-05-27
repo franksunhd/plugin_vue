@@ -22,39 +22,30 @@
 </template>
 
 <script>
-    import html2canvas from 'html2canvas';
+	import html2canvas from 'html2canvas';
 
-    export default {
-        name: 'htmlToCanvas',
-        data () {
-            return {
-                imgUrl: '', // 图片地址
-            };
-        },
-        methods: {
-            // 点击绘图按钮
-            drawImg () {
-                let _t = this;
-                html2canvas(_t.$refs.drawImg, {
-                    logging: true, // 启用日志记录以进行调试 (发现加上对去白边有帮助)
-                    allowTaint: true, // 否允许跨源图像污染画布
-                    backgroundColor: null, // 解决生成的图片有白边
-                    useCORS: true // 如果截图的内容里有图片,解决文件跨域问题
-                }).then((canvas) => {
-                    let text = '上海东方明珠';
-                    let ctx = canvas.getContext('2d');
-                    ctx.save();//保存原来的状态  绘制字体都是需要旋转倾斜  那么之前绘制的图片就要进行状态的保存
-                    ctx.rotate(-Math.PI / 6);//绘制倾斜字体
-                    ctx.translate(0, 0);//发生位移进行位移的恢复
-                    ctx.font = '48px serif';
-                    ctx.fillStyle = 'red';
-                    ctx.fillText(text, 1000, 700);
-                    ctx.restore(); // 状态的恢复
-                    _t.imgUrl = canvas.toDataURL('image/png');
-                });
-            },
-        }
-    };
+	export default {
+		name: 'htmlToCanvas',
+		data () {
+			return {
+				imgUrl: '', // 图片地址
+			};
+		},
+		methods: {
+			// 点击绘图按钮
+			drawImg () {
+				let _t = this;
+				html2canvas(_t.$refs.drawImg, {
+					logging: true, // 启用日志记录以进行调试 (发现加上对去白边有帮助)
+					allowTaint: true, // 否允许跨源图像污染画布
+					backgroundColor: null, // 解决生成的图片有白边
+					useCORS: true // 如果截图的内容里有图片,解决文件跨域问题
+				}).then((canvas) => {
+					_t.imgUrl = canvas.toDataURL('image/png');
+				});
+			},
+		}
+	};
 </script>
 
 <style scoped>
