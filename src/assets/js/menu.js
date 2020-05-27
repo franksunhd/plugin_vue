@@ -51,6 +51,12 @@ export default {
                     name: 'html转canvas',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
+                },
+                {
+                    path: '/' + common.companyName + '/vueCropper',
+                    name: 'vue图片裁剪',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
                 }
             ]
         },

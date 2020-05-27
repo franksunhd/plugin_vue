@@ -1,6 +1,6 @@
 <template>
     <div class="clipboardBox">
-        <p class="title">
+        <p class="marginBottom20">
             这是一个复制粘贴的插件, 可以配置部分参数,
             <a style="color: #229399;font-weight: bold;" href="https://github.com/zenorocha/clipboard.js/"
                target="_blank">API文档</a>,效果如下:
@@ -61,7 +61,5 @@
 </script>
 
 <style scoped>
-    .title {
-        margin-bottom: 20px;
-    }
+
 </style>

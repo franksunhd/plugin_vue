@@ -1,14 +1,14 @@
 <template>
     <div class="qrCode">
-        <p class="title">
+        <p class="marginBottom20">
             这是一个生成二维码的插件 --->> vue-qart 以配置参数为主, 适合初始化的时候就配置好参数
         </p>
         <vue-q-art :config="config" :downloadButton="downloadButton"></vue-q-art>
-        <p class="title">
+        <p class="marginBottom20">
             这是一个生成二维码的插件 --->> qrcodejs2 <<--- js配置实例对象 适合动态后者手动生成二维码
         </p>
         <div id="qrCode" ref="qrCode"></div>
-        <p class="title">
+        <p class="marginBottom20">
             这是一个生成二维码的插件 --->> vue-qr <<--- js配置实例对象 适合中心区域加背景图片的方案
         </p>
         <!-- 只有中间图片 -->
@@ -18,7 +18,7 @@
         <!-- 既有中间图片又有背景图片 -->
         <vue-qr class="right" :bgSrc="config.imagePath" :logoSrc="config.imagePath" :text="config.value"
                 :size="config.size" :margin="0"/>
-        <p class="title">
+        <p class="marginBottom20">
             这是一个生成条形码的插件 --->> vue-barcode <<---
             <vue-barcode :value="barcode.value">
                 无法生成条形码
@@ -90,10 +90,6 @@
 </script>
 
 <style scoped>
-    .title {
-        margin-bottom: 20px;
-    }
-
     .right {
         margin-right: 50px;
     }

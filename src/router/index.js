@@ -19,6 +19,8 @@ import qrCode from '../page/pages/qrCode';
 import vueUEditor from '../page/pages/vueUEditor';
 // html2canvas
 import htmlToCanvas from '../page/pages/htmlToCanvas';
+// vue图片裁剪
+import vueCropper from '../page/pages/vueCropper';
 
 Vue.use(Router);
 
@@ -41,6 +43,7 @@ export default new Router({
                 { path: '/' + companyName + '/qrCode', name: 'qrCode', component: qrCode },
                 { path: '/' + companyName + '/vueUEditor', name: 'vueUEditor', component: vueUEditor },
                 { path: '/' + companyName + '/htmlToCanvas', name: 'htmlToCanvas', component: htmlToCanvas },
+                { path: '/' + companyName + '/vueCropper', name: 'vueCropper', component: vueCropper },
             ]
         },
         { path: '*', component: ErrorPage }

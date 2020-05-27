@@ -1,11 +1,11 @@
 <template>
     <div class="wangEditorBox">
-        <p class="title">
+        <p class="marginBottom20">
             这是一个富文本编辑器, 可以配置部分参数,
             <a style="color: #229399;font-weight: bold;" href="https://www.kancloud.cn/wangfupeng/wangeditor3/332599"
                target="_blank">API文档</a>,效果如下:
         </p>
-        <div class="title">
+        <div class="marginBottom20">
             <el-button size="mini" type="primary" @click="setContent">设置内容</el-button>
         </div>
         <div id="wangEditor"></div>
@@ -39,7 +39,5 @@
 </script>
 
 <style scoped>
-    .title {
-        margin-bottom: 20px;
-    }
+
 </style>

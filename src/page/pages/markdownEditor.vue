@@ -1,10 +1,10 @@
 <template>
     <div class="markdownBox">
-        <p class="title">这是一个markdown的编辑器, 可以配置部分参数,
+        <p class="marginBottom20">这是一个markdown的编辑器, 可以配置部分参数,
             <a style="color: #229399;font-weight: bold;" href="https://github.com/hinesboy/mavonEditor" target="_blank">API文档</a>
             ,效果如下:
         </p>
-        <div class="title">
+        <div class="marginBottom20">
             <!-- 默认值 -->
             <el-button size="mini" type="primary" @click="editor.value = '默认值...'">设置默认值</el-button>
             <!-- 语言 -->
@@ -74,7 +74,5 @@
 </script>
 
 <style scoped>
-    .title {
-        margin-bottom: 20px;
-    }
+
 </style>

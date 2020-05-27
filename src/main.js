@@ -14,6 +14,7 @@ Vue.use(markdownEditor);
 // 使用ElementUI
 Vue.use(elementUI);
 import './assets/css/base.css';
+import './assets/css/common.css';
 
 Vue.config.productionTip = false;
 
