@@ -29,8 +29,6 @@ Vue.use(Router);
 let companyName = common.companyName;
 
 export default new Router({
-    mode: 'history',
-    base: '/',
     routes: [
         { path: '/', redirect: '/' + companyName + '/index' },
         // Home页

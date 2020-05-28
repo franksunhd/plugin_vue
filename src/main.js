@@ -16,7 +16,9 @@ Vue.use(elementUI);
 import './assets/css/base.css';
 import './assets/css/common.css';
 import myButton from './page/pages/my_plugin/detail/myToast';
-Vue.use(myButton)
+
+Vue.use(myButton);
+import 'babel-polyfill';
 
 Vue.config.productionTip = false;
 
