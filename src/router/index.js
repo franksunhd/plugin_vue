@@ -8,19 +8,19 @@ import Home from '../page/pages/Home';
 // 错误页面
 import ErrorPage from '../components/ErrorPage';
 // markdown编辑器
-import markdownEditor from '../page/pages/markdownEditor';
+import markdownEditor from '../page/pages/pc_plugin/markdownEditor';
 // wangEditor富文本编辑器
-import wangEditor from '../page/pages/wangEditor';
+import wangEditor from '../page/pages/pc_plugin/wangEditor';
 // 复制粘贴插件
-import clipboard from '../page/pages/clipboard';
+import clipboard from '../page/pages/pc_plugin/clipboard';
 // 二维码插件
-import qrCode from '../page/pages/qrCode';
+import qrCode from '../page/pages/pc_plugin/qrCode';
 // vue-uEditor-warp 富文本插件
-import vueUEditor from '../page/pages/vueUEditor';
+import vueUEditor from '../page/pages/pc_plugin/vueUEditor';
 // html2canvas
-import htmlToCanvas from '../page/pages/htmlToCanvas';
+import htmlToCanvas from '../page/pages/pc_plugin/htmlToCanvas';
 // vue图片裁剪
-import vueCropper from '../page/pages/vueCropper';
+import vueCropper from '../page/pages/pc_plugin/vueCropper';
 
 Vue.use(Router);
 

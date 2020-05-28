@@ -11,8 +11,8 @@ export default {
         },
         // 插件
         {
-            path: '/' + common.companyName + '/plugin',
-            name: '插件',
+            path: '/' + common.companyName + '/pc_plugin',
+            name: 'PC插件',
             icon: 'el-icon-menu',
             isSubMenu: true,
             children: [
@@ -60,6 +60,20 @@ export default {
                 }
             ]
         },
-        // 第三组
+        // 移动端插件
+        {
+            path: '/' + common.companyName + '/my_plugin',
+            name: '封装插件',
+            icon: 'el-icon-menu',
+            isSubMenu: true,
+            children: [
+                {
+                    path: '/' + common.companyName + '/myButton',
+                    name: '按钮轮子',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
+                }
+            ]
+        }
     ]
 };
