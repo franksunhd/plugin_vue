@@ -2,11 +2,11 @@
     <div v-if="isShowToast" class="toastStyleBox">
         <div class="toastStyle">
             <div v-if="showType === 'S'" class="toastImg">
-                <i class="el-icon-success"></i>
+                <i class="el-icon-success successIcon"></i>
                 <span class="toastText">{{ msg }}</span>
             </div>
             <div v-if="showType === 'F'" class="toastImg">
-                <i class="el-icon-error"></i>
+                <i class="el-icon-error errorIcon"></i>
                 <span class="toastText">{{ msg }}</span>
             </div>
         </div>
@@ -57,5 +57,13 @@
 
     .toastText {
         padding-left: 10px;
+    }
+
+    .successIcon {
+        color: #008200;
+    }
+
+    .errorIcon {
+        color: #f43838;
     }
 </style>

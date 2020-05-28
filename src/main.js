@@ -9,16 +9,16 @@ import 'element-ui/lib/theme-chalk/index.css';
 // 引入vue的markdown编辑器
 import markdownEditor from 'mavon-editor';
 import 'mavon-editor/dist/css/index.css';
-// 使用vue的markdown编辑器
-Vue.use(markdownEditor);
-// 使用ElementUI
-Vue.use(elementUI);
 import './assets/css/base.css';
 import './assets/css/common.css';
 import myButton from './page/pages/my_plugin/detail/myToast';
-
-Vue.use(myButton);
+import vueBus from 'vue-bus';
 import 'babel-polyfill';
+
+Vue.use(vueBus);
+Vue.use(myButton);
+Vue.use(markdownEditor);
+Vue.use(elementUI);
 
 Vue.config.productionTip = false;
 
