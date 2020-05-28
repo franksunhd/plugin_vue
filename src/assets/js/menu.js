@@ -68,7 +68,7 @@ export default {
             isSubMenu: true,
             children: [
                 {
-                    path: '/' + common.companyName + '/myToast',
+                    path: '/' + common.companyName + '/myToastBox',
                     name: '封装Toast',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false

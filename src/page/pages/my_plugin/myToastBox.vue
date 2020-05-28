@@ -17,7 +17,7 @@
 
 <script>
     export default {
-        name: 'myToast',
+        name: 'myToastBox',
         components: {
             childToast: () => import ('./childToast')
         },
