@@ -21,6 +21,8 @@ import vueUEditor from '../page/pages/pc_plugin/vueUEditor';
 import htmlToCanvas from '../page/pages/pc_plugin/htmlToCanvas';
 // vue图片裁剪
 import vueCropper from '../page/pages/pc_plugin/vueCropper';
+// 封装提示
+import myToast from '../page/pages/my_plugin/myToast';
 
 Vue.use(Router);
 
@@ -44,6 +46,7 @@ export default new Router({
                 { path: '/' + companyName + '/vueUEditor', name: 'vueUEditor', component: vueUEditor },
                 { path: '/' + companyName + '/htmlToCanvas', name: 'htmlToCanvas', component: htmlToCanvas },
                 { path: '/' + companyName + '/vueCropper', name: 'vueCropper', component: vueCropper },
+                { path: '/' + companyName + '/myToast', name: 'myToast', component: myToast },
             ]
         },
         { path: '*', component: ErrorPage }

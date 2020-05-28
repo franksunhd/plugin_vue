@@ -68,8 +68,8 @@ export default {
             isSubMenu: true,
             children: [
                 {
-                    path: '/' + common.companyName + '/myButton',
-                    name: '按钮轮子',
+                    path: '/' + common.companyName + '/myToast',
+                    name: '封装Toast',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
                 }
