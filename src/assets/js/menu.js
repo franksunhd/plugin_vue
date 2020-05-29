@@ -87,6 +87,12 @@ export default {
                     name: 'vue-bus',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
+                },
+                {
+                    path: '/' + common.companyName + '/jsCookies',
+                    name: 'js-cookies',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
                 }
             ]
         }

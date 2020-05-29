@@ -20,8 +20,8 @@ Vue.use(vueBus);
 Vue.use(myButton);
 Vue.use(markdownEditor);
 Vue.use(elementUI);
-Vue.use(jsCookies);
 
+Vue.prototype.$cookies = jsCookies;
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */

@@ -25,6 +25,8 @@ import vueCropper from '../page/pages/pc_plugin/vueCropper';
 import myToastBox from '../page/pages/my_plugin/myToast/myToastBox';
 // vueBus
 import vueBus from '../page/pages/global_plugin/vueBus/vueBus';
+// js-Cookies
+import jsCookies from '../page/pages/global_plugin/jsCookies/index';
 
 Vue.use(Router);
 
@@ -48,6 +50,7 @@ export default new Router({
                 { path: '/' + companyName + '/vueCropper', name: 'vueCropper', component: vueCropper },
                 { path: '/' + companyName + '/myToastBox', name: 'myToastBox', component: myToastBox },
                 { path: '/' + companyName + '/vueBus', name: 'vueBus', component: vueBus },
+                { path: '/' + companyName + '/jsCookies', name: 'jsCookies', component: jsCookies },
             ]
         },
         { path: '*', component: ErrorPage }
