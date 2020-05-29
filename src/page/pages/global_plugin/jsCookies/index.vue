@@ -2,8 +2,8 @@
     <div class="jsCookiesBox">
         <div class="marginBottom20">
             <el-button type="primary" size="small" @click="set">设置cookies</el-button>
-            <el-button type="primary" size="small" @click="get">获取cookies</el-button>
-            <el-button type="primary" size="small" @click="del">删除cookies</el-button>
+            <el-button type="warning" size="small" @click="get">获取cookies</el-button>
+            <el-button type="danger" size="small" @click="del">删除cookies</el-button>
         </div>
         <div>{{msg}} {{cookies}}</div>
     </div>
