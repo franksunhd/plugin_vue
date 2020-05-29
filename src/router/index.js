@@ -22,7 +22,9 @@ import htmlToCanvas from '../page/pages/pc_plugin/htmlToCanvas';
 // vue图片裁剪
 import vueCropper from '../page/pages/pc_plugin/vueCropper';
 // 封装提示
-import myToastBox from '../page/pages/my_plugin/myToastBox';
+import myToastBox from '../page/pages/my_plugin/myToast/myToastBox';
+// vueBus
+import vueBus from '../page/pages/global_plugin/vueBus/vueBus';
 
 Vue.use(Router);
 
@@ -45,6 +47,7 @@ export default new Router({
                 { path: '/' + companyName + '/htmlToCanvas', name: 'htmlToCanvas', component: htmlToCanvas },
                 { path: '/' + companyName + '/vueCropper', name: 'vueCropper', component: vueCropper },
                 { path: '/' + companyName + '/myToastBox', name: 'myToastBox', component: myToastBox },
+                { path: '/' + companyName + '/vueBus', name: 'vueBus', component: vueBus },
             ]
         },
         { path: '*', component: ErrorPage }

@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: 'childToast',
+        name: 'childBus',
         methods: {
             // 发送信息
             sendMessage () {

@@ -9,7 +9,7 @@ export default {
             name: '首页',
             isSubMenu: false
         },
-        // 插件
+        // PC插件
         {
             path: '/' + common.companyName + '/pc_plugin',
             name: 'PC插件',
@@ -70,6 +70,21 @@ export default {
                 {
                     path: '/' + common.companyName + '/myToastBox',
                     name: '封装Toast',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
+                }
+            ]
+        },
+        // 全局性方法
+        {
+            path: '/' + common.companyName + '/global_plugin',
+            name: '全局性方法',
+            icon: 'el-icon-menu',
+            isSubMenu: true,
+            children: [
+                {
+                    path: '/' + common.companyName + '/vueBus',
+                    name: 'vue-bus',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
                 }

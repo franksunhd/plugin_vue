@@ -1,12 +1,5 @@
 <template>
-    <div class="myButtonBox">
-        <p class="marginBottom20">
-            这是一个造插件的页面.
-        </p>
-        <div class="marginBottom20">
-            <el-button type="success" size="small" @click="showToast('S')">显示Toast(成功)</el-button>
-            <el-button type="danger" size="small" @click="showToast('F')">显示Toast(失败)</el-button>
-        </div>
+    <div class="vueBoxBox">
         <childToast/>
         <div class="marginBottom20">
             <div>值为:</div>
@@ -17,20 +10,9 @@
 
 <script>
     export default {
-        name: 'myToastBox',
+        name: 'vueBus',
         components: {
-            childToast: () => import ('./childToast')
-        },
-        data () {
-            return {
-                timer: null,
-            };
-        },
-        methods: {
-            showToast (item) {
-                let _t = this;
-                _t.$toast.show(item, '提示信息');
-            }
+            childToast: () => import ('./childBus')
         },
         created () {
             let _t = this;
@@ -55,8 +37,6 @@
     };
 </script>
 
-<style>
-    #toastNum li {
-        line-height: 30px;
-    }
+<style scoped>
+
 </style>

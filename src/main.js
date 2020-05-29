@@ -11,14 +11,16 @@ import markdownEditor from 'mavon-editor';
 import 'mavon-editor/dist/css/index.css';
 import './assets/css/base.css';
 import './assets/css/common.css';
-import myButton from './page/pages/my_plugin/detail/myToast';
+import myButton from './page/pages/my_plugin/myToast/detail/myToast';
 import vueBus from 'vue-bus';
+import jsCookies from 'js-cookies';
 import 'babel-polyfill';
 
 Vue.use(vueBus);
 Vue.use(myButton);
 Vue.use(markdownEditor);
 Vue.use(elementUI);
+Vue.use(jsCookies);
 
 Vue.config.productionTip = false;
 
