@@ -3,6 +3,7 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+import 'babel-polyfill';
 // 引入elementUI
 import elementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
@@ -14,7 +15,8 @@ import './assets/css/common.css';
 import myButton from './page/pages/my_plugin/myToast/detail/myToast';
 import vueBus from 'vue-bus';
 import jsCookies from 'js-cookies';
-import 'babel-polyfill';
+// 引入过滤器
+import * as custom from './assets/js/formatDate';
 
 Vue.use(vueBus);
 Vue.use(myButton);
@@ -23,6 +25,9 @@ Vue.use(elementUI);
 
 Vue.prototype.$cookies = jsCookies;
 Vue.config.productionTip = false;
+Object.keys(custom).forEach(key => {
+    Vue.filter(key, custom[key])
+});
 
 /* eslint-disable no-new */
 new Vue({

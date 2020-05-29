@@ -27,6 +27,8 @@ import myToastBox from '../page/pages/my_plugin/myToast/myToastBox';
 import vueBus from '../page/pages/global_plugin/vueBus/vueBus';
 // js-Cookies
 import jsCookies from '../page/pages/global_plugin/jsCookies/index';
+// moment-js
+import moment from '../page/pages/global_plugin/Moment/moment';
 
 Vue.use(Router);
 
@@ -51,6 +53,7 @@ export default new Router({
                 { path: '/' + companyName + '/myToastBox', name: 'myToastBox', component: myToastBox },
                 { path: '/' + companyName + '/vueBus', name: 'vueBus', component: vueBus },
                 { path: '/' + companyName + '/jsCookies', name: 'jsCookies', component: jsCookies },
+                { path: '/' + companyName + '/moment', name: 'moment', component: moment },
             ]
         },
         { path: '*', component: ErrorPage }

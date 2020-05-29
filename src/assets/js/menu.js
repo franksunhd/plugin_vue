@@ -93,6 +93,12 @@ export default {
                     name: 'js-cookies',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
+                },
+                {
+                    path: '/' + common.companyName + '/moment',
+                    name: 'moment-js',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
                 }
             ]
         }
