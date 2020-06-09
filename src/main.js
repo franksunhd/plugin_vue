@@ -18,11 +18,16 @@ import jsCookies from 'js-cookies';
 // 引入过滤器
 import * as custom from './assets/js/formatDate';
 import lodash from 'lodash';
+import videoPlayer from 'vue-video-player';
+import 'video.js/dist/video-js.css';
+import 'vue-video-player/src/custom-theme.css';
+
 
 Vue.use(vueBus);
 Vue.use(myButton);
 Vue.use(markdownEditor);
 Vue.use(elementUI);
+Vue.use(videoPlayer);
 
 Vue.prototype.$cookies = jsCookies;
 Vue.prototype.$lodash = lodash;
