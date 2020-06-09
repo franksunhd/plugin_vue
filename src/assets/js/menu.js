@@ -105,6 +105,12 @@ export default {
                     name: 'mock-js',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
+                },
+                {
+                    path: '/' + common.companyName + '/lodash',
+                    name: 'lodash',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
                 }
             ]
         }

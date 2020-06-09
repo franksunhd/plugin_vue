@@ -31,6 +31,8 @@ import jsCookies from '../page/pages/global_plugin/jsCookies/index';
 import moment from '../page/pages/global_plugin/Moment/moment';
 // mock-js
 import mockJs from '../page/pages/global_plugin/mockJs/index';
+// lodash
+import lodash from '../page/pages/global_plugin/lodash/index';
 
 Vue.use(Router);
 
@@ -57,6 +59,7 @@ export default new Router({
                 {path: '/' + companyName + '/jsCookies', name: 'jsCookies', component: jsCookies},
                 {path: '/' + companyName + '/moment', name: 'moment', component: moment},
                 {path: '/' + companyName + '/mock-js', name: 'mock-js', component: mockJs},
+                {path: '/' + companyName + '/lodash', name: 'lodash', component: lodash},
             ]
         },
         {path: '*', component: ErrorPage}
