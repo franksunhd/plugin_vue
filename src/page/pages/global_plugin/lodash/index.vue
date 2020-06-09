@@ -12,7 +12,7 @@
 </template>
 
 <script>
-    import lodash from 'lodash';
+
 
     export default {
         name: "index",
@@ -31,14 +31,13 @@
         methods: {
             getData() {
                 let _t = this;
-                _t.arrC = lodash.difference(_t.arrA, _t.arrB);
+                _t.arrC = _t.$lodash.difference(_t.arrA, _t.arrB);
 
-                _t.arrD = lodash.chunk(_t.arrA, 4);
+                _t.arrD = _t.$lodash.chunk(_t.arrA, 4);
 
-                _t.arrE = lodash.compact(_t.arrA);
+                _t.arrE = _t.$lodash.compact(_t.arrA);
 
-
-                _t.arrF = lodash.concat(_t.arrA,_t.arrC);
+                _t.arrF = _t.$lodash.concat(_t.arrA, _t.arrC);
 
 
             }

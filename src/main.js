@@ -17,6 +17,7 @@ import vueBus from 'vue-bus';
 import jsCookies from 'js-cookies';
 // 引入过滤器
 import * as custom from './assets/js/formatDate';
+import lodash from 'lodash';
 
 Vue.use(vueBus);
 Vue.use(myButton);
@@ -24,6 +25,7 @@ Vue.use(markdownEditor);
 Vue.use(elementUI);
 
 Vue.prototype.$cookies = jsCookies;
+Vue.prototype.$lodash = lodash;
 Vue.config.productionTip = false;
 Object.keys(custom).forEach(key => {
     Vue.filter(key, custom[key])
@@ -33,6 +35,6 @@ Object.keys(custom).forEach(key => {
 new Vue({
     el: '#app',
     router,
-    components: { App },
+    components: {App},
     template: '<App/>'
 });
