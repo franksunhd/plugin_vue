@@ -33,6 +33,8 @@ import moment from '../page/pages/global_plugin/Moment/moment';
 import mockJs from '../page/pages/global_plugin/mockJs/index';
 // lodash
 import lodash from '../page/pages/global_plugin/lodash/index';
+// videoPlayer
+import videoPlayer from '../page/pages/my_plugin/videoPlayer';
 
 Vue.use(Router);
 
@@ -60,6 +62,7 @@ export default new Router({
                 {path: '/' + companyName + '/moment', name: 'moment', component: moment},
                 {path: '/' + companyName + '/mock-js', name: 'mock-js', component: mockJs},
                 {path: '/' + companyName + '/lodash', name: 'lodash', component: lodash},
+                {path: '/' + companyName + '/videoPlayer', name: 'videoPlayer', component: videoPlayer},
             ]
         },
         {path: '*', component: ErrorPage}

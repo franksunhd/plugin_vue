@@ -72,6 +72,12 @@ export default {
                     name: '封装Toast',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
+                },
+                {
+                    path: '/' + common.companyName + '/videoPlayer',
+                    name: 'videoPlayer',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
                 }
             ]
         },
