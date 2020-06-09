@@ -29,6 +29,8 @@ import vueBus from '../page/pages/global_plugin/vueBus/vueBus';
 import jsCookies from '../page/pages/global_plugin/jsCookies/index';
 // moment-js
 import moment from '../page/pages/global_plugin/Moment/moment';
+// mock-js
+import mockJs from '../page/pages/global_plugin/mockJs/index';
 
 Vue.use(Router);
 
@@ -36,26 +38,27 @@ let companyName = common.companyName;
 
 export default new Router({
     routes: [
-        { path: '/', redirect: '/' + companyName + '/index' },
+        {path: '/', redirect: '/' + companyName + '/index'},
         // Home页
-        { path: '/' + companyName, redirect: '/' + companyName + '/index' },
+        {path: '/' + companyName, redirect: '/' + companyName + '/index'},
         {
             path: '/' + companyName, name: 'index', component: Index, children: [
                 // Home页的页面内容
-                { path: '/' + companyName + '/index', name: 'Home', component: Home },
-                { path: '/' + companyName + '/markdownEditor', name: 'markdownEditor', component: markdownEditor },
-                { path: '/' + companyName + '/wangEditor', name: 'wangEditor', component: wangEditor },
-                { path: '/' + companyName + '/clipboard', name: 'clipboard', component: clipboard },
-                { path: '/' + companyName + '/qrCode', name: 'qrCode', component: qrCode },
-                { path: '/' + companyName + '/vueUEditor', name: 'vueUEditor', component: vueUEditor },
-                { path: '/' + companyName + '/htmlToCanvas', name: 'htmlToCanvas', component: htmlToCanvas },
-                { path: '/' + companyName + '/vueCropper', name: 'vueCropper', component: vueCropper },
-                { path: '/' + companyName + '/myToastBox', name: 'myToastBox', component: myToastBox },
-                { path: '/' + companyName + '/vueBus', name: 'vueBus', component: vueBus },
-                { path: '/' + companyName + '/jsCookies', name: 'jsCookies', component: jsCookies },
-                { path: '/' + companyName + '/moment', name: 'moment', component: moment },
+                {path: '/' + companyName + '/index', name: 'Home', component: Home},
+                {path: '/' + companyName + '/markdownEditor', name: 'markdownEditor', component: markdownEditor},
+                {path: '/' + companyName + '/wangEditor', name: 'wangEditor', component: wangEditor},
+                {path: '/' + companyName + '/clipboard', name: 'clipboard', component: clipboard},
+                {path: '/' + companyName + '/qrCode', name: 'qrCode', component: qrCode},
+                {path: '/' + companyName + '/vueUEditor', name: 'vueUEditor', component: vueUEditor},
+                {path: '/' + companyName + '/htmlToCanvas', name: 'htmlToCanvas', component: htmlToCanvas},
+                {path: '/' + companyName + '/vueCropper', name: 'vueCropper', component: vueCropper},
+                {path: '/' + companyName + '/myToastBox', name: 'myToastBox', component: myToastBox},
+                {path: '/' + companyName + '/vueBus', name: 'vueBus', component: vueBus},
+                {path: '/' + companyName + '/jsCookies', name: 'jsCookies', component: jsCookies},
+                {path: '/' + companyName + '/moment', name: 'moment', component: moment},
+                {path: '/' + companyName + '/mock-js', name: 'mock-js', component: mockJs},
             ]
         },
-        { path: '*', component: ErrorPage }
+        {path: '*', component: ErrorPage}
     ]
 });

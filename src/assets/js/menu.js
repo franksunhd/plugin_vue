@@ -99,6 +99,12 @@ export default {
                     name: 'moment-js',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
+                },
+                {
+                    path: '/' + common.companyName + '/mock-js',
+                    name: 'mock-js',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
                 }
             ]
         }
