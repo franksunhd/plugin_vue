@@ -35,6 +35,8 @@ import mockJs from '../page/pages/global_plugin/mockJs/index';
 import lodash from '../page/pages/global_plugin/lodash/index';
 // videoPlayer
 import videoPlayer from '../page/pages/my_plugin/videoPlayer';
+// circleMenu
+import circleMenu from '../page/pages/mobile_plugin/circleMenu/circleMenu'
 
 Vue.use(Router);
 
@@ -63,6 +65,7 @@ export default new Router({
                 {path: '/' + companyName + '/mock-js', name: 'mock-js', component: mockJs},
                 {path: '/' + companyName + '/lodash', name: 'lodash', component: lodash},
                 {path: '/' + companyName + '/videoPlayer', name: 'videoPlayer', component: videoPlayer},
+                {path: '/' + companyName + '/circleMenu', name: 'circleMenu', component: circleMenu},
             ]
         },
         {path: '*', component: ErrorPage}
