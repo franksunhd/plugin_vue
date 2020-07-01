@@ -66,17 +66,17 @@
             // 获取省的数据
             getProvince(val) {
                 let _t = this;
-                _t.areaItem.province = val.code !== undefined ? val.value : '';
+                _t.areaItem.province = val.code !== undefined ? val.value + '(' + val.code + ')' : '';
             },
             // 获取市的数据
             getCity(val) {
                 let _t = this;
-                _t.areaItem.city = val.code !== undefined ? val.value : '';
+                _t.areaItem.city = val.code !== undefined ? val.value + '(' + val.code + ')' : '';
             },
             // 获取区的数据
             getArea(val) {
                 let _t = this;
-                _t.areaItem.area = val.code !== undefined ? val.value : '';
+                _t.areaItem.area = val.code !== undefined ? val.value + '(' + val.code + ')' : '';
             }
         }
     }
