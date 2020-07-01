@@ -3,7 +3,7 @@
         <div class="box">
             <h4 ref="gestureTitle" class="gestureTitle">请绘制您的图形密码</h4>
             <a class="reset" ref="updatePassword" @click="updatePassword">重置密码</a>
-            <a class="close" ref="updatePassword" @click="closePwd(false)">关闭</a>
+            <a class="close" ref="updatePassword" @click="closePwd">关闭</a>
             <canvas ref="canvas"></canvas>
         </div>
     </div>
@@ -13,107 +13,99 @@
     export default {
         name: "vueGesture",
         props: {
-            value: {
+            // 是否显示组件
+            currentValue: {
                 type: Boolean,
                 default: false
             },
         },
         data() {
             return {
-                currentValue: false,
-                ctx: '',
-                width: 0,
-                height: 0,
-                devicePixelRatio: 0,
+                canvas: '', // 画布
+                ctx: '', // 画笔
+                devicePixelRatio: 0, // 物理像素和分辨率额比例
                 chooseType: '',
                 r: '', // 公式计算
-                lastPoint: [],
-                arr: [],
-                restPoint: [],
-                pswObj: {step: 2},
-                canvas: ''
-            }
-        },
-        watch: {
-            value: {
-                handler: function (val) {
-                    this.currentValue = val
-                },
-                immediate: true
-            },
-            currentValue(val) {
-                this.$emit(val ? 'on-show' : 'on-hide')
-                this.$emit('input', val)
-            }
-        },
-        created() {
-            if (typeof this.value !== 'undefined') {
-                this.currentValue = this.value
+                lastPoint: [], // 记录的集合数组
+                lineArr: [], // 描边数组
+                restPoint: [], // 连线画点数组
+                pswObj: {step: 2}, // 记录次数
+                // 颜色配置
+                itemStyle: {
+                    textColor: '#87888a', // 文字颜色
+                    lineColor: '#27AED5', // 连线颜色
+                    successColor: '#2CFF26', // 连线成功的颜色
+                    errorColor: '#F56C6C', // 连线失败的颜色
+                }
             }
         },
         mounted() {
-            this.setChooseType(3);
+            let _t = this;
+            _t.init();
         },
         methods: {
-            closePwd(bol) {
-                this.$emit("handPwd", bol);
-                this.currentValue = false;
+            closePwd() {
+                let _t = this;
+                _t.$emit("control", false);
             },
             // 初始化解锁密码面板 小圆圈
             drawCle(x, y) {
+                let _t = this;
                 // 密码的点点默认的颜色
-                this.ctx.strokeStyle = '#87888a';
-                this.ctx.lineWidth = 2;
-                this.ctx.beginPath();
-                this.ctx.arc(x, y, this.r, 0, Math.PI * 2, true);
-                this.ctx.closePath();
-                this.ctx.stroke();
+                _t.ctx.strokeStyle = _t.itemStyle.textColor;
+                _t.ctx.lineWidth = 2;
+                _t.ctx.beginPath();
+                _t.ctx.arc(x, y, _t.r, 0, Math.PI * 2, true);
+                _t.ctx.closePath();
+                _t.ctx.stroke();
             },
             // 初始化圆心
             drawPoint(style) {
-                for (let i = 0; i < this.lastPoint.length; i++) {
-                    this.ctx.fillStyle = style;
-                    this.ctx.beginPath();
-                    this.ctx.arc(this.lastPoint[i].x, this.lastPoint[i].y, this.r / 2.5, 0, Math.PI * 2, true);
-                    this.ctx.closePath();
-                    this.ctx.fill();
+                let _t = this;
+                for (let i = 0; i < _t.lastPoint.length; i++) {
+                    _t.ctx.fillStyle = style;
+                    _t.ctx.beginPath();
+                    _t.ctx.arc(_t.lastPoint[i].x, _t.lastPoint[i].y, _t.r / 2.5, 0, Math.PI * 2, true);
+                    _t.ctx.closePath();
+                    _t.ctx.fill();
                 }
             },
             // 初始化状态线条
             drawStatusPoint(type) {
-                for (let i = 0; i < this.lastPoint.length; i++) {
-                    this.ctx.strokeStyle = type;
-                    this.ctx.beginPath();
-                    this.ctx.arc(this.lastPoint[i].x, this.lastPoint[i].y, this.r, 0, Math.PI * 2, true);
-                    this.ctx.closePath();
-                    this.ctx.stroke();
+                let _t = this;
+                for (let i = 0; i < _t.lastPoint.length; i++) {
+                    _t.ctx.strokeStyle = type;
+                    _t.ctx.beginPath();
+                    _t.ctx.arc(_t.lastPoint[i].x, _t.lastPoint[i].y, _t.r, 0, Math.PI * 2, true);
+                    _t.ctx.closePath();
+                    _t.ctx.stroke();
                 }
             },
             // style:颜色 解锁轨迹
-            drawLine(style, po, lastPoint) {
-                this.ctx.beginPath();
-                this.ctx.strokeStyle = style;
-                this.ctx.lineWidth = 3;
-                this.ctx.moveTo(this.lastPoint[0].x, this.lastPoint[0].y);
-
-                for (let i = 1; i < this.lastPoint.length; i++) {
-                    this.ctx.lineTo(this.lastPoint[i].x, this.lastPoint[i].y);
+            drawLine(style, po) {
+                let _t = this;
+                _t.ctx.beginPath();
+                _t.ctx.strokeStyle = style;
+                _t.ctx.lineWidth = 3;
+                _t.ctx.moveTo(_t.lastPoint[0].x, _t.lastPoint[0].y);
+                for (let i = 1; i < _t.lastPoint.length; i++) {
+                    _t.ctx.lineTo(_t.lastPoint[i].x, _t.lastPoint[i].y);
                 }
-                this.ctx.lineTo(po.x, po.y);
-                this.ctx.stroke();
-                this.ctx.closePath();
-
+                _t.ctx.lineTo(po.x, po.y);
+                _t.ctx.stroke();
+                _t.ctx.closePath();
             },
             // 创建解锁点的坐标，根据canvas的大小来平均分配半径
             createCircle() {
-                let n = this.chooseType;
+                let _t = this;
+                let n = _t.chooseType;
                 let count = 0;
                 // 公式计算
-                this.r = this.ctx.canvas.width / (2 + 4 * n);
-                this.lastPoint = [];
-                this.arr = [];
-                this.restPoint = [];
-                let r = this.r;
+                _t.r = _t.ctx.canvas.width / (2 + 4 * n);
+                _t.lastPoint = [];
+                _t.lineArr = [];
+                _t.restPoint = [];
+                let r = _t.r;
                 for (let i = 0; i < n; i++) {
                     for (let j = 0; j < n; j++) {
                         count++;
@@ -122,43 +114,43 @@
                             y: i * 4 * r + 3 * r,
                             index: count
                         };
-                        this.arr.push(obj);
-                        this.restPoint.push(obj);
+                        _t.lineArr.push(obj);
+                        _t.restPoint.push(obj);
                     }
                 }
-                this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
-                for (let i = 0; i < this.arr.length; i++) {
-                    this.drawCle(this.arr[i].x, this.arr[i].y);
-
+                _t.ctx.clearRect(0, 0, _t.ctx.canvas.width, _t.ctx.canvas.height);
+                for (let i = 0; i < _t.lineArr.length; i++) {
+                    _t.drawCle(_t.lineArr[i].x, _t.lineArr[i].y);
                 }
             },
             // 获取touch点相对于canvas的坐标
             getPosition(e) {
+                let _t = this;
                 let rect = e.currentTarget.getBoundingClientRect();
-                let po = {
-                    x: (e.touches[0].clientX - rect.left) * this.devicePixelRatio,
-                    y: (e.touches[0].clientY - rect.top) * this.devicePixelRatio
+                return {
+                    x: (e.touches[0].clientX - rect.left) * _t.devicePixelRatio,
+                    y: (e.touches[0].clientY - rect.top) * _t.devicePixelRatio
                 };
-                return po;
             },
             // 核心变换方法在touchmove时候调用
             update(po) {
-                this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
+                let _t = this;
+                _t.ctx.clearRect(0, 0, _t.ctx.canvas.width, _t.ctx.canvas.height);
                 // 每帧先把面板画出来
-                for (let i = 0; i < this.arr.length; i++) {
-                    this.drawCle(this.arr[i].x, this.arr[i].y);
+                for (let i = 0; i < _t.lineArr.length; i++) {
+                    _t.drawCle(_t.lineArr[i].x, _t.lineArr[i].y);
                 }
                 // 每帧花轨迹
-                this.drawPoint('#27AED5');
+                _t.drawPoint(_t.itemStyle.lineColor);
                 // 每帧花轨迹
-                this.drawStatusPoint('#27AED5');
+                _t.drawStatusPoint(_t.itemStyle.lineColor);
                 // 每帧画圆心
-                this.drawLine('#27AED5', po, this.lastPoint);
-                for (let i = 0; i < this.restPoint.length; i++) {
-                    if (Math.abs(po.x - this.restPoint[i].x) < this.r && Math.abs(po.y - this.restPoint[i].y) < this.r) {
-                        this.drawPoint(this.restPoint[i].x, this.restPoint[i].y);
-                        this.lastPoint.push(this.restPoint[i]);
-                        this.restPoint.splice(i, 1);
+                _t.drawLine(_t.itemStyle.lineColor, po);
+                for (let i = 0; i < _t.restPoint.length; i++) {
+                    if (Math.abs(po.x - _t.restPoint[i].x) < _t.r && Math.abs(po.y - _t.restPoint[i].y) < _t.r) {
+                        _t.drawPoint(_t.restPoint[i].x, _t.restPoint[i].y);
+                        _t.lastPoint.push(_t.restPoint[i]);
+                        _t.restPoint.splice(i, 1);
                         break;
                     }
                 }
@@ -176,137 +168,138 @@
             },
             // touchend结束之后对密码和状态的处理
             storePass(psw) {
-                if (this.pswObj.step == 1) {
-                    if (this.checkPass(this.pswObj.fpassword, psw)) {
-                        this.pswObj.step = 2;
-                        this.pswObj.spassword = psw;
-                        this.$refs.gestureTitle.innerHTML = '密码保存成功';
-                        this.drawStatusPoint('#2CFF26');
-                        this.drawPoint('#2CFF26');
-                        window.localStorage.setItem('passwordxx', JSON.stringify(this.pswObj.spassword));
-                        window.localStorage.setItem('chooseType', this.chooseType);
+                let _t = this;
+                if (_t.pswObj.step === 1) {
+                    if (_t.checkPass(_t.pswObj.fpassword, psw)) {
+                        _t.pswObj.step = 2;
+                        _t.pswObj.spassword = psw;
+                        _t.$refs.gestureTitle.innerHTML = '密码保存成功';
+                        _t.drawStatusPoint(_t.itemStyle.successColor);
+                        _t.drawPoint(_t.itemStyle.successColor);
+                        window.localStorage.setItem('pwdList', JSON.stringify(_t.pswObj.spassword));
+                        window.localStorage.setItem('chooseType', _t.chooseType);
                     } else {
-                        this.$refs.gestureTitle.innerHTML = '两次不一致，重新输入';
-                        this.drawStatusPoint('red');
-                        this.drawPoint('red');
-                        delete this.pswObj.step;
+                        _t.$refs.gestureTitle.innerHTML = '两次不一致，重新输入';
+                        _t.drawStatusPoint(_t.itemStyle.errorColor);
+                        _t.drawPoint(_t.itemStyle.errorColor);
+                        delete _t.pswObj.step;
                     }
-                } else if (this.pswObj.step == 2) {
-                    if (this.checkPass(this.pswObj.spassword, psw)) {
-                        let gestureTitle = this.$refs.gestureTitle;
-                        gestureTitle.style.color = "#2CFF26";
+                } else if (_t.pswObj.step === 2) {
+                    if (_t.checkPass(_t.pswObj.spassword, psw)) {
+                        let gestureTitle = _t.$refs.gestureTitle;
+                        gestureTitle.style.color = _t.itemStyle.successColor;
                         gestureTitle.innerHTML = '解锁成功';
                         // 小点点外圈高亮
-                        this.drawStatusPoint('#2CFF26');
-                        this.drawPoint('#2CFF26');
+                        _t.drawStatusPoint(_t.itemStyle.successColor);
+                        _t.drawPoint(_t.itemStyle.successColor);
                         // 每帧画圆心
-                        this.drawLine('#2CFF26', this.lastPoint[this.lastPoint.length - 1], this.lastPoint);
-                        this.closePwd(true);
+                        _t.drawLine(_t.itemStyle.successColor, _t.lastPoint[_t.lastPoint.length - 1]);
+                        _t.closePwd(true);
                     } else if (psw.length < 4) {
-                        this.drawStatusPoint('red');
-                        this.drawPoint('red');
+                        _t.drawStatusPoint(_t.itemStyle.errorColor);
+                        _t.drawPoint(_t.itemStyle.errorColor);
                         // 每帧画圆心
-                        this.drawLine('red', this.lastPoint[this.lastPoint.length - 1], this.lastPoint);
-                        let gestureTitle = this.$refs.gestureTitle;
-                        gestureTitle.style.color = "red";
+                        _t.drawLine(_t.itemStyle.errorColor, _t.lastPoint[_t.lastPoint.length - 1]);
+                        let gestureTitle = _t.$refs.gestureTitle;
+                        gestureTitle.style.color = _t.itemStyle.errorColor;
                         gestureTitle.innerHTML = '请连接4个点';
-
                     } else {
-                        this.drawStatusPoint('red');
-                        this.drawPoint('red');
+                        _t.drawStatusPoint(_t.itemStyle.errorColor);
+                        _t.drawPoint(_t.itemStyle.errorColor);
                         // 每帧画圆心
-                        this.drawLine('red', this.lastPoint[this.lastPoint.length - 1], this.lastPoint);
-                        let gestureTitle = this.$refs.gestureTitle;
-                        gestureTitle.style.color = "red";
+                        _t.drawLine(_t.itemStyle.errorColor, _t.lastPoint[_t.lastPoint.length - 1]);
+                        let gestureTitle = _t.$refs.gestureTitle;
+                        gestureTitle.style.color = _t.itemStyle.errorColor;
                         gestureTitle.innerHTML = '密码错误';
                     }
                 } else {
-                    this.pswObj.step = 1;
-                    this.pswObj.fpassword = psw;
-                    this.$refs.gestureTitle.innerHTML = '再次输入';
+                    _t.pswObj.step = 1;
+                    _t.pswObj.fpassword = psw;
+                    _t.$refs.gestureTitle.innerHTML = '再次输入';
                 }
             },
             makeState() {
-                if (this.pswObj.step == 2) {
-                    this.$refs.updatePassword.style.display = 'block';
-                    let gestureTitle = this.$refs.gestureTitle;
-                    gestureTitle.style.color = "#87888a";
+                let _t = this;
+                if (_t.pswObj.step === 2) {
+                    _t.$refs.updatePassword.style.display = 'block';
+                    let gestureTitle = _t.$refs.gestureTitle;
+                    gestureTitle.style.color = _t.itemStyle.textColor;
                     gestureTitle.innerHTML = '请解锁';
-                } else if (this.pswObj.step == 1) {
-                    this.$refs.updatePassword.style.display = 'none';
+                } else if (_t.pswObj.step === 1) {
+                    _t.$refs.updatePassword.style.display = 'none';
                 } else {
-                    this.$refs.updatePassword.style.display = 'block';
+                    _t.$refs.updatePassword.style.display = 'block';
                 }
             },
-            setChooseType(type) {
-                this.chooseType = type;
-                this.init();
-            },
             updatePassword() {
-                window.localStorage.removeItem('passwordxx');
+                let _t = this;
+                window.localStorage.removeItem('pwdList');
                 window.localStorage.removeItem('chooseType');
-                this.pswObj = {};
-                this.$refs.gestureTitle.innerHTML = '绘制解锁图案';
-                this.reset();
+                _t.pswObj = {};
+                _t.$refs.gestureTitle.innerHTML = '绘制解锁图案';
+                _t.reset();
             },
             initDom() {
-                this.chooseType = Number(window.localStorage.getItem('chooseType')) || 3;
-                this.devicePixelRatio = window.devicePixelRatio || 1;
-                let canvas = this.$refs.canvas;
-                let width = this.width || 320;
-                let height = this.height || 320;
+                let _t = this;
+                _t.chooseType = Number(window.localStorage.getItem('chooseType')) || 3;
+                _t.devicePixelRatio = window.devicePixelRatio || 1;
+                let canvas = _t.$refs.canvas;
+                let width = 320;
+                let height = 320;
                 // 高清屏锁放
                 canvas.style.width = width + "px";
                 canvas.style.height = height + "px";
-                canvas.height = height * this.devicePixelRatio;
-                canvas.width = width * this.devicePixelRatio;
+                canvas.height = height * _t.devicePixelRatio;
+                canvas.width = width * _t.devicePixelRatio;
             },
             init() {
-                this.initDom();
-                this.pswObj = window.localStorage.getItem('passwordxx') ? {
+                let _t = this;
+                _t.initDom();
+                _t.pswObj = window.localStorage.getItem('pwdList') ? {
                     step: 2,
-                    spassword: JSON.parse(window.localStorage.getItem('passwordxx'))
+                    spassword: JSON.parse(window.localStorage.getItem('pwdList'))
                 } : {};
-                this.lastPoint = [];
-                this.makeState();
-                this.touchFlag = false;
-                this.canvas = this.$refs.canvas;
-                this.ctx = this.canvas.getContext('2d');
-                this.createCircle();
-                this.bindEvent();
+                _t.lastPoint = [];
+                _t.makeState();
+                _t.touchFlag = false;
+                _t.canvas = _t.$refs.canvas;
+                _t.ctx = _t.canvas.getContext('2d');
+                _t.createCircle();
+                _t.bindEvent();
             },
             reset() {
-                this.makeState();
-                this.createCircle();
+                let _t = this;
+                _t.makeState();
+                _t.createCircle();
             },
             bindEvent() {
-                let self = this;
-                this.canvas = this.$refs.canvas;
-                this.canvas.addEventListener("touchstart", function (e) {
+                let _t = this;
+                _t.canvas = _t.$refs.canvas;
+                _t.canvas.addEventListener("touchstart", function (e) {
                     // 某些android 的 touchmove不宜触发 所以增加此行代码
                     e.preventDefault();
-                    let po = self.getPosition(e);
-                    for (let i = 0; i < self.arr.length; i++) {
-                        if (Math.abs(po.x - self.arr[i].x) < self.r && Math.abs(po.y - self.arr[i].y) < self.r) {
-                            self.touchFlag = true;
-                            self.drawPoint(self.arr[i].x, self.arr[i].y);
-                            self.lastPoint.push(self.arr[i]);
-                            self.restPoint.splice(i, 1);
+                    let po = _t.getPosition(e);
+                    for (let i = 0; i < _t.lineArr.length; i++) {
+                        if (Math.abs(po.x - _t.lineArr[i].x) < _t.r && Math.abs(po.y - _t.lineArr[i].y) < _t.r) {
+                            _t.touchFlag = true;
+                            _t.drawPoint(_t.lineArr[i].x, _t.lineArr[i].y);
+                            _t.lastPoint.push(_t.lineArr[i]);
+                            _t.restPoint.splice(i, 1);
                             break;
                         }
                     }
                 }, false);
-                this.canvas.addEventListener("touchmove", function (e) {
-                    if (self.touchFlag) {
-                        self.update(self.getPosition(e));
+                _t.canvas.addEventListener("touchmove", function (e) {
+                    if (_t.touchFlag) {
+                        _t.update(_t.getPosition(e));
                     }
                 }, false);
-                this.canvas.addEventListener("touchend", function (e) {
-                    if (self.touchFlag) {
-                        self.touchFlag = false;
-                        self.storePass(self.lastPoint);
+                _t.canvas.addEventListener("touchend", function (e) {
+                    if (_t.touchFlag) {
+                        _t.touchFlag = false;
+                        _t.storePass(_t.lastPoint);
                         setTimeout(function () {
-                            self.reset();
+                            _t.reset();
                         }, 1000);
                     }
                 }, false);

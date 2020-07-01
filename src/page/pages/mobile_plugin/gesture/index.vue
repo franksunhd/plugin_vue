@@ -1,7 +1,8 @@
 <template>
     <div class="hello">
-        <el-button type="primary" size="small" @click="showClicked">手势密码</el-button>
-        <vueGesture v-model="showPwd" @handPwd="handPwd"/>
+        <el-button type="primary" size="small" @click="showPwd = true">手势密码</el-button>
+        <!--手势组件-->
+        <vueGesture :currentValue="showPwd" @control="isShowControl"/>
     </div>
 </template>
 
@@ -18,13 +19,9 @@
             }
         },
         methods: {
-            // 显示控件
-            showClicked() {
-                this.showPwd = true;
-            },
-            // 打印数据
-            handPwd(val) {
-                console.log(val);
+            // 接收子组件的值控制显示隐藏
+            isShowControl(val) {
+                this.showPwd = val;
             }
         },
     }
