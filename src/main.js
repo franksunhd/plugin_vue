@@ -21,7 +21,7 @@ import lodash from 'lodash';
 import videoPlayer from 'vue-video-player';
 import 'video.js/dist/video-js.css';
 import 'vue-video-player/src/custom-theme.css';
-
+import 'lib-flexible';
 
 Vue.use(vueBus);
 Vue.use(myButton);
