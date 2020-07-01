@@ -99,6 +99,12 @@ export default {
                     name: 'videoPlayer',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
+                },
+                {
+                    path: '/' + common.companyName + '/distPicker',
+                    name: '省市县三级联动',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
                 }
             ]
         },
