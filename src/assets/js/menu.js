@@ -72,6 +72,12 @@ export default {
                     name: '圆形菜单',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
+                },
+                {
+                    path: '/' + common.companyName + '/vueGesture',
+                    name: '手势密码',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
                 }
             ]
         },
