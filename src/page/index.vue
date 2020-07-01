@@ -34,8 +34,10 @@
     }
 
     .elHeader {
+        font-size: 26px;
+        height: 80px !important;
         background-color: #229399;
-        line-height: 60px;
+        line-height: 80px !important;
     }
 
     .elAside {
