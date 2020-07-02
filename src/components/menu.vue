@@ -110,6 +110,8 @@
     .menuBox .elMenu .el-menu-item,
     .menuBox .elMenu .el-submenu .el-submenu__title {
         padding: 0 10px !important;
+        height: 70px;
+        line-height: 70px;
     }
 
     .menuBox .elMenu .el-submenu .el-menu-item {
@@ -120,6 +122,13 @@
     .menuBox .elMenuNo .el-submenu .el-submenu__title {
         padding: 0 !important;
         text-align: center !important;
+        height: 70px;
+        line-height: 70px;
+    }
+
+    .el-menu--vertical .el-menu-item {
+        height: 70px;
+        line-height: 70px;
     }
 
     .menuBox .el-submenu.is-active .el-submenu__title,
