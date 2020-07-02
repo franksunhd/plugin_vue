@@ -31,6 +31,7 @@
     "vue-barcode": "^1.2.0",
     "vue-bus": "^1.2.1",
     "vue-circle-menu": "^1.1.1",
+    "vue-meta": "^2.4.0",
     "vue-qart": "^2.2.0",
     "vue-qr": "^2.2.1",
     "vue-router": "^3.0.1",
