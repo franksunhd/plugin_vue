@@ -1,5 +1,6 @@
 <template>
     <div class="aweSiperBox">
+        <div class="title">{{ currentIndex }}/{{ imgList.length }}</div>
         <swiper :options="swiperOptions">
             <swiper-slide v-for="(item,index) in imgList" :key="index">
                 <div class="FDWXSelectImgBox">
@@ -15,13 +16,19 @@
         name: "vueAwesomeSwiper",
         data() {
             return {
+                currentIndex: 2,
                 swiperOptions: {
                     direction: 'horizontal',
                     initialSlide: 1,
                     slidesPerView: 1.5, // 可见图片张数
                     centeredSlides: true, // 默认选中中间一张
-                    loop: false, // 无限循环
+                    loop: true, // 无限循环
                     autoplay: 4000, // 自动播放时间间隔
+                    on: {
+                        slideChange() {
+                            this.currentIndex = this.activeIndex + 1
+                        }
+                    }
                 },
                 imgList: [
                     {url: require('../../../../assets/img/resource/1.png')},
@@ -47,6 +54,12 @@
         display: inline-block;
         padding: 30px 20px;
         background-color: #9cb945;
+    }
+
+    .aweSiperBox .title {
+        font-size: 30px;
+        margin-bottom: 20px;
+        text-align: center;
     }
 
     .aweSiperBox .swiper-container {
