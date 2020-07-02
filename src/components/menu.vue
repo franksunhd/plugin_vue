@@ -19,12 +19,12 @@
                 </el-menu-item>
                 <el-submenu v-if="item.isSubMenu === true" :index="item.path">
                     <template slot="title">
-                        <i class="menuItemIcon" :class="item.icon"></i>
+                        <i class="menuItemIcon" :class="!isShow ? item.icon : 'menuItemIconRight ' + item.icon"></i>
                         <span class="menuItem">{{item.name}}</span>
                     </template>
                     <el-menu-item v-for="(val,i) in item.children" :key="i" :index="val.path">
                         <template slot="title">
-                            <i class="menuItemIcon" :class="item.icon"></i>
+                            <i class="menuItemIcon" :class="!isShow ? item.icon : 'menuItemIconRight ' + item.icon"></i>
                             <span class="menuItem">{{val.name}}</span>
                         </template>
                     </el-menu-item>
@@ -92,6 +92,9 @@
 
     .menuItemIcon {
         font-size: 26px;
+    }
+
+    .menuItemIconRight {
         margin-right: 10px;
     }
 
@@ -126,9 +129,15 @@
         line-height: 70px;
     }
 
+    .menuBox .elMenuNo .el-menu-item,
     .el-menu--vertical .el-menu-item {
         height: 70px;
         line-height: 70px;
+    }
+
+    .menuBox .elMenuNo .el-menu-item {
+        padding: 0 !important;
+        text-align: center !important;
     }
 
     .menuBox .el-submenu.is-active .el-submenu__title,
