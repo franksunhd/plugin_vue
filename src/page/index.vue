@@ -64,19 +64,19 @@
     }
 
     .elAside_old {
-        width: 400px;
+        width: 400px !important;
     }
 
     .elAside_new {
-        width: 100px;
+        width: 60px !important;
     }
 
     .elMain_old {
-        left: 400px;
+        left: 400px !important;
     }
 
     .elMain_new {
-        left: 100px;
+        left: 60px !important;
     }
 
     .elAside .el-submenu .el-menu-item {

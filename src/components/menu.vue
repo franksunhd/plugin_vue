@@ -1,11 +1,12 @@
 <template>
     <div class="menuBox">
         <el-menu
-            :class="isShow ? 'elMenu' : ''"
+            :class="isShow ? 'elMenu' : 'elMenuNo'"
             :default-active="current"
             :router="true"
             :unique-opened="false"
             :collapse="!isShow"
+            :collapse-transition="false"
             background-color="#545c64"
             text-color="#fff"
             active-text-color="#ffd04b">
@@ -91,6 +92,7 @@
 
     .menuItemIcon {
         font-size: 26px;
+        margin-right: 10px;
     }
 
     .elMenu {
@@ -103,6 +105,21 @@
 
     .menuBox .el-menu--collapse {
         width: auto;
+    }
+
+    .menuBox .elMenu .el-menu-item,
+    .menuBox .elMenu .el-submenu .el-submenu__title {
+        padding: 0 15px !important;
+    }
+
+    .menuBox .elMenu .el-submenu .el-menu-item {
+        padding: 0 15px 0 30px !important;
+    }
+
+    .menuBox .elMenuNo .el-menu-item .el-tooltip,
+    .menuBox .elMenuNo .el-submenu .el-submenu__title {
+        padding: 0 !important;
+        text-align: center !important;
     }
 
     .menuBox .el-submenu.is-active .el-submenu__title,
