@@ -49,14 +49,14 @@
         background-color: #9cb945;
     }
 
-    .swiper-container {
+    .aweSiperBox .swiper-container {
         width: 100%;
         max-width: 1000px;
         height: 100%;
         overflow: hidden !important;
     }
 
-    .FDWXSelectImgBox {
+    .aweSiperBox .FDWXSelectImgBox {
         height: 100%;
         padding: 20px;
         background: rgba(255, 255, 255, 1);
@@ -68,18 +68,18 @@
         transition: 1s;
     }
 
-    .swiper-slideImg {
+    .aweSiperBox .swiper-slideImg {
         width: 100%;
         height: 100%;
     }
 
-    .swiper-slide {
+    .aweSiperBox .swiper-slide {
         transition: 1s;
         transform: scale(0.9);
     }
 
-    .swiper-slide-active,
-    .swiper-slide-duplicate-active {
+    .aweSiperBox .swiper-slide-active,
+    .aweSiperBox .swiper-slide-duplicate-active {
         transform: scale(1);
     }
 </style>
