@@ -41,6 +41,8 @@ import circleMenu from '../page/pages/mobile_plugin/circleMenu/circleMenu';
 import vueGesture from '../page/pages/mobile_plugin/gesture/index';
 // 省市县三级联动
 import distPicker from "../page/pages/my_plugin/distPicker/distPicker";
+// 可变色的svg
+import svgIcon from "../page/pages/my_plugin/svgIcon/svgIcon";
 
 Vue.use(Router);
 
@@ -72,6 +74,7 @@ export default new Router({
                 {path: '/' + companyName + '/circleMenu', name: 'circleMenu', component: circleMenu},
                 {path: '/' + companyName + '/vueGesture', name: 'vueGesture', component: vueGesture},
                 {path: '/' + companyName + '/distPicker', name: 'distPicker', component: distPicker},
+                {path: '/' + companyName + '/svgIcon', name: 'svgIcon', component: svgIcon},
             ]
         },
         {path: '*', component: ErrorPage}

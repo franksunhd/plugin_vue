@@ -105,7 +105,13 @@ export default {
                     name: '省市县三级联动',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
-                }
+                },
+                {
+                    path: '/' + common.companyName + '/svgIcon',
+                    name: '可变色的svg',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
+                },
             ]
         },
         // 全局性方法
