@@ -50,7 +50,8 @@
     }
 
     .swiper-container {
-        width: 1000px;
+        width: 100%;
+        max-width: 1000px;
         height: 100%;
         overflow: hidden !important;
     }
