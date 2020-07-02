@@ -109,7 +109,7 @@
 
     .menuBox .elMenu .el-menu-item,
     .menuBox .elMenu .el-submenu .el-submenu__title {
-        padding: 0 15px !important;
+        padding: 0 10px !important;
     }
 
     .menuBox .elMenu .el-submenu .el-menu-item {
