@@ -22,12 +22,15 @@ import videoPlayer from 'vue-video-player';
 import 'video.js/dist/video-js.css';
 import 'vue-video-player/src/custom-theme.css';
 import 'lib-flexible';
+// 颜色选择器
+import colorPicker from 'vcolorpicker';
 
 Vue.use(vueBus);
 Vue.use(myButton);
 Vue.use(markdownEditor);
 Vue.use(elementUI);
 Vue.use(videoPlayer);
+Vue.use(colorPicker);
 
 Vue.prototype.$cookies = jsCookies;
 Vue.prototype.$lodash = lodash;
