@@ -47,6 +47,8 @@ import svgIcon from "../page/pages/my_plugin/svgIcon/svgIcon";
 import vueMeta from "../page/pages/my_plugin/vueMeta/vueMeta";
 // 元素拖拽
 import aweDnd from "../page/pages/my_plugin/aweDnd/aweDnd";
+// vue-awesome-swiper
+import aweSwiper from "../page/pages/mobile_plugin/vueAwesomeSwiper/vueAwesomeSwiper";
 
 Vue.use(Router);
 
@@ -81,6 +83,7 @@ export default new Router({
                 {path: '/' + companyName + '/svgIcon', name: 'svgIcon', component: svgIcon},
                 {path: '/' + companyName + '/vueMeta', name: 'vueMeta', component: vueMeta},
                 {path: '/' + companyName + '/aweDnd', name: 'aweDnd', component: aweDnd},
+                {path: '/' + companyName + '/aweSwiper', name: 'aweSwiper', component: aweSwiper},
             ]
         },
         {path: '*', component: ErrorPage}

@@ -26,7 +26,8 @@ import 'lib-flexible';
 import colorPicker from 'vcolorpicker';
 import VueMeta from 'vue-meta';
 import VueDND from 'awe-dnd';
-
+import VueAwesomeSwiper from 'vue-awesome-swiper';
+import 'swiper/css/swiper.css'
 
 Vue.use(vueBus);
 Vue.use(myButton);
@@ -36,6 +37,7 @@ Vue.use(videoPlayer);
 Vue.use(colorPicker);
 Vue.use(VueMeta);
 Vue.use(VueDND);
+Vue.use(VueAwesomeSwiper);
 
 Vue.prototype.$cookies = jsCookies;
 Vue.prototype.$lodash = lodash;

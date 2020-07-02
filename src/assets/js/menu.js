@@ -78,6 +78,12 @@ export default {
                     name: '手势密码',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
+                },
+                {
+                    path: '/' + common.companyName + '/aweSwiper',
+                    name: 'vue-awesome-swiper',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
                 }
             ]
         },
