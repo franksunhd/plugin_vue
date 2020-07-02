@@ -43,7 +43,7 @@
     }
 
     .color-ul {
-        width: 300px;
+        width: 900px;
     }
 
     .color-ul li {
