@@ -118,6 +118,12 @@ export default {
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
                 },
+                {
+                    path: '/' + common.companyName + '/aweDnd',
+                    name: '元素元素拖拽',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
+                },
             ]
         },
         // 全局性方法

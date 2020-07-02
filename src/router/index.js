@@ -45,6 +45,8 @@ import distPicker from "../page/pages/my_plugin/distPicker/distPicker";
 import svgIcon from "../page/pages/my_plugin/svgIcon/svgIcon";
 // vueMeta
 import vueMeta from "../page/pages/my_plugin/vueMeta/vueMeta";
+// 元素拖拽
+import aweDnd from "../page/pages/my_plugin/aweDnd/aweDnd";
 
 Vue.use(Router);
 
@@ -78,6 +80,7 @@ export default new Router({
                 {path: '/' + companyName + '/distPicker', name: 'distPicker', component: distPicker},
                 {path: '/' + companyName + '/svgIcon', name: 'svgIcon', component: svgIcon},
                 {path: '/' + companyName + '/vueMeta', name: 'vueMeta', component: vueMeta},
+                {path: '/' + companyName + '/aweDnd', name: 'aweDnd', component: aweDnd},
             ]
         },
         {path: '*', component: ErrorPage}

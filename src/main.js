@@ -25,6 +25,8 @@ import 'lib-flexible';
 // 颜色选择器
 import colorPicker from 'vcolorpicker';
 import VueMeta from 'vue-meta';
+import VueDND from 'awe-dnd';
+
 
 Vue.use(vueBus);
 Vue.use(myButton);
@@ -33,6 +35,7 @@ Vue.use(elementUI);
 Vue.use(videoPlayer);
 Vue.use(colorPicker);
 Vue.use(VueMeta);
+Vue.use(VueDND);
 
 Vue.prototype.$cookies = jsCookies;
 Vue.prototype.$lodash = lodash;
