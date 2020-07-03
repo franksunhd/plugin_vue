@@ -55,6 +55,8 @@ import Recorder from "../page/pages/mobile_plugin/Recorder/Recorder";
 import imageClip from '../page/pages/pc_plugin/imgClip/index';
 // vue-scroll
 import vueScroll from "../page/pages/mobile_plugin/vueScroll/index";
+// vueTyper
+import vueTyper from "../page/pages/pc_plugin/vueTyper/index";
 
 Vue.use(Router);
 
@@ -93,6 +95,7 @@ export default new Router({
                 {path: '/' + companyName + '/Recorder', name: 'Recorder', component: Recorder},
                 {path: '/' + companyName + '/imageClip', name: 'imageClip', component: imageClip},
                 {path: '/' + companyName + '/vueScroll', name: 'vueScroll', component: vueScroll},
+                {path: '/' + companyName + '/vueTyper', name: 'vueTyper', component: vueTyper},
             ]
         },
         {path: '*', component: ErrorPage}

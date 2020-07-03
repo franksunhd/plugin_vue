@@ -58,6 +58,12 @@ export default {
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
                 },
+                {
+                    path: '/' + common.companyName + '/vueTyper',
+                    name: '打字效果',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
+                }
             ]
         },
         // 移动端插件
