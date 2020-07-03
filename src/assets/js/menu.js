@@ -57,6 +57,12 @@ export default {
                     name: 'vue图片裁剪',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
+                },
+                {
+                    path: '/' + common.companyName + '/imageClip',
+                    name: 'vue图片裁剪2',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
                 }
             ]
         },

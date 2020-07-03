@@ -51,6 +51,8 @@ import aweDnd from "../page/pages/my_plugin/aweDnd/aweDnd";
 import aweSwiper from "../page/pages/mobile_plugin/vueAwesomeSwiper/vueAwesomeSwiper";
 // 录音
 import Recorder from "../page/pages/mobile_plugin/Recorder/Recorder";
+// 图片裁剪
+import imageClip from '../page/pages/pc_plugin/imgClip/index';
 
 Vue.use(Router);
 
@@ -87,6 +89,7 @@ export default new Router({
                 {path: '/' + companyName + '/aweDnd', name: 'aweDnd', component: aweDnd},
                 {path: '/' + companyName + '/aweSwiper', name: 'aweSwiper', component: aweSwiper},
                 {path: '/' + companyName + '/Recorder', name: 'Recorder', component: Recorder},
+                {path: '/' + companyName + '/imageClip', name: 'imageClip', component: imageClip},
             ]
         },
         {path: '*', component: ErrorPage}
