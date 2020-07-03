@@ -2,6 +2,13 @@
     <div class="homeBox">
         <p>本项目主要针对vue常用的一些插件进行展示,并附带了插件对应的API文档.</p>
         <p class="marginBottom20">具体包含了以下插件：</p>
+        <typewriter
+            :speed="200"
+            :full-erase="true"
+            :interval="300"
+            :words='["我是一个新的打字机效果","无敌烈焰火流星"]'>
+            看我的：
+        </typewriter>
         <div class="marginBottom20" v-for="(item,index) in menuList" :key="index">
             <div class="title" v-if="item.name !== '首页'">{{item.name}}</div>
             <template v-if="item.children">

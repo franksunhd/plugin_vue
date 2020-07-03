@@ -33,8 +33,9 @@ import VConsole from 'vconsole';
 let vConsole = new VConsole();
 // vue-scroll
 import vueScroll from "vuescroll/dist/vuescroll-native";
-// import the css file.
 import "vuescroll/dist/vuescroll.css";
+// 打字机效果
+import Typewriter from 'vue-typewriter';
 
 Vue.use(vueBus);
 Vue.use(myButton);
@@ -46,6 +47,7 @@ Vue.use(VueMeta);
 Vue.use(VueDND);
 Vue.use(VueAwesomeSwiper);
 Vue.use(vueScroll);
+Vue.use(Typewriter);
 
 Vue.prototype.$cookies = jsCookies;
 Vue.prototype.$lodash = lodash;
