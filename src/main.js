@@ -28,6 +28,9 @@ import VueMeta from 'vue-meta';
 import VueDND from 'awe-dnd';
 import VueAwesomeSwiper from 'vue-awesome-swiper';
 import 'swiper/css/swiper.css'
+// 引入vConsole
+import VConsole from 'vconsole';
+let vConsole = new VConsole();
 
 Vue.use(vueBus);
 Vue.use(myButton);

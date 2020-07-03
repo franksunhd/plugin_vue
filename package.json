@@ -29,6 +29,7 @@
     "swiper": "^5.4.5",
     "v-distpicker": "^1.2.6",
     "vcolorpicker": "^1.0.1",
+    "vconsole": "^3.3.4",
     "vue": "^2.5.2",
     "vue-awesome-swiper": "^4.1.1",
     "vue-barcode": "^1.2.0",
