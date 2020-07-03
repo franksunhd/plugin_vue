@@ -1,6 +1,8 @@
 <template>
     <div class="typerBox">
-        <div class="marginBottom20">第一种打字机效果：</div>
+        <div class="marginBottom20">第一种打字机效果：
+            <a style="color: #229399;font-weight: bold;" href="https://github.com/cngu/vue-typer" target="_blank">API文档</a>
+        </div>
         <div class="marginBottom20">
             <vue-typer
                 :text="textArr"
