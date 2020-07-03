@@ -13,7 +13,7 @@
             <template v-for="(item,index) in menuList">
                 <el-menu-item v-if="item.isSubMenu === false" :index="item.path">
                     <template>
-                        <i class="menuItemIcon" :class="item.icon"></i>
+                        <i class="menuItemIcon" :class="!isShow ? item.icon : 'menuItemIconRight ' + item.icon"></i>
                         <span slot="title" class="menuItem">{{item.name}}</span>
                     </template>
                 </el-menu-item>
