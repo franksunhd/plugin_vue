@@ -58,12 +58,6 @@ export default {
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
                 },
-                {
-                    path: '/' + common.companyName + '/imageClip',
-                    name: 'vue图片裁剪2',
-                    icon: 'el-icon-edit-outline',
-                    isSubMenu: false
-                }
             ]
         },
         // 移动端插件
@@ -142,6 +136,12 @@ export default {
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
                 },
+                {
+                    path: '/' + common.companyName + '/imageClip',
+                    name: 'vue图片裁剪封装',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
+                }
             ]
         },
         // 全局性方法
