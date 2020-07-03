@@ -26,6 +26,7 @@
     "moment": "^2.26.0",
     "postcss-px2rem-exclude": "0.0.6",
     "qrcodejs2": "0.0.2",
+    "recorder-core": "^1.1.20062600",
     "swiper": "^5.4.5",
     "v-distpicker": "^1.2.6",
     "vcolorpicker": "^1.0.1",

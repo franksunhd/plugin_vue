@@ -84,7 +84,13 @@ export default {
                     name: 'vue-awesome-swiper',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
-                }
+                },
+                {
+                    path: '/' + common.companyName + '/Recorder',
+                    name: 'Recorder录音',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
+                },
             ]
         },
         // 封装插件

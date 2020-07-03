@@ -49,6 +49,8 @@ import vueMeta from "../page/pages/my_plugin/vueMeta/vueMeta";
 import aweDnd from "../page/pages/my_plugin/aweDnd/aweDnd";
 // vue-awesome-swiper
 import aweSwiper from "../page/pages/mobile_plugin/vueAwesomeSwiper/vueAwesomeSwiper";
+// 录音
+import Recorder from "../page/pages/mobile_plugin/Recorder/Recorder";
 
 Vue.use(Router);
 
@@ -84,6 +86,7 @@ export default new Router({
                 {path: '/' + companyName + '/vueMeta', name: 'vueMeta', component: vueMeta},
                 {path: '/' + companyName + '/aweDnd', name: 'aweDnd', component: aweDnd},
                 {path: '/' + companyName + '/aweSwiper', name: 'aweSwiper', component: aweSwiper},
+                {path: '/' + companyName + '/Recorder', name: 'Recorder', component: Recorder},
             ]
         },
         {path: '*', component: ErrorPage}
