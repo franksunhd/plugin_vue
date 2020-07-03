@@ -5,8 +5,27 @@
 </template>
 
 <script>
+    import menu from "./assets/js/menu";
+
     export default {
-        name: 'App'
+        name: 'App',
+        watch: {
+            $route(oldStr, newStr) {
+                let _t = this;
+                if (oldStr !== newStr) {
+                    let menuList = menu.menuList;
+                    menuList.forEach((item) => {
+                        if (item.children) {
+                            item.children.forEach((val) => {
+                                if (val.path === _t.$route.path) {
+                                    document.title = val.name;
+                                }
+                            });
+                        }
+                    });
+                }
+            }
+        }
     };
 </script>
 

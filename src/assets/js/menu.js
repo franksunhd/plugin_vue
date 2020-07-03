@@ -91,6 +91,12 @@ export default {
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
                 },
+                {
+                    path: '/' + common.companyName + '/vueScroll',
+                    name: 'vue自定义滚动条',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
+                },
             ]
         },
         // 封装插件

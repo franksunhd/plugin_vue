@@ -31,6 +31,10 @@ import 'swiper/css/swiper.css'
 // 引入vConsole
 import VConsole from 'vconsole';
 let vConsole = new VConsole();
+// vue-scroll
+import vueScroll from "vuescroll/dist/vuescroll-native";
+// import the css file.
+import "vuescroll/dist/vuescroll.css";
 
 Vue.use(vueBus);
 Vue.use(myButton);
@@ -41,6 +45,7 @@ Vue.use(colorPicker);
 Vue.use(VueMeta);
 Vue.use(VueDND);
 Vue.use(VueAwesomeSwiper);
+Vue.use(vueScroll);
 
 Vue.prototype.$cookies = jsCookies;
 Vue.prototype.$lodash = lodash;

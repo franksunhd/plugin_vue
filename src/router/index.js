@@ -53,6 +53,8 @@ import aweSwiper from "../page/pages/mobile_plugin/vueAwesomeSwiper/vueAwesomeSw
 import Recorder from "../page/pages/mobile_plugin/Recorder/Recorder";
 // 图片裁剪
 import imageClip from '../page/pages/pc_plugin/imgClip/index';
+// vue-scroll
+import vueScroll from "../page/pages/mobile_plugin/vueScroll/index";
 
 Vue.use(Router);
 
@@ -90,6 +92,7 @@ export default new Router({
                 {path: '/' + companyName + '/aweSwiper', name: 'aweSwiper', component: aweSwiper},
                 {path: '/' + companyName + '/Recorder', name: 'Recorder', component: Recorder},
                 {path: '/' + companyName + '/imageClip', name: 'imageClip', component: imageClip},
+                {path: '/' + companyName + '/vueScroll', name: 'vueScroll', component: vueScroll},
             ]
         },
         {path: '*', component: ErrorPage}
