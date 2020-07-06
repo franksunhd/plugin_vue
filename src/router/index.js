@@ -59,6 +59,8 @@ import vueScroll from "../page/pages/mobile_plugin/vueScroll/index";
 import vueTyper from "../page/pages/pc_plugin/vueTyper/index";
 // vue-amap
 import vueAMap from "../page/pages/pc_plugin/vueAMap/index";
+// 中国地图
+import chinaMap from "../page/pages/map_plugin/chinaMap";
 
 Vue.use(Router);
 
@@ -99,6 +101,7 @@ export default new Router({
                 {path: '/' + companyName + '/vueScroll', name: 'vueScroll', component: vueScroll},
                 {path: '/' + companyName + '/vueTyper', name: 'vueTyper', component: vueTyper},
                 {path: '/' + companyName + '/vueAMap', name: 'vueAMap', component: vueAMap},
+                {path: '/' + companyName + '/chinaMap', name: 'chinaMap', component: chinaMap},
             ]
         },
         {path: '*', component: ErrorPage}

@@ -63,12 +63,6 @@ export default {
                     name: '打字效果',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
-                },
-                {
-                    path: '/' + common.companyName + '/vueAMap',
-                    name: '高德地图',
-                    icon: 'el-icon-edit-outline',
-                    isSubMenu: false
                 }
             ]
         },
@@ -196,6 +190,27 @@ export default {
                 {
                     path: '/' + common.companyName + '/lodash',
                     name: 'lodash',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
+                }
+            ]
+        },
+        // 地图集合
+        {
+            path: '/' + common.companyName + '/map_plugin',
+            name: '地图集合',
+            icon: 'el-icon-menu',
+            isSubMenu: true,
+            children: [
+                {
+                    path: '/' + common.companyName + '/vueAMap',
+                    name: '高德地图',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
+                },
+                {
+                    path: '/' + common.companyName + '/chinaMap',
+                    name: '模拟肺炎效果',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
                 }

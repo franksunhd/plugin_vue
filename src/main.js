@@ -38,7 +38,7 @@ import "vuescroll/dist/vuescroll.css";
 // 打字机效果
 import Typewriter from 'vue-typewriter';
 // 高德地图
-import aMap from 'vue-amap'
+import aMap from 'vue-amap';
 
 Vue.use(vueBus);
 Vue.use(myButton);
