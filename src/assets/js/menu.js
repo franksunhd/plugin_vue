@@ -63,6 +63,12 @@ export default {
                     name: '打字效果',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
+                },
+                {
+                    path: '/' + common.companyName + '/radialProgress',
+                    name: '放射性进度条',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
                 }
             ]
         },

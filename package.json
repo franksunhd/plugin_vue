@@ -39,6 +39,7 @@
     "vue-meta": "^2.4.0",
     "vue-qart": "^2.2.0",
     "vue-qr": "^2.2.1",
+    "vue-radial-progress": "^0.3.2",
     "vue-router": "^3.0.1",
     "vue-typer": "^1.2.0",
     "vue-typewriter": "^2.2.1",
