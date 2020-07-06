@@ -27,16 +27,5 @@
 </script>
 
 <style scoped>
-    .defaultSize {
-        width: 300px;
-        height: 300px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #9cb945;
-        font-size: 30px;
-        box-sizing: border-box;
-        border: 10px solid red;
-    }
+
 </style>
