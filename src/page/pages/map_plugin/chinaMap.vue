@@ -3,7 +3,8 @@
 </template>
 
 <script>
-    import '../../../../node_modules/echarts/map/js/china.js' // 引入中国地图数据
+    import 'echarts/map/js/china.js'; // 引入中国地图数据
+
     export default {
         name: "chinaMap",
 
@@ -252,7 +253,6 @@
                 top: 120,
             };
             myChart.setOption(options);
-
 
             window.addEventListener("resize", () => {
                 myChart.resize();
