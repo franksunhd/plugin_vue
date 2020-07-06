@@ -65,8 +65,8 @@ export default {
                     isSubMenu: false
                 },
                 {
-                    path: '/' + common.companyName + '/radialProgress',
-                    name: '放射性进度条',
+                    path: '/' + common.companyName + '/vueAMap',
+                    name: '高德地图',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
                 }

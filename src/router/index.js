@@ -57,8 +57,8 @@ import imageClip from '../page/pages/pc_plugin/imgClip/index';
 import vueScroll from "../page/pages/mobile_plugin/vueScroll/index";
 // vueTyper
 import vueTyper from "../page/pages/pc_plugin/vueTyper/index";
-// radial-progress
-import radialProgress from "../page/pages/pc_plugin/radialProgress/index";
+// vue-amap
+import vueAMap from "../page/pages/pc_plugin/vueAMap/index";
 
 Vue.use(Router);
 
@@ -98,7 +98,7 @@ export default new Router({
                 {path: '/' + companyName + '/imageClip', name: 'imageClip', component: imageClip},
                 {path: '/' + companyName + '/vueScroll', name: 'vueScroll', component: vueScroll},
                 {path: '/' + companyName + '/vueTyper', name: 'vueTyper', component: vueTyper},
-                {path: '/' + companyName + '/radialProgress', name: 'radialProgress', component: radialProgress},
+                {path: '/' + companyName + '/vueAMap', name: 'vueAMap', component: vueAMap},
             ]
         },
         {path: '*', component: ErrorPage}

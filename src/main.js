@@ -30,12 +30,15 @@ import VueAwesomeSwiper from 'vue-awesome-swiper';
 import 'swiper/css/swiper.css'
 // 引入vConsole
 import VConsole from 'vconsole';
+
 let vConsole = new VConsole();
 // vue-scroll
 import vueScroll from "vuescroll/dist/vuescroll-native";
 import "vuescroll/dist/vuescroll.css";
 // 打字机效果
 import Typewriter from 'vue-typewriter';
+// 高德地图
+import aMap from 'vue-amap'
 
 Vue.use(vueBus);
 Vue.use(myButton);
@@ -48,6 +51,24 @@ Vue.use(VueDND);
 Vue.use(VueAwesomeSwiper);
 Vue.use(vueScroll);
 Vue.use(Typewriter);
+Vue.use(aMap);
+
+aMap.initAMapApiLoader({
+    key: '59d042d7d0c0d51c89adad1c468fd711',
+    plugin: [
+        'AMap.Autocomplete',
+        'AMap.PlaceSearch',
+        'AMap.Scale',
+        'AMap.OverView',
+        'AMap.ToolBar',
+        'AMap.MapType',
+        'AMap.PolyEditor',
+        'AMap.CircleEditor'
+    ],
+    uiVersion: "1.0",
+    // 默认高德 sdk 版本为 1.4.4
+    v: '1.4.4'
+});
 
 Vue.prototype.$cookies = jsCookies;
 Vue.prototype.$lodash = lodash;
