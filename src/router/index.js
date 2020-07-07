@@ -60,7 +60,7 @@ import vueTyper from "../page/pages/pc_plugin/vueTyper/index";
 // vue-amap
 import vueAMap from "../page/pages/map_plugin/vueAMap/index";
 // 中国地图
-import chinaMap from "../page/pages/map_plugin/chinaMap";
+import chinaMap from "../page/pages/map_plugin/chinaMap/chinaMap";
 
 Vue.use(Router);
 
