@@ -210,7 +210,7 @@ export default {
                 },
                 {
                     path: '/' + common.companyName + '/chinaMap',
-                    name: '模拟肺炎效果',
+                    name: '模拟中国肺炎效果',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
                 }
