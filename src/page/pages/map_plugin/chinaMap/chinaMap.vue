@@ -246,11 +246,13 @@
             _t.myChart.on('click', function (params) {
                 // 点击的是省级
                 if (params.seriesName === 'province') {
+                    _t.provinceOptions.series[0].data = params.data.children ? params.data.children : [];
                     _t.dataOptions.baseOption.timeline.autoPlay = false;
                     _t.provinceOptions.series[0].mapType = params.name;
                     _t.myChart.clear();
                     _t.myChart.setOption(_t.provinceOptions);
                 } else {
+                    _t.provinceOptions.series[0].data = [];
                     _t.dataOptions.baseOption.timeline.autoPlay = true;
                     _t.provinceOptions.series[0].mapType = '';
                     _t.myChart.clear();
