@@ -65,6 +65,8 @@ import chinaMap from "../page/pages/map_plugin/chinaMap/chinaMap";
 import worldMap from "../page/pages/map_plugin/worldMap/worldMap";
 // 词云图
 import wordCloud from "../page/pages/map_plugin/wordCloud/wordCloud";
+// 文学太阳图
+import sunMap from "../page/pages/map_plugin/sunMap/sunMap";
 
 Vue.use(Router);
 
@@ -108,6 +110,7 @@ export default new Router({
                 {path: '/' + companyName + '/chinaMap', name: 'chinaMap', component: chinaMap},
                 {path: '/' + companyName + '/worldMap', name: 'worldMap', component: worldMap},
                 {path: '/' + companyName + '/wordCloud', name: 'wordCloud', component: wordCloud},
+                {path: '/' + companyName + '/sunMap', name: 'sunMap', component: sunMap},
             ]
         },
         {path: '*', component: ErrorPage}

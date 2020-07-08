@@ -69,6 +69,10 @@
             _t.myChart = _t.$echarts.init(document.getElementById('wordCloud'));
             _t.drawWarp();
             _t.myChart.setOption(_t.dataOptions);
+
+            window.addEventListener("resize", () => {
+                _t.myChart.resize();
+            });
         },
         destroyed() {
             this.myChart = null;

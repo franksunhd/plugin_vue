@@ -225,6 +225,12 @@ export default {
                     name: '词云图',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
+                },
+                {
+                    path: '/' + common.companyName + '/sunMap',
+                    name: '文学太阳图',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
                 }
             ]
         }
