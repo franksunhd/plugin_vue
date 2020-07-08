@@ -67,6 +67,8 @@ import worldMap from "../page/pages/map_plugin/worldMap/worldMap";
 import wordCloud from "../page/pages/map_plugin/wordCloud/wordCloud";
 // 文学太阳图
 import sunMap from "../page/pages/map_plugin/sunMap/sunMap";
+// 疫情海螺图
+import conchMap from "../page/pages/map_plugin/conchMap/conchMap";
 
 Vue.use(Router);
 
@@ -111,6 +113,7 @@ export default new Router({
                 {path: '/' + companyName + '/worldMap', name: 'worldMap', component: worldMap},
                 {path: '/' + companyName + '/wordCloud', name: 'wordCloud', component: wordCloud},
                 {path: '/' + companyName + '/sunMap', name: 'sunMap', component: sunMap},
+                {path: '/' + companyName + '/conchMap', name: 'conchMap', component: conchMap},
             ]
         },
         {path: '*', component: ErrorPage}

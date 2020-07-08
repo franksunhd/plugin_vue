@@ -231,6 +231,12 @@ export default {
                     name: '文学太阳图',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
+                },
+                {
+                    path: '/' + common.companyName + '/conchMap',
+                    name: '疫情海螺图',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
                 }
             ]
         }
