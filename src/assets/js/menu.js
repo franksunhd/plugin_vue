@@ -219,6 +219,12 @@ export default {
                     name: '模拟世界肺炎效果',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
+                },
+                {
+                    path: '/' + common.companyName + '/wordCloud',
+                    name: '词云图',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
                 }
             ]
         }
