@@ -61,6 +61,8 @@ import vueTyper from "../page/pages/pc_plugin/vueTyper/index";
 import vueAMap from "../page/pages/map_plugin/vueAMap/index";
 // 中国地图
 import chinaMap from "../page/pages/map_plugin/chinaMap/chinaMap";
+// 世界地图
+import worldMap from "../page/pages/map_plugin/worldMap/worldMap";
 
 Vue.use(Router);
 
@@ -102,6 +104,7 @@ export default new Router({
                 {path: '/' + companyName + '/vueTyper', name: 'vueTyper', component: vueTyper},
                 {path: '/' + companyName + '/vueAMap', name: 'vueAMap', component: vueAMap},
                 {path: '/' + companyName + '/chinaMap', name: 'chinaMap', component: chinaMap},
+                {path: '/' + companyName + '/worldMap', name: 'worldMap', component: worldMap},
             ]
         },
         {path: '*', component: ErrorPage}

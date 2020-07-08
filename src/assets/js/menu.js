@@ -213,6 +213,12 @@ export default {
                     name: '模拟中国肺炎效果',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
+                },
+                {
+                    path: '/' + common.companyName + '/worldMap',
+                    name: '模拟世界肺炎效果',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
                 }
             ]
         }

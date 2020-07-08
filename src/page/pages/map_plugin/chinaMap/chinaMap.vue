@@ -260,6 +260,9 @@
             window.addEventListener("resize", () => {
                 _t.myChart.resize();
             });
+        },
+        destroyed() {
+            this.myChart = null;
         }
     }
 </script>
