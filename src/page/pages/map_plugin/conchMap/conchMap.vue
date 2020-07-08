@@ -14,6 +14,12 @@
                 myChart: null,
                 // 配置
                 dataOption: {
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: function (params) {
+                            return `${params.seriesName} <br/> ${params.name}: 确诊${params.data[1]}例 死亡${params.data[3]}例`
+                        }
+                    },
                     dataset: {
                         source: [
                             ['Country', 'Confirmed', 'SQRT', 'Dead'],
@@ -36,11 +42,10 @@
                             ['澳大利亚', 2991, 54.69003566, 13],
                             ['巴西', 2985, 54.63515352, 77],
                             ['瑞典', 2840, 53.29165038, 77]
-
                         ]
                     },
                     toolbox: {
-                        show: true, //false则不显示工具栏
+                        show: false, // false则不显示工具栏
                         feature: {
                             saveAsImage: {
                                 show: true,
@@ -49,9 +54,9 @@
                         }
                     },
                     title: {
-                        text: '人民日报式海外疫情玫瑰图',
-                        subtext: '\n使用2020-03-27数据\n\n——by charming_chart（微信公众号）',
-                        x: '60%',
+                        text: '人民日报式海外疫情海螺图',
+                        subtext: '使用2020-03-27数据',
+                        x: '55%',
                         y: '150',
                         textStyle: {
                             fontSize: 27,
@@ -60,68 +65,60 @@
                             color: '#000'
                         },
                         subtextStyle: {
-                            fontStyle: 'italic',
+                            fontStyle: 'bold',
                             fontSize: 14
                         }
                     },
                     legend: {
-                        x: '60%', //水平位置，【left\center\right\数字】
+                        x: '55%', //水平位置，【left\center\right\数字】
                         y: '350', //垂直位置，【top\center\bottom\数字】
                         align: 'left', //字在图例的左边或右边【left/right】
-                        orient: 'vertical', //图例方向【horizontal/vertical】
-                        icon: "circle", //图例形状【circle\rect\roundRect\triangle\diamond\pin\arrow\none】
-                        textStyle: //图例文字
-                            {
-                                fontFamily: '微软雅黑',
-                                color: '#000',
-
-                            },
+                        orient: 'vertical', // 图例方向【horizontal/vertical】
+                        icon: "rect", // 图例形状【circle\rect\roundRect\triangle\diamond\pin\arrow\none】
+                        textStyle: {fontFamily: '微软雅黑', color: '#000'},
                         data: ['美国', '意大利', '西班牙', '德国', '法国', '伊朗', '英国', '瑞士', '韩国', '荷兰', '', '奥地利', '比利时', '加拿大', '土耳其', '葡萄牙', '挪威', '澳大利亚', '巴西', '瑞典'],
                     },
-
                     calculable: true,
-                    series: [{
-                        name: '半径模式',
-                        type: 'pie',
-                        clockWise: false,
-                        radius: [20, 400],
-                        center: ['40%', '60%'],
-                        roseType: 'area',
-                        encode: {
-                            itemName: 'Country',
-                            value: 'SQRT'
-                        },
-                        itemStyle: {
-                            normal: {
-                                color: function (params) {
-                                    var colorList = [
-                                        "#a71a4f", "#bc1540", "#c71b1b", "#d93824", "#ce4018", "#d15122", "#e7741b", "#e58b3d", "#e59524", "#dc9e31", "#da9c2d", "#d2b130", "#bbd337", "#8cc13f", "#67b52d", "#53b440", "#48af54", "#479c7f", "#48a698", "#57868c"
-                                    ];
-                                    return colorList[params.dataIndex]
-                                },
-                                label: {
-                                    position: 'inside',
-                                    textStyle: {
-                                        fontWeight: 'bold',
-                                        fontFamily: 'Microsoft YaHei',
-                                        color: '#FAFAFA',
-                                        fontSize: 10
+                    series: [
+                        {
+                            name: '海外疫情海螺图',
+                            type: 'pie',
+                            clockWise: false,
+                            radius: [20, 400],
+                            center: ['40%', '60%'],
+                            roseType: 'area',
+                            encode: {
+                                itemName: 'Country',
+                                value: 'SQRT'
+                            },
+                            itemStyle: {
+                                normal: {
+                                    color: function (params) {
+                                        let colorList = [
+                                            "#a71a4f", "#bc1540", "#c71b1b", "#d93824", "#ce4018", "#d15122", "#e7741b", "#e58b3d", "#e59524", "#dc9e31", "#da9c2d", "#d2b130", "#bbd337", "#8cc13f", "#67b52d", "#53b440", "#48af54", "#479c7f", "#48a698", "#57868c"
+                                        ];
+                                        return colorList[params.dataIndex]
                                     },
-                                    //formatter:'{b} \n{@Confirmed}例 \n死亡{@Dead}',//注意这里大小写敏感哦
-                                    formatter: function (params) {
-                                        console.log('参数列表', params)
-                                        if (params.data[1] > 9000) {
-                                            return params.data[0] + '\n' + params.data[1] + "例" + '\n' + "死亡" + params.data[3] + "例";
-                                        } else {
-                                            return "";
-                                        }
+                                    label: {
+                                        position: 'inside',
+                                        textStyle: {
+                                            fontWeight: 'bold',
+                                            fontFamily: 'Microsoft YaHei',
+                                            color: '#FAFAFA',
+                                            fontSize: 10
+                                        },
+                                        formatter: function (params) {
+                                            // 大于9000例显示
+                                            if (params.data[1] > 9000) {
+                                                return `${params.name}: \n 确诊${params.data[1]}例 \n 死亡${params.data[3]}例`;
+                                            } else {
+                                                return '';
+                                            }
+                                        },
                                     },
-
                                 },
                             },
                         },
-
-                    },
                         {
                             name: '透明圆圈',
                             type: 'pie',
@@ -130,10 +127,9 @@
                             itemStyle: {
                                 color: 'rgba(250, 250, 250, 0.3)',
                             },
-                            data: [{
-                                value: 10,
-                                name: ''
-                            }]
+                            data: [
+                                {value: 10, name: ''}
+                            ]
                         },
                         {
                             name: '透明圆圈',
@@ -143,10 +139,9 @@
                             itemStyle: {
                                 color: 'rgba(250, 250, 250, 0.3)',
                             },
-                            data: [{
-                                value: 10,
-                                name: ''
-                            }]
+                            data: [
+                                {value: 10, name: ''}
+                            ]
                         }
                     ]
                 },
@@ -157,9 +152,9 @@
             _t.myChart = _t.$echarts.init(document.getElementById('conchMap'));
 
             _t.dataOption.legend.formatter = function (params) {
-                for (var i = 0; i < dataList.length; i++) {
-                    if (dataList[i].name == params) {
-                        return params + "\t确诊:" + dataList[i].Confirmed + "\t死亡:" + dataList[i].Dead;
+                for (let i = 0; i < dataList.length; i++) {
+                    if (dataList[i].name === params) {
+                        return params + "\t确诊:" + dataList[i].Confirmed + "例\t死亡:" + dataList[i].Dead + '例';
                     }
                 }
             }
