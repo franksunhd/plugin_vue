@@ -69,6 +69,8 @@ import wordCloud from "../page/pages/map_plugin/wordCloud/wordCloud";
 import sunMap from "../page/pages/map_plugin/sunMap/sunMap";
 // 疫情海螺图
 import conchMap from "../page/pages/map_plugin/conchMap/conchMap";
+// 九宫格抽奖
+import luckyDraw from "../page/pages/luck_plugin/luckyDraw";
 
 Vue.use(Router);
 
@@ -114,6 +116,7 @@ export default new Router({
                 {path: '/' + companyName + '/wordCloud', name: 'wordCloud', component: wordCloud},
                 {path: '/' + companyName + '/sunMap', name: 'sunMap', component: sunMap},
                 {path: '/' + companyName + '/conchMap', name: 'conchMap', component: conchMap},
+                {path: '/' + companyName + '/luckyDraw', name: 'luckyDraw', component: luckyDraw},
             ]
         },
         {path: '*', component: ErrorPage}
