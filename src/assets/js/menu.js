@@ -243,13 +243,19 @@ export default {
         // 抽奖
         {
             path: '/' + common.companyName + '/luck_plugin',
-            name: '地图集合',
+            name: '抽奖集合',
             icon: 'el-icon-menu',
             isSubMenu: true,
             children: [
                 {
                     path: '/' + common.companyName + '/luckyDraw',
                     name: '九宫格抽奖',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
+                },
+                {
+                    path: '/' + common.companyName + '/rotaryDraw',
+                    name: '转盘抽奖',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
                 }

@@ -71,6 +71,8 @@ import sunMap from "../page/pages/map_plugin/sunMap/sunMap";
 import conchMap from "../page/pages/map_plugin/conchMap/conchMap";
 // 九宫格抽奖
 import luckyDraw from "../page/pages/luck_plugin/luckyDraw";
+// 大转盘抽奖
+import rotaryDraw from "../page/pages/luck_plugin/rotaryDraw";
 
 Vue.use(Router);
 
@@ -117,6 +119,8 @@ export default new Router({
                 {path: '/' + companyName + '/sunMap', name: 'sunMap', component: sunMap},
                 {path: '/' + companyName + '/conchMap', name: 'conchMap', component: conchMap},
                 {path: '/' + companyName + '/luckyDraw', name: 'luckyDraw', component: luckyDraw},
+                {path: '/' + companyName + '/rotaryDraw', name: 'rotaryDraw', component: rotaryDraw},
+
             ]
         },
         {path: '*', component: ErrorPage}
