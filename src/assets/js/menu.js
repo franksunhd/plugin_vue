@@ -258,6 +258,12 @@ export default {
                     name: '转盘抽奖',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
+                },
+                {
+                    path: '/' + common.companyName + '/tigerDraw',
+                    name: '转盘抽奖',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
                 }
             ]
         }

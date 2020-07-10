@@ -73,6 +73,8 @@ import conchMap from "../page/pages/map_plugin/conchMap/conchMap";
 import luckyDraw from "../page/pages/luck_plugin/luckyDraw";
 // 大转盘抽奖
 import rotaryDraw from "../page/pages/luck_plugin/rotaryDraw";
+// 老虎机
+import tigerDraw from "../page/pages/luck_plugin/tigerDraw";
 
 Vue.use(Router);
 
@@ -120,6 +122,7 @@ export default new Router({
                 {path: '/' + companyName + '/conchMap', name: 'conchMap', component: conchMap},
                 {path: '/' + companyName + '/luckyDraw', name: 'luckyDraw', component: luckyDraw},
                 {path: '/' + companyName + '/rotaryDraw', name: 'rotaryDraw', component: rotaryDraw},
+                {path: '/' + companyName + '/tigerDraw', name: 'tigerDraw', component: tigerDraw},
 
             ]
         },
