@@ -153,6 +153,12 @@ export default {
                     name: 'vue图片裁剪封装',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
+                },
+                {
+                    path: '/' + common.companyName + '/toJson',
+                    name: 'toJson',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
                 }
             ]
         },
