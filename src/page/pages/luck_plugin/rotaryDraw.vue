@@ -1,6 +1,6 @@
 <template>
     <div class="rotaryDrawBox">
-        <div style="text-align: center;font-size: 30px;margin-bottom: 20px;">还可以抽奖次数{{drawTime}}</div>
+        <div class="title">还可以抽奖次数{{drawTime}}</div>
         <!-- 转盘转 -->
         <div class="wheel_wp">
             <div class="wheel_wp_top">
@@ -45,6 +45,13 @@
         align-items: center;
     }
 
+    .rotaryDrawBox .title {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 20px;
+        animation: show_location 50s infinite linear;
+    }
+
     .wheel_wp_top {
         flex: 1;
         position: relative;
@@ -58,25 +65,44 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        animation: show_tips 1s;
+        animation: show_tips 0.1s infinite;
     }
 
     .wheel_wp_top .wheel_pointer img.point {
         width: 100%;
         height: 100%;
-        /*opacity: 0.3*/
+        opacity: 0.3;
     }
 
     @keyframes show_tips {
         0% {
-            opacity: 0;
+            transform: translate(-85px, -93px) rotate(0deg);
         }
-        50% {
-            opacity: 1;
-        }
+
         100% {
-            opacity: 0;
+            transform: translate(-85px, -93px) rotate(360deg);
+        }
+    }
+
+    @keyframes show_location {
+        0% {
+            transform: translateX(0);
+        }
+
+        25% {
+            transform: translateX(1000px);
+        }
+
+        50% {
+            transform: translateX(0);
+        }
+
+        75% {
+            transform: translateX(-1000px);
+        }
+
+        100% {
+            transform: translateX(0);
         }
     }
 </style>

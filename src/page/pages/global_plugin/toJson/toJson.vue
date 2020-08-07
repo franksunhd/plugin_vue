@@ -5,6 +5,17 @@
             :options="jsonList"
             :props="defaultProps"
             @change="handleChange"/>
+        <div class="marginBottom20">第二个案例</div>
+        <div class="marginBottom20">
+            <div class="marginBottom20" v-for="(item,index) in demoList" :key="index">
+                <div class="marginBottom20">{{index+1}}</div>
+                <el-cascader
+                    v-model="item.value"
+                    :options="item.dataList"
+                    :props="props"
+                    @change="changeNode(item,index)"/>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -22,6 +33,15 @@
                     value: "label",
                     children: "child",
                     expandTrigger: "click"
+                },
+                // 测试用
+                demoList: [],
+                props: {
+                    label: "label",
+                    value: "value",
+                    children: "child",
+                    expandTrigger: "click",
+                    checkStrictly: true
                 }
             }
         },
@@ -77,16 +97,54 @@
                     });
                 }
                 _t.jsonList = jsonList;
-                console.log(jsonList)
             },
             handleChange(val) {
-                console.log(val)
+            },
+            // 测试
+            getAllData() {
+                let _t = this;
+                _t.$api.get("api/provinceCity/getProvinces", {}, function (res) {
+                    let arr = [];
+                    for (let i = 0; i < 3; i++) {
+                        let obj = new Object();
+                        obj.value = [];
+                        obj.level = i + 1;
+                        obj.dataList = [];
+                        _t.getNode(obj);
+                        arr.push(obj);
+                    }
+                    _t.demoList = arr;
+                });
+
+            },
+            getNode(obj) {
+                let _t = this;
+                _t.$api.get("api/provinceCity/getProvinces", {}, function (res) {
+                    if (res.code === "200") {
+                        obj.dataList = res.data.map((val) => {
+                            return {
+                                label: val.province,
+                                value: val.provinceId,
+                                child: obj.level === 1 ? null : val.children
+                            }
+                        });
+                    }
+                })
+            },
+            changeNode(item, index) {
+                let _t = this;
+                if (item.level === 2) {
+                    _t.$api.post("api/provinceCity/getCitysByPid", {citysId: item.value[0]}, function (res) {
+
+                    })
+                }
             }
         },
         created() {
             let _t = this;
-
             _t.getData();
+
+            _t.getAllData();
 
         }
     }

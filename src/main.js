@@ -42,7 +42,7 @@ import 'swiper/css/swiper.css'
 // 引入vConsole
 import VConsole from 'vconsole';
 
-let vConsole = new VConsole();
+// let vConsole = new VConsole();
 // vue-scroll
 import vueScroll from "vuescroll/dist/vuescroll-native";
 import "vuescroll/dist/vuescroll.css";
@@ -52,6 +52,8 @@ import Typewriter from 'vue-typewriter';
 import echarts from 'echarts';
 // 高德地图
 import aMap from 'vue-amap';
+// 引入api
+import api from './api/index';
 
 Vue.use(vueBus);
 Vue.use(myButton);
@@ -86,6 +88,7 @@ aMap.initAMapApiLoader({
 Vue.prototype.$cookies = jsCookies;
 Vue.prototype.$lodash = lodash;
 Vue.prototype.$echarts = echarts;
+Vue.prototype.$api = api;
 Vue.config.productionTip = false;
 Object.keys(custom).forEach(key => {
     Vue.filter(key, custom[key])
