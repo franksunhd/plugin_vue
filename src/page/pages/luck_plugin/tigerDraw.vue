@@ -6,10 +6,10 @@
             <img class="main_bg" src="../../../assets/img/helpAndDraw/main_bg.jpg" alt="">
             <div class="num_box">
                 <div class="numBox">
-                    <div class="num"></div>
-                    <div class="num"></div>
-                    <div class="num"></div>
-                    <div class="num"></div>
+                    <div class="num" v-for="(item,index) in list"
+                         :key="index"
+                         :style="{'background-position-y': + item.location + 'rem'}"></div>
+
                 </div>
                 <div class="mask"></div>
             </div>
@@ -27,56 +27,51 @@
                 resultNum: '', // 抽奖结果
                 isBegin: false, // 是否开始 避免重复点击
                 timerArr: [], // 延时定时器组
+                list: [
+                    {location: 0},
+                    {location: 0},
+                    {location: 0},
+                    {location: 0},
+                ]
             }
         },
         methods: {
             // 点击开始
             runClick() {
                 let _t = this;
-                // 数字定位先清0
-                let numItem = document.getElementsByClassName('num');
-                if (numItem && numItem.length !== 0) {
-                    for (let i = 0; i < numItem.length; i++) {
-                        numItem[i].style.backgroundPositionY = '0px';
-                    }
-                }
                 // 避免重复点击
                 if (_t.isBegin) return false;
                 // 点击之后先禁用
-                // _t.isBegin = true;
+                _t.isBegin = true;
                 // 随机结果
                 _t.resultNum = _t.randomNum(1111, 9999);
                 let new_arr = _t.resultNum.toString().split('');
-                let u = 245;
-                for (let i = 0; i < numItem.length; i++) {
-                    let positionY = (u * 10) - (u * new_arr[i]);
+                let u = 3.2; // 基础比例
+                _t.list.forEach((item, index) => {
+                    item.location = 0;
+                    let positionY = (u * 10) - (u * new_arr[index]);
                     let num = 0;
                     let speed = 200;
-                    numItem[i].style.backgroundPositionY = positionY + 'px';
                     // 延时定时器
-                    // setTimeout(function () {
-                    //     _t.timerArr[i] = setInterval(function () {
-                    //         num += 10;
-                    //         console.log(num)
-                    //
-                    //         if (num >= 1000 + i * 3000) {
-                    //             clearInterval(_t.timerArr[i]);
-                    //             console.log('position---', positionY, i)
-                    //         }
-                    //     },)
-                    // }, i * 300);
-                }
+                    setTimeout(function () {
+                        _t.timerArr[index] = setInterval(function () {
+                            num += 10;
+                            item.location = num;
+                            if (num >= 1000 + index * 3000) {
+                                item.location = positionY;
+                                _t.isBegin = false;
+                                clearInterval(_t.timerArr[index]);
+                            }
+                        },)
+                    }, index * speed);
+                });
             },
             // 生成随机数的方法
             randomNum(Min, Max) {
                 let Range = Max - Min;
                 let Rand = Math.random();
-                let num = Min + Math.round(Rand * Range); // 四舍五入
-                return num;
+                return Min + Math.round(Rand * Range); // 四舍五入
             },
-        },
-        mounted() {
-
         },
         destroyed() {
             let _t = this;
