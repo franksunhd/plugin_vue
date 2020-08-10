@@ -267,7 +267,7 @@ export default {
                 },
                 {
                     path: '/' + common.companyName + '/tigerDraw',
-                    name: '转盘抽奖',
+                    name: '老虎机抽奖',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
                 }

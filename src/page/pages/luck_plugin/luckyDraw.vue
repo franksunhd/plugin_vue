@@ -113,7 +113,7 @@
         methods: {
             /* 跑马灯 */
             lightFun() {
-                let _t = this
+                let _t = this;
                 _t.lightTimer = setInterval(function () {
                     _t.fresh = !_t.fresh;
                 }, 800);
