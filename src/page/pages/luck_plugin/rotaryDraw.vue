@@ -165,7 +165,6 @@
     .wheel_wp_top .wheel_pointer img.point {
         width: 100%;
         height: 100%;
-        opacity: 0.3;
     }
 
     @keyframes show_location {
@@ -174,7 +173,7 @@
         }
 
         25% {
-            transform: translateX(1000px);
+            transform: translateX(500px);
         }
 
         50% {
@@ -182,7 +181,7 @@
         }
 
         75% {
-            transform: translateX(-1000px);
+            transform: translateX(-500px);
         }
 
         100% {

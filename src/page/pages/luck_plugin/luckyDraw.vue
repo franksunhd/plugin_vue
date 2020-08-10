@@ -1,61 +1,64 @@
 <template>
     <div class="luckyBox">
-        <div style="text-align: center;font-size: 30px;margin-bottom: 20px;">还可以抽奖次数{{drawTime}}</div>
-        <div class="HDdrawMachineBox">
-            <div class="HDdrawMachine">
-                <img class="HDLightBG" v-show="fresh" src="../../../assets/img/helpAndDraw/HDlight1.png" alt="">
-                <img class="HDLightBG" v-show="!fresh" src="../../../assets/img/helpAndDraw/HDlight2.png" alt="">
-                <div class="HDdrawMainBox" id="HDdrawMainBox">
-                    <table border="0" cellpadding="0" cellspacing="0">
+        <div class="luckyTitle">还可以抽奖次数{{drawTime}}</div>
+        <div class="luckyTitle">中奖位置：奖品{{prize}}</div>
+        <div class="drawMachineBox">
+            <div class="drawMachine">
+                <img class="lightBG" v-show="fresh" src="../../../assets/img/helpAndDraw/light1.png" alt="">
+                <img class="lightBG" v-show="!fresh" src="../../../assets/img/helpAndDraw/light2.png" alt="">
+                <div class="drawMainBox" id="drawMainBox">
+                    <table>
                         <tbody>
                         <tr>
                             <td class="lottery-unit" :class="index === 1 ? 'active' : ''">
-                                <div class="prizeListImg"></div>
-                                <div class="box"><em class="name">奖品1</em></div>
+                                <div class="box">
+                                    <div class="text">奖品1</div>
+                                </div>
                             </td>
                             <td class="lottery-unit" :class="index === 2 ? 'active' : ''">
-                                <div class="prizeListImg"></div>
-                                <div class="box"><em class="name">奖品2</em></div>
+                                <div class="box">
+                                    <div class="text">奖品2</div>
+                                </div>
                             </td>
                             <td class="lottery-unit" :class="index === 3 ? 'active' : ''">
-                                <div class="prizeListImg"></div>
-                                <div class="box"><em class="name">奖品3</em></div>
+                                <div class="box">
+                                    <div class="text">奖品3</div>
+                                </div>
                             </td>
                         </tr>
                         <tr>
                             <td class="lottery-unit" :class="index === 8 ? 'active' : ''">
-                                <div class="prizeListImg"></div>
-                                <div class="box"><em class="name">谢谢参与</em></div>
-                            </td>
-                            <td class="start-btn1" v-if="!HDActStatus">
-                                <span class="b">立即抽奖1</span>
                                 <div class="box">
-                                    <button class="prize_start1" :disabled="!HDActStatus"></button>
+                                    <div class="text">谢谢参与</div>
                                 </div>
                             </td>
-                            <td class="start-btn" v-else>
-                                <span class="b">立即抽奖2</span>
+                            <td class="start-btn">
+                                <span class="b">立即抽奖</span>
                                 <div class="box">
-                                    <button class="prize_start" :disabled="drawtwice" @click="lotteryFun"></button>
+                                    <button class="prize_start" :disabled="drawTwice" @click="lotteryFun"></button>
                                 </div>
                             </td>
                             <td class="lottery-unit" :class="index === 4 ? 'active' : ''">
-                                <div class="prizeListImg"></div>
-                                <div class="box"><em class="name">奖品4</em></div>
+                                <div class="box">
+                                    <div class="text">奖品4</div>
+                                </div>
                             </td>
                         </tr>
                         <tr>
                             <td class="lottery-unit" :class="index === 7 ? 'active' : ''">
-                                <div class="prizeListImg"></div>
-                                <div class="box"><em class="name">奖品7</em></div>
+                                <div class="box">
+                                    <div class="text">奖品7</div>
+                                </div>
                             </td>
                             <td class="lottery-unit" :class="index === 6 ? 'active' : ''">
-                                <div class="prizeListImg"></div>
-                                <div class="box"><em class="name">奖品6</em></div>
+                                <div class="box">
+                                    <div class="text">奖品6</div>
+                                </div>
                             </td>
                             <td class="lottery-unit" :class="index === 5 ? 'active' : ''">
-                                <div class="prizeListImg"></div>
-                                <div class="box"><em class="name">奖品5</em></div>
+                                <div class="box">
+                                    <div class="text">奖品5</div>
+                                </div>
                             </td>
                         </tr>
                         </tbody>
@@ -64,23 +67,23 @@
             </div>
         </div>
         <!-- 结果弹窗 -->
-        <div class="HDActivityRulePop" v-show="resultShow">
+        <div class="activityRulePop" v-show="resultShow">
             <!--机会用完了可邀请增加机会-->
-            <div class="HDActivityResultBox StpeInAnimation" v-show="resultNum === 1">
-                <div class="HDANotLuckyTitle">机会用完啦</div>
-                <div class="HDANotLuckyButton" @click="resultBoxHideFun">关闭</div>
+            <div class="activityResultBox StepInAnimation" v-show="resultNum === 1">
+                <div class="aNotLuckyTitle">机会用完啦</div>
+                <div class="aNotLuckyButton" @click="resultBoxHideFun">关闭</div>
             </div>
 
             <!--未中奖有机会-->
-            <div class="HDActivityResultBox StpeInAnimation" v-show="resultNum === 2">
-                <div class="HDANotLuckyTitle">很遗憾未中奖</div>
-                <div class="HDANotLuckyButton" @click="resultBoxHideFun">再玩一次</div>
+            <div class="activityResultBox StepInAnimation" v-show="resultNum === 2">
+                <div class="aNotLuckyTitle">很遗憾未中奖</div>
+                <div class="aNotLuckyButton" @click="resultBoxHideFun">再玩一次</div>
             </div>
 
             <!--中奖-->
-            <div class="HDActivityResultBox StpeInAnimation" v-show="resultNum === 3">
-                <div class="HDANotLuckyTitle">恭喜您已中奖</div>
-                <div class="HDANotLuckyButton" @click="resultBoxHideFun">关闭</div>
+            <div class="activityResultBox StepInAnimation" v-show="resultNum === 3">
+                <div class="aNotLuckyTitle">恭喜您已中奖</div>
+                <div class="aNotLuckyButton" @click="resultBoxHideFun">关闭</div>
             </div>
         </div>
     </div>
@@ -95,8 +98,7 @@
                 lightTimer: null, // 跑马灯定时器
                 timer: null, // 转盘定时器
                 alertTimer: null, // alert弹窗定时器
-                HDActStatus: false, // 活动状态
-                drawtwice: false, // 抽奖防止二次点击
+                drawTwice: false, // 抽奖防止二次点击
 
                 drawTime: 10, // 还可以抽奖次数
                 resultShow: false, // 是否显示结果弹窗
@@ -122,14 +124,14 @@
             lotteryFun() {
                 let _t = this;
                 // 避免重复点击
-                if (_t.drawtwice) return false;
+                if (_t.drawTwice) return false;
                 // 点击了一次 再点击就会禁用, 有了抽奖结果之后再置为 false
-                _t.drawtwice = true;
+                _t.drawTwice = true;
                 // 次数用完了 显示弹窗
                 if (_t.drawTime <= 0) {
                     _t.resultShow = true; // 先显示 弹窗
                     _t.resultNum = 1; // 1代表次数用完
-                    _t.drawtwice = false; // 取消重复点击限制
+                    _t.drawTwice = false; // 取消重复点击限制
                 } else {
                     // 次数没用完 次数减1
                     _t.drawTime -= 1;
@@ -164,7 +166,7 @@
                             _t.resultNum = 2;
                         }
                         _t.resultShow = true;
-                        _t.drawtwice = false;
+                        _t.drawTwice = false;
                     }, 500);
                 } else {
                     // 动画阶段 还没进入抽奖
@@ -215,8 +217,6 @@
             let _t = this;
             // 开启跑马灯定时器
             _t.lightFun();
-            // 活动中
-            _t.HDActStatus = true;
         },
         destroyed() {
             clearInterval(this.lightTimer);
@@ -226,113 +226,106 @@
 </script>
 
 <style scoped>
-    .HDdrawMachineBox {
-        width: 9.04rem;
-        height: 7.706666666666667rem;
-        border-radius: 0.26666666666666666rem;
+    .drawMachineBox {
+        width: 700px;
+        height: 600px;
+        border-radius: 20px;
         background-color: #B43A11;
         margin: 0 auto;
     }
 
-    .HDdrawMachine {
+    .luckyTitle {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .drawMachine {
         position: relative;
-        width: 9.04rem;
-        height: 7.52rem;
+        width: 100%;
+        height: 98%;
         background: rgba(254, 213, 72, 1);
-        border-radius: 0.26666666666666666rem;
+        border-radius: 20px;
         margin: 0 auto;
     }
 
-    .HDLightBG {
-        width: 8.906666666666666rem;
-        height: 7.386666666666667rem;
-        margin: 0.06666666666666667rem;
+    .lightBG {
+        width: 98%;
+        height: 98%;
+        margin: 1%;
     }
 
-    .HDdrawMainBox {
+    .drawMainBox {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 8.133333333333333rem;
-        height: 6.613333333333333rem;
+        width: 85%;
+        height: 85%;
         background: rgba(234, 84, 33, 1);
-        border-radius: 0.26666666666666666rem;
-        padding: 0.08rem 0 0 0.08rem;
+        border-radius: 20px;
+        padding: 10px 0 0 10px;
         box-sizing: border-box;
     }
 
-    .HDdrawMainBox td {
-        width: 2.6133333333333333rem;
-        height: 2.1066666666666665rem;
+    .drawMainBox table {
+        width: 100%;
+        height: 100%;
+        font-size: 0;
+        border: none;
+    }
+
+    .drawMainBox table tr {
         text-align: center;
         vertical-align: middle;
+    }
+
+    .drawMainBox td {
+        width: calc(33.333% - 10px);
+        height: calc(100% - 10px);
+        margin: 0 10px 10px 0;
+        text-align: center;
         position: relative;
         box-sizing: border-box;
-        margin-right: 0.062rem;
-        margin-bottom: 0.06666666666666667rem;
         display: inline-block;
     }
 
-    .HDdrawMainBox td img {
-        max-width: 34%;
-        max-height: 0.9rem;
-        position: relative;
-        top: 0.05rem;
-        z-index: 10;
-    }
-
-    .HDdrawMainBox td .prizeListImg {
-        width: 1.46666666667rem;
-        height: 0.88rem;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        position: relative;
-        top: 0.24rem;
-        z-index: 10;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .HDdrawMainBox td .box {
-        width: 2.6133333333333333rem;
-        height: 2.1066666666666665rem;
-        margin: 0 auto;
-        overflow: hidden;
-        border-radius: 0.26666666666666666rem;
+    .drawMainBox td .box {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
         background: #ffbfbf;
         position: absolute;
         top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
 
-    .HDdrawMainBox td .box:before {
+    .drawMainBox td .box:before {
         content: '';
         width: 100%;
-        height: 1.8666666666666667rem;
-        border-radius: 0.26666666666666666rem;
+        height: 90%;
+        border-radius: 20px;
         background: #ffeeee;
         position: absolute;
         top: 0;
         left: 0;
+        z-index: 1;
     }
 
-    .HDdrawMainBox td .name {
-        color: #d80015;
-        font-size: 0.32rem;
-        display: block;
-        width: 95%;
-        text-align: center;
+    .drawMainBox td .box .text {
+        width: 100%;
+        font-size: 30px;
+        color: #B43A11;
         position: absolute;
+        top: 50%;
         left: 50%;
-        bottom: 0.43rem;
-        transform: translateX(-50%);
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        transform: translate(-50%, -50%);
+        z-index: 10;
     }
 
-    .HDdrawMainBox td .prize_start {
+    .drawMainBox td .prize_start {
         display: block;
         position: absolute;
         z-index: 10;
@@ -343,97 +336,48 @@
         background: transparent;
     }
 
-    .HDdrawMainBox .active .box {
+    .drawMainBox .active .box {
         background: #ffd213;
     }
 
-    .HDdrawMainBox .active .box:before {
+    .drawMainBox .active .box:before {
         background: #ffe462;
     }
 
-    .HDdrawMainBox .start-btn {
-        padding-bottom: 0.4rem;
-    }
-
-    .HDdrawMainBox .start-btn .b {
+    .drawMainBox .start-btn .b {
+        width: 100%;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 10;
-        color: #ffffff;
-        font-size: 0.48rem;
+        color: #fff;
+        font-size: 30px;
         font-weight: bold;
-        display: block;
-        width: 100%;
+        display: inline-block;
     }
 
-    .HDdrawMainBox .start-btn .box {
+    .drawMainBox .start-btn .box {
         background: #C74000;
     }
 
-    .HDdrawMainBox .start-btn .box:before {
+    .drawMainBox .start-btn .box:before {
         background: linear-gradient(180deg, rgba(255, 218, 81, 1) 0%, rgba(255, 104, 0, 1) 100%);
     }
 
-    .HDdrawMainBox .start-btn .box .text {
+    .drawMainBox .start-btn .box {
         color: #ffe461;
-        font-size: 0.26666666666666666rem;
-        width: 2.16rem;
-        height: 0.4rem;
-        line-height: 0.4rem;
+        font-size: 20px;
+        width: 100%;
+        height: 100%;
         text-align: center;
         position: absolute;
-        bottom: 0.4rem;
-        left: 50%;
-        margin-left: -1.08rem;
-        display: block;
-        border-radius: 0.6rem;
+        border-radius: 20px;
         background: #db2332;
     }
 
-    .HDdrawMainBox .start-btn1 {
-        padding-bottom: 0.4rem;
-    }
-
-    .HDdrawMainBox .start-btn1 .b {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 10;
-        color: #ff975d;
-        font-size: 0.48rem;
-        font-weight: bold;
-        display: block;
-        width: 100%;
-    }
-
-    .HDdrawMainBox .start-btn1 .box {
-        background: #C74000;
-    }
-
-    .HDdrawMainBox .start-btn1 .box:before {
-        background: #F96615;
-    }
-
-    .HDdrawMainBox .start-btn1 .box .text {
-        color: #ffe461;
-        font-size: 0.26666666666666666rem;
-        width: 2.16rem;
-        height: 0.4rem;
-        line-height: 0.4rem;
-        text-align: center;
-        position: absolute;
-        bottom: 0.4rem;
-        left: 50%;
-        margin-left: -1.08rem;
-        display: block;
-        border-radius: 0.6rem;
-        background: #ff975d;
-    }
-
-    .HDActivityRulePop {
+    /* 弹窗部分 */
+    .activityRulePop {
         position: fixed;
         top: 0;
         left: 0;
@@ -442,20 +386,19 @@
         background-color: rgba(0, 0, 0, 0.7);
     }
 
-    .HDActivityResultBox {
+    .activityResultBox {
         position: absolute;
         top: 50%;
         left: 50%;
-        margin-top: -4.4rem;
-        margin-left: -3.933333333333333rem;
-        width: 7.866666666666666rem;
-        height: 8.8rem;
-        background: linear-gradient(135deg, rgba(255, 151, 81, 1), 0, rgba(255, 72, 51, 1) 100%);
-        border-radius: 0.26666666666666666rem;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 500px;
+        background: linear-gradient(135deg, rgba(255, 151, 81, 1) 0%, rgba(255, 72, 51, 1) 100%);
+        border-radius: 20px;
         text-align: center;
     }
 
-    .StpeInAnimation {
+    .StepInAnimation {
         animation-name: slideInUp, slideInDownBack;
         animation-duration: 0.2s, 0.18s;
         animation-timing-function: linear, linear;
@@ -464,45 +407,26 @@
         animation-fill-mode: forwards, forwards;
     }
 
-    .HDActivityResult {
-        font-size: 0.56rem;
-        color: #ffffff;
-        line-height: 1;
-        margin-bottom: 0.32rem;
-    }
-
-    .HDActivityResultText {
-        font-size: 0.4533333333333333rem;
-        color: #ffffff;
-        line-height: 1;
-        margin-bootm: 0.72rem;
-    }
-
-    .HDANotLuckyButton {
+    .aNotLuckyButton {
         position: absolute;
-        bottom: 0.6666666666666666rem;
+        width: 80%;
+        height: 60px;
+        line-height: 60px;
         left: 50%;
-        margin-left: -3.1333333333333333rem;
-        font-size: 0.4533333333333333rem;
-        color: #ffffff;
-        width: 6.266666666666667rem;
-        height: 1.0666666666666667rem;
-        line-height: 1.0666666666666667rem;
+        bottom: 5%;
+        transform: translateX(-50%);
+        font-size: 30px;
+        color: #fff;
         text-align: center;
         background: linear-gradient(360deg, rgba(253, 130, 44, 1) 0%, rgba(255, 233, 56, 1) 100%);
-        box-shadow: 0rem 0.05333333333333334rem 0.16rem 0rem rgba(211, 114, 35, 0.67);
-        border-radius: 0.6666666666666666rem;
+        box-shadow: 5px 5px 0 rgba(211, 114, 35, 0.67);
+        border-radius: 20px;
     }
 
-    .HDANotLuckyTitle {
-        margin-top: 1.0666666666666667rem;
-        color: #ffffff;
-        font-size: 0.56rem;
+    .aNotLuckyTitle {
+        margin-top: 50px;
+        color: #fff;
+        font-size: 30px;
         font-weight: bold;
-    }
-
-    .HDANotLuckyText {
-        font-size: 0.4rem;
-        color: #ffffff;
     }
 </style>
