@@ -270,6 +270,12 @@ export default {
                     name: '老虎机抽奖',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
+                },
+                {
+                    path: '/' + common.companyName + '/eggDraw',
+                    name: '扭蛋机抽奖',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
                 }
             ]
         }

@@ -77,6 +77,8 @@ import rotaryDraw from "../page/pages/luck_plugin/rotaryDraw";
 import tigerDraw from "../page/pages/luck_plugin/tigerDraw";
 // 转json
 import toJson from "../page/pages/global_plugin/toJson/toJson";
+// 扭蛋机抽奖
+import eggDraw from "../page/pages/luck_plugin/eggDraw";
 
 Vue.use(Router);
 
@@ -126,6 +128,7 @@ export default new Router({
                 {path: '/' + companyName + '/rotaryDraw', name: 'rotaryDraw', component: rotaryDraw},
                 {path: '/' + companyName + '/tigerDraw', name: 'tigerDraw', component: tigerDraw},
                 {path: '/' + companyName + '/toJson', name: 'toJson', component: toJson},
+                {path: '/' + companyName + '/eggDraw', name: 'eggDraw', component: eggDraw},
 
             ]
         },
