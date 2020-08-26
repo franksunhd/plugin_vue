@@ -260,6 +260,12 @@ export default {
                     isSubMenu: false
                 },
                 {
+                    path: '/' + common.companyName + '/luckyDraw_new',
+                    name: '九宫格抽奖(新)',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
+                },
+                {
                     path: '/' + common.companyName + '/rotaryDraw',
                     name: '转盘抽奖',
                     icon: 'el-icon-edit-outline',

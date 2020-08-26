@@ -71,6 +71,8 @@ import sunMap from "../page/pages/map_plugin/sunMap/sunMap";
 import conchMap from "../page/pages/map_plugin/conchMap/conchMap";
 // 九宫格抽奖
 import luckyDraw from "../page/pages/luck_plugin/luckyDraw";
+// 九宫格抽奖新
+import luckyDraw_new from "../page/pages/luck_plugin/luckyDraw_new";
 // 大转盘抽奖
 import rotaryDraw from "../page/pages/luck_plugin/rotaryDraw";
 // 老虎机
@@ -125,6 +127,7 @@ export default new Router({
                 {path: '/' + companyName + '/sunMap', name: 'sunMap', component: sunMap},
                 {path: '/' + companyName + '/conchMap', name: 'conchMap', component: conchMap},
                 {path: '/' + companyName + '/luckyDraw', name: 'luckyDraw', component: luckyDraw},
+                {path: '/' + companyName + '/luckyDraw_new', name: 'luckyDraw_new', component: luckyDraw_new},
                 {path: '/' + companyName + '/rotaryDraw', name: 'rotaryDraw', component: rotaryDraw},
                 {path: '/' + companyName + '/tigerDraw', name: 'tigerDraw', component: tigerDraw},
                 {path: '/' + companyName + '/toJson', name: 'toJson', component: toJson},
