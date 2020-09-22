@@ -159,6 +159,12 @@ export default {
                     name: 'toJson',
                     icon: 'el-icon-edit-outline',
                     isSubMenu: false
+                },
+                {
+                    path: '/' + common.companyName + '/dyForm',
+                    name: '动态表单',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
                 }
             ]
         },
@@ -284,6 +290,28 @@ export default {
                     isSubMenu: false
                 }
             ]
+        },
+        // 游戏
+        {
+            path: '/' + common.companyName + '/game_plugin',
+            name: '游戏集合',
+            icon: 'el-icon-menu',
+            isSubMenu: true,
+            children: [
+                {
+                    path: '/' + common.companyName + '/playground',
+                    name: '运动场',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
+                },
+            ]
+        },
+        // 移动端
+        {
+            path: '/loveTeeth',
+            name: '齿科专区',
+            icon: 'el-icon-s-home',
+            isSubMenu: false,
         }
     ]
 };

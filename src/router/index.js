@@ -81,6 +81,12 @@ import tigerDraw from "../page/pages/luck_plugin/tigerDraw";
 import toJson from "../page/pages/global_plugin/toJson/toJson";
 // 扭蛋机抽奖
 import eggDraw from "../page/pages/luck_plugin/eggDraw";
+// 运动场
+import playground from "../page/pages/game_plugin/playground";
+// 动态表单
+import dyForm from "../page/pages/my_plugin/dy_form/dyForm.vue";
+// 齿科专区首页
+import loveTeeth from "../page/pages/mobile/loveTeeth";
 
 Vue.use(Router);
 
@@ -132,9 +138,12 @@ export default new Router({
                 {path: '/' + companyName + '/tigerDraw', name: 'tigerDraw', component: tigerDraw},
                 {path: '/' + companyName + '/toJson', name: 'toJson', component: toJson},
                 {path: '/' + companyName + '/eggDraw', name: 'eggDraw', component: eggDraw},
+                {path: '/' + companyName + '/playground', name: 'playground', component: playground},
+                {path: '/' + companyName + '/dyForm', name: 'dyForm', component: dyForm},
 
             ]
         },
+        {path: '/' + 'loveTeeth', name: 'loveTeeth', component: loveTeeth},
         {path: '*', component: ErrorPage}
     ]
 });
