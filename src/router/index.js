@@ -87,6 +87,8 @@ import playground from "../page/pages/game_plugin/playground";
 import dyForm from "../page/pages/my_plugin/dy_form/dyForm.vue";
 // 齿科专区首页
 import loveTeeth from "../page/pages/mobile/loveTeeth";
+// 京东页面
+import jdPage from "../page/pages/mobile/jdPage";
 
 Vue.use(Router);
 
@@ -144,6 +146,7 @@ export default new Router({
             ]
         },
         {path: '/' + 'loveTeeth', name: 'loveTeeth', component: loveTeeth},
+        {path: '/' + 'jdPage', name: 'jdPage', component: jdPage},
         {path: '*', component: ErrorPage}
     ]
 });

@@ -309,9 +309,23 @@ export default {
         // 移动端
         {
             path: '/loveTeeth',
-            name: '齿科专区',
+            name: 'C端页面',
             icon: 'el-icon-s-home',
-            isSubMenu: false,
+            isSubMenu: true,
+            children: [
+                {
+                    path: '/loveTeeth',
+                    name: '齿科专区',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
+                },
+                {
+                    path: '/jdPage',
+                    name: '京东页面',
+                    icon: 'el-icon-edit-outline',
+                    isSubMenu: false
+                },
+            ]
         }
     ]
 };
