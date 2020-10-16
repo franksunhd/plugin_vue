@@ -4,14 +4,10 @@
 
 <script>
     export default {
-        name: "jsPage",
-        mounted() {
-            document.html.removeAttribute('style');
-            document.body.removeAttribute('style');
-        }
+        name: "jsPage"
     }
 </script>
 
 <style scoped>
-
+    @import "jdPage.css";
 </style>
