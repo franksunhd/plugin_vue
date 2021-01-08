@@ -1,6 +1,6 @@
 import axios from "axios";
 
-let root = 'https://scrmsit.taikang.com/api/';
+let root = "https://scrmsit.taikang.com/api/";
 
 function apiAxios(method, url, params, success) {
     axios({
@@ -9,7 +9,7 @@ function apiAxios(method, url, params, success) {
         data: method === "POST" || method === "PUT" ? params : null,
         params: method === "GET" || method === "DELETE" ? params : null,
         baseURL: root, // base_url
-        withCredentials: false,  // cookie
+        withCredentials: false  // cookie
     }).then(function (res) {
         // 成功时回调
         if (success) {
@@ -27,6 +27,6 @@ export default {
     },
     post: function (url, params, success) {
         return apiAxios("POST", url, params, success);
-    },
+    }
 };
 

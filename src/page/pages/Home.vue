@@ -1,5 +1,12 @@
 <template>
     <div class="homeBox">
+        <div class="marginBottom20">
+            <div class="title">
+                <span class="marginRight50">{{$t("isLanguage")}}：{{navigatorItem.language}}</span>
+                <span class="marginRight50">{{$t("isToCookies")}}：{{navigatorItem.cookieEnabled}}</span>
+                <span class="marginRight50">{{$t("isOnLine")}}：{{navigatorItem.onLine}}</span>
+            </div>
+        </div>
         <p>本项目主要针对vue常用的一些插件进行展示,并附带了插件对应的API文档.</p>
         <p class="marginBottom20">具体包含了以下插件：</p>
         <div class="marginBottom20" v-for="(item,index) in menuList" :key="index">
@@ -14,14 +21,15 @@
 </template>
 
 <script>
-    import menu from "../../assets/js/menu";
+    import menu from "../../mock/index";
 
     export default {
-        name: 'Home',
+        name: "Home",
         data() {
             return {
-                menuList: []
-            }
+                menuList: [],
+                navigatorItem: {}
+            };
         },
         methods: {
             // 点击跳转页面
@@ -31,6 +39,8 @@
         },
         created() {
             this.menuList = menu.menuList;
+            this.navigatorItem = navigator;
+            console.log(navigator);
         }
     };
 </script>

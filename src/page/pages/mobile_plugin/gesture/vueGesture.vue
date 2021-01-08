@@ -10,6 +10,8 @@
 </template>
 
 <script>
+    import {mapState, mapMutations} from "vuex";
+
     export default {
         name: "vueGesture",
         props: {
@@ -17,33 +19,33 @@
             currentValue: {
                 type: Boolean,
                 default: false
-            },
+            }
         },
         data() {
             return {
-                canvas: '', // 画布
-                ctx: '', // 画笔
+                canvas: "", // 画布
+                ctx: "", // 画笔
                 devicePixelRatio: 0, // 物理像素和分辨率额比例
-                chooseType: '',
-                r: '', // 公式计算
+                chooseType: "",
+                r: "", // 公式计算
                 lastPoint: [], // 记录的集合数组
                 lineArr: [], // 描边数组
                 restPoint: [], // 连线画点数组
                 pswObj: {step: 2}, // 记录次数
                 // 颜色配置
                 itemStyle: {
-                    textColor: '#87888a', // 文字颜色
-                    lineColor: '#27AED5', // 连线颜色
-                    successColor: '#2CFF26', // 连线成功的颜色
-                    errorColor: '#F56C6C', // 连线失败的颜色
+                    textColor: "#87888a", // 文字颜色
+                    lineColor: "#27AED5", // 连线颜色
+                    successColor: "#2CFF26", // 连线成功的颜色
+                    errorColor: "#F56C6C" // 连线失败的颜色
                 }
-            }
+            };
         },
-        mounted() {
-            let _t = this;
-            _t.init();
+        computed: {
+            ...mapState(["vueGesture"])
         },
         methods: {
+            ...mapMutations(["changeVueGesture"]),
             closePwd() {
                 let _t = this;
                 _t.$emit("control", false);
@@ -157,7 +159,7 @@
             },
             // 检测密码
             checkPass(psw1, psw2) {
-                let p1 = '', p2 = '';
+                let p1 = "", p2 = "";
                 for (let i = 0; i < psw1.length; i++) {
                     p1 += psw1[i].index + psw1[i].index;
                 }
@@ -173,13 +175,13 @@
                     if (_t.checkPass(_t.pswObj.fpassword, psw)) {
                         _t.pswObj.step = 2;
                         _t.pswObj.spassword = psw;
-                        _t.$refs.gestureTitle.innerHTML = '密码保存成功';
+                        _t.$refs.gestureTitle.innerHTML = "密码保存成功";
                         _t.drawStatusPoint(_t.itemStyle.successColor);
                         _t.drawPoint(_t.itemStyle.successColor);
-                        window.localStorage.setItem('pwdList', JSON.stringify(_t.pswObj.spassword));
-                        window.localStorage.setItem('chooseType', _t.chooseType);
+                        this.changeVueGesture("pwdList", JSON.stringify(_t.pswObj.spassword));
+                        this.changeVueGesture("chooseType", _t.chooseType);
                     } else {
-                        _t.$refs.gestureTitle.innerHTML = '两次不一致，重新输入';
+                        _t.$refs.gestureTitle.innerHTML = "两次不一致，重新输入";
                         _t.drawStatusPoint(_t.itemStyle.errorColor);
                         _t.drawPoint(_t.itemStyle.errorColor);
                         delete _t.pswObj.step;
@@ -188,7 +190,7 @@
                     if (_t.checkPass(_t.pswObj.spassword, psw)) {
                         let gestureTitle = _t.$refs.gestureTitle;
                         gestureTitle.style.color = _t.itemStyle.successColor;
-                        gestureTitle.innerHTML = '解锁成功';
+                        gestureTitle.innerHTML = "解锁成功";
                         // 小点点外圈高亮
                         _t.drawStatusPoint(_t.itemStyle.successColor);
                         _t.drawPoint(_t.itemStyle.successColor);
@@ -202,7 +204,7 @@
                         _t.drawLine(_t.itemStyle.errorColor, _t.lastPoint[_t.lastPoint.length - 1]);
                         let gestureTitle = _t.$refs.gestureTitle;
                         gestureTitle.style.color = _t.itemStyle.errorColor;
-                        gestureTitle.innerHTML = '请连接4个点';
+                        gestureTitle.innerHTML = "请连接4个点";
                     } else {
                         _t.drawStatusPoint(_t.itemStyle.errorColor);
                         _t.drawPoint(_t.itemStyle.errorColor);
@@ -210,38 +212,38 @@
                         _t.drawLine(_t.itemStyle.errorColor, _t.lastPoint[_t.lastPoint.length - 1]);
                         let gestureTitle = _t.$refs.gestureTitle;
                         gestureTitle.style.color = _t.itemStyle.errorColor;
-                        gestureTitle.innerHTML = '密码错误';
+                        gestureTitle.innerHTML = "密码错误";
                     }
                 } else {
                     _t.pswObj.step = 1;
                     _t.pswObj.fpassword = psw;
-                    _t.$refs.gestureTitle.innerHTML = '再次输入';
+                    _t.$refs.gestureTitle.innerHTML = "再次输入";
                 }
             },
             makeState() {
                 let _t = this;
                 if (_t.pswObj.step === 2) {
-                    _t.$refs.updatePassword.style.display = 'block';
+                    _t.$refs.updatePassword.style.display = "block";
                     let gestureTitle = _t.$refs.gestureTitle;
                     gestureTitle.style.color = _t.itemStyle.textColor;
-                    gestureTitle.innerHTML = '请解锁';
+                    gestureTitle.innerHTML = "请解锁";
                 } else if (_t.pswObj.step === 1) {
-                    _t.$refs.updatePassword.style.display = 'none';
+                    _t.$refs.updatePassword.style.display = "none";
                 } else {
-                    _t.$refs.updatePassword.style.display = 'block';
+                    _t.$refs.updatePassword.style.display = "block";
                 }
             },
             updatePassword() {
                 let _t = this;
-                window.localStorage.removeItem('pwdList');
-                window.localStorage.removeItem('chooseType');
+                _t.changeVueGesture("pwdList", "");
+                _t.changeVueGesture("chooseType", "");
                 _t.pswObj = {};
-                _t.$refs.gestureTitle.innerHTML = '绘制解锁图案';
+                _t.$refs.gestureTitle.innerHTML = "绘制解锁图案";
                 _t.reset();
             },
             initDom() {
                 let _t = this;
-                _t.chooseType = Number(window.localStorage.getItem('chooseType')) || 3;
+                _t.chooseType = Number(this.vueGesture.chooseType) || 3;
                 _t.devicePixelRatio = window.devicePixelRatio || 1;
                 let canvas = _t.$refs.canvas;
                 let width = 320;
@@ -255,15 +257,15 @@
             init() {
                 let _t = this;
                 _t.initDom();
-                _t.pswObj = window.localStorage.getItem('pwdList') ? {
+                _t.pswObj = this.vueGesture.pwdList ? {
                     step: 2,
-                    spassword: JSON.parse(window.localStorage.getItem('pwdList'))
+                    spassword: JSON.parse(this.vueGesture.pwdList)
                 } : {};
                 _t.lastPoint = [];
                 _t.makeState();
                 _t.touchFlag = false;
                 _t.canvas = _t.$refs.canvas;
-                _t.ctx = _t.canvas.getContext('2d');
+                _t.ctx = _t.canvas.getContext("2d");
                 _t.createCircle();
                 _t.bindEvent();
             },
@@ -304,8 +306,12 @@
                     }
                 }, false);
             }
+        },
+        mounted() {
+            let _t = this;
+            _t.init();
         }
-    }
+    };
 </script>
 
 <style scoped>

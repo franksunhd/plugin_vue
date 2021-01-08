@@ -18,7 +18,7 @@
             return {
                 currentIndex: 2,
                 swiperOptions: {
-                    direction: 'horizontal',
+                    direction: "horizontal",
                     initialSlide: 1,
                     slidesPerView: 1.5, // 可见图片张数
                     centeredSlides: true, // 默认选中中间一张
@@ -26,27 +26,27 @@
                     autoplay: 4000, // 自动播放时间间隔
                     on: {
                         slideChange() {
-                            this.currentIndex = this.activeIndex + 1
+                            this.currentIndex = this.activeIndex + 1;
                         }
                     }
                 },
                 imgList: [
-                    {url: require('../../../../assets/img/resource/1.png')},
-                    {url: require('../../../../assets/img/resource/2.png')},
-                    {url: require('../../../../assets/img/resource/3.png')},
-                    {url: require('../../../../assets/img/resource/4.png')},
-                    {url: require('../../../../assets/img/resource/5.png')},
-                    {url: require('../../../../assets/img/resource/6.png')},
-                    {url: require('../../../../assets/img/resource/7.png')},
-                    {url: require('../../../../assets/img/resource/8.png')},
-                    {url: require('../../../../assets/img/resource/9.png')},
-                    {url: require('../../../../assets/img/resource/10.png')},
-                    {url: require('../../../../assets/img/resource/11.png')},
-                    {url: require('../../../../assets/img/resource/12.png')},
+                    {url: require("../../../../assets/img/resource/1.png")},
+                    {url: require("../../../../assets/img/resource/2.png")},
+                    {url: require("../../../../assets/img/resource/3.png")},
+                    {url: require("../../../../assets/img/resource/4.png")},
+                    {url: require("../../../../assets/img/resource/5.png")},
+                    {url: require("../../../../assets/img/resource/6.png")},
+                    {url: require("../../../../assets/img/resource/7.png")},
+                    {url: require("../../../../assets/img/resource/8.png")},
+                    {url: require("../../../../assets/img/resource/9.png")},
+                    {url: require("../../../../assets/img/resource/10.png")},
+                    {url: require("../../../../assets/img/resource/11.png")},
+                    {url: require("../../../../assets/img/resource/12.png")}
                 ]
-            }
+            };
         }
-    }
+    };
 </script>
 
 <style>

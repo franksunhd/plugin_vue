@@ -5,26 +5,24 @@
 </template>
 
 <script>
-    import menu from "./assets/js/menu";
-
     export default {
-        name: 'App',
-        watch: {
-            $route(oldStr, newStr) {
-                let _t = this;
-                if (oldStr !== newStr) {
-                    let menuList = menu.menuList;
-                    menuList.forEach((item) => {
-                        if (item.children) {
-                            item.children.forEach((val) => {
-                                if (val.path === _t.$route.path) {
-                                    document.title = val.name;
-                                }
-                            });
-                        }
-                    });
+        name: "App",
+        created() {
+            //在页面加载时读取sessionStorage里的状态信息
+            if (sessionStorage.getItem("pluginVueStore")) {
+                try {
+                    this.$store.replaceState(Object.assign({}, this.$store.state, JSON.parse(sessionStorage.getItem("pluginVueStore"))));
+                    setTimeout(function () {
+                        sessionStorage.removeItem("pluginVueStore");
+                    }, 500);
+                } catch (err) {
+
                 }
             }
+            //在页面刷新时将vuex里的信息保存到sessionStorage里
+            window.addEventListener("beforeunload", () => {
+                sessionStorage.setItem("pluginVueStore", JSON.stringify(this.$store.state));
+            });
         }
     };
 </script>

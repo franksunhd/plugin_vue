@@ -38,8 +38,6 @@
                 _t.arrE = _t.$lodash.compact(_t.arrA);
 
                 _t.arrF = _t.$lodash.concat(_t.arrA, _t.arrC);
-
-
             }
         },
         created() {

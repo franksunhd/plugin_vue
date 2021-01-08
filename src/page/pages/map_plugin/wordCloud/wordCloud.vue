@@ -6,7 +6,7 @@
 
 <script>
     import 'echarts-wordcloud'; // 引入词云组件
-    import dataList from "./mock"; // 引入mock数据
+    import dataList from "../../../../mock/index"; // 引入mock数据
 
     export default {
         name: "wordCloud",
@@ -53,7 +53,7 @@
                                 shadowColor: '#222'
                             }
                         },
-                        data: dataList
+                        data: dataList.worldCloud
                     }]
                 }
             }

@@ -24,16 +24,16 @@
         data() {
             return {
                 drawTime: 10, // 还可以抽奖次数
-                resultNum: '', // 抽奖结果
+                resultNum: "", // 抽奖结果
                 isBegin: false, // 是否开始 避免重复点击
                 timerArr: [], // 延时定时器组
                 list: [
                     {location: 0},
                     {location: 0},
                     {location: 0},
-                    {location: 0},
+                    {location: 0}
                 ]
-            }
+            };
         },
         methods: {
             // 点击开始
@@ -44,8 +44,8 @@
                 // 点击之后先禁用
                 _t.isBegin = true;
                 // 随机结果
-                _t.resultNum = _t.randomNum(1111, 9999);
-                let new_arr = _t.resultNum.toString().split('');
+                _t.resultNum = _t.$randomNum(1111, 9999);
+                let new_arr = _t.resultNum.toString().split("");
                 let u = 3.2; // 基础比例
                 _t.list.forEach((item, index) => {
                     item.location = 0;
@@ -62,16 +62,10 @@
                                 _t.isBegin = false;
                                 clearInterval(_t.timerArr[index]);
                             }
-                        },)
+                        });
                     }, index * speed);
                 });
-            },
-            // 生成随机数的方法
-            randomNum(Min, Max) {
-                let Range = Max - Min;
-                let Rand = Math.random();
-                return Min + Math.round(Rand * Range); // 四舍五入
-            },
+            }
         },
         destroyed() {
             let _t = this;
@@ -80,7 +74,7 @@
             });
             _t.timerArr = [];
         }
-    }
+    };
 </script>
 
 <style scoped>

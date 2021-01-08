@@ -67,10 +67,10 @@
                     isStart: false, // 是否开始
                     clearLocation: false, // 是否清除位移
                     isShowDown: false, // 是否加载掉的动画
-                    prizeLevel: 0, // 中奖等级
+                    prizeLevel: 0 // 中奖等级
                 },
-                level: false,
-            }
+                level: false
+            };
         },
         methods: {
             // 关闭弹窗
@@ -102,7 +102,7 @@
             // 中奖结果
             draw() {
                 let _t = this;
-                let number = _t.randomNum(1, 4); // 随机中奖等级
+                let number = _t.$randomNum(1, 4); // 随机中奖等级
                 _t.drawItem.isShowDown = false; // 不显示加载掉落动画
                 _t.drawItem.clearLocation = true; // 显示小球滚动动画
                 setTimeout(function () {
@@ -119,17 +119,11 @@
                         _t.level = false;
                     }, 2500);
                 }, 3000);
-            },
-            // 生成随机数的方法
-            randomNum(Min, Max) {
-                let Range = Max - Min;
-                let Rand = Math.random();
-                return Min + Math.round(Rand * Range); // 四舍五入
-            },
+            }
         },
         created() {
         }
-    }
+    };
 </script>
 
 <style scoped>

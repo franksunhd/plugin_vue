@@ -4,7 +4,7 @@
 </template>
 
 <script>
-    import dataList from "./mock"; // 模拟数据
+    import dataList from "../../../../mock/index"; // 模拟数据
 
     export default {
         name: "conchMap",
@@ -152,9 +152,9 @@
             _t.myChart = _t.$echarts.init(document.getElementById('conchMap'));
 
             _t.dataOption.legend.formatter = function (params) {
-                for (let i = 0; i < dataList.length; i++) {
-                    if (dataList[i].name === params) {
-                        return params + "\t确诊:" + dataList[i].Confirmed + "例\t死亡:" + dataList[i].Dead + '例';
+                for (let i = 0; i < dataList.conchMap.length; i++) {
+                    if (dataList.conchMap[i].name === params) {
+                        return params + "\t确诊:" + dataList.conchMap[i].Confirmed + "例\t死亡:" + dataList.conchMap[i].Dead + '例';
                     }
                 }
             }

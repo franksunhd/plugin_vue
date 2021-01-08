@@ -4,7 +4,7 @@
 </template>
 
 <script>
-    import dataList from "./mock"; // 模拟数据
+    import dataList from "../../../../mock/index"; // 模拟数据
 
     export default {
         name: "sunMap",
@@ -23,7 +23,7 @@
                     series: [{
                         type: 'sunburst',
                         center: ['50%', '48%'],
-                        data: dataList,
+                        data: dataList.sunMap,
                         sort: function (a, b) {
                             if (a.depth === 1) {
                                 return b.getValue() - a.getValue();
@@ -112,8 +112,8 @@
 
             _t.dataOption.color = _t.colors;
 
-            for (let j = 0; j < dataList.length; ++j) {
-                let level1 = dataList[j].children;
+            for (let j = 0; j < dataList.sunMap.length; ++j) {
+                let level1 = dataList.sunMap[j].children;
                 for (let i = 0; i < level1.length; ++i) {
                     let block = level1[i].children;
                     let bookScore = [];
@@ -174,7 +174,7 @@
                     }
 
                     level1[i].itemStyle = {
-                        color: dataList[j].itemStyle.color
+                        color: dataList.sunMap[j].itemStyle.color
                     };
                 }
             }

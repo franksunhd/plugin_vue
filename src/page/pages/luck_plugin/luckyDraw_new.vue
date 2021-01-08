@@ -111,8 +111,8 @@
                 times: 0, // 转动次数
                 cycle: 60, // 转动基本次数：即至少需要转动多少次再进入抽奖环节, 也就是前边的动画
                 cycleArr: [], // 抽奖的随机位置
-                timerArr: [],
-            }
+                timerArr: []
+            };
         },
         methods: {
             /* 跑马灯 */
@@ -138,20 +138,20 @@
                     // 次数没用完 次数减1
                     _t.drawTime -= 1;
                     // 新的中奖位置
-                    _t.prize = _t.randomNum(1, 8);
+                    _t.prize = _t.$randomNum(1, 8);
                     // 记录上一次的中奖位置
                     let lastIndex = 0;
                     _t.cycleArr = new Array();
                     do {
 
-                        let num = _t.randomNum(1, 8); // 生成一个随机数
+                        let num = _t.$randomNum(1, 8); // 生成一个随机数
                         if (num !== lastIndex) {
                             _t.cycleArr.push(num);
                             lastIndex = num;
                         }
                     } while (_t.cycleArr.length < _t.cycle - 1);
                     _t.cycleArr.push(_t.prize);
-                    console.log(_t.cycleArr)
+                    console.log(_t.cycleArr);
                     // 重新抽奖
                     // _t.activityRoll();
                     _t.dealWithRoll();
@@ -186,7 +186,7 @@
                     // 启动动画
                     _t.index = _t.cycleArr[_t.times - 1];
                     // 动画阶段 还没进入抽奖
-                    console.log('index---', _t.index, 'times---', _t.times, '前1/5----', parseInt(_t.cycle / 5), '后1/5---', _t.cycle - (parseInt(_t.cycle / 5)), 'speed---', _t.speed);
+                    console.log("index---", _t.index, "times---", _t.times, "前1/5----", parseInt(_t.cycle / 5), "后1/5---", _t.cycle - (parseInt(_t.cycle / 5)), "speed---", _t.speed);
                     if (_t.times < parseInt(_t.cycle / 5)) {
                         // 起步动画加快
                         _t.speed -= 10;
@@ -275,18 +275,12 @@
                 _t.index = _t.cycleArr[index];
                 console.log(_t.index);
             },
-            // 生成随机数的方法
-            randomNum(Min, Max) {
-                let Range = Max - Min;
-                let Rand = Math.random();
-                return Min + Math.round(Rand * Range); // 四舍五入
-            },
             // 再玩一次
             resultBoxHideFun() {
                 let _t = this;
                 _t.resultShow = false;
                 _t.resultNum = 0;
-            },
+            }
         },
         mounted() {
             let _t = this;
@@ -297,7 +291,7 @@
             clearInterval(this.lightTimer);
             this.lightTimer = null;
         }
-    }
+    };
 </script>
 
 <style scoped>

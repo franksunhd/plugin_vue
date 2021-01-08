@@ -24,7 +24,7 @@
                     </template>
                     <el-menu-item v-for="(val,i) in item.children" :key="i" :index="val.path">
                         <template slot="title">
-                            <i class="menuItemIcon" :class="!isShow ? item.icon : 'menuItemIconRight ' + item.icon"></i>
+                            <i class="menuItemIcon" :class="!isShow ? val.icon : 'menuItemIconRight ' + val.icon"></i>
                             <span class="menuItem">{{val.name}}</span>
                         </template>
                     </el-menu-item>
@@ -35,10 +35,10 @@
 </template>
 
 <script>
-    import menu from '../assets/js/menu';
+    import menu from "../mock/index";
 
     export default {
-        name: 'menuBox',
+        name: "menuBox",
         props: {
             isShow: {
                 type: Boolean,
@@ -52,21 +52,21 @@
         },
         watch: {
             isShow: function (oldVal, newVal) {
-                this.$emit('isShow', newVal);
+                this.$emit("isShow", newVal);
             }
         },
         computed: {
             current() {
                 let _t = this;
-                let arr = _t.$route.path.split('/');
+                let arr = _t.$route.path.split("/");
                 if (arr.length > 3) {
                     arr.pop();
-                    return arr.join('/');
+                    return arr.join("/");
                 } else {
                     return _t.$route.path;
                 }
             }
-        },
+        }
     };
 </script>
 

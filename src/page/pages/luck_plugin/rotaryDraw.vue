@@ -42,10 +42,10 @@
                     mode: 1, // 1：转盘转 2：指针转
                     speed: 16, // 速度
                     areaNumber: 6, // 奖品区域数量
-                    disabled: false, // 是否禁用
+                    disabled: false // 是否禁用
                 },
-                timer: null,
-            }
+                timer: null
+            };
         },
         methods: {
             // 初始化数据
@@ -59,13 +59,13 @@
                 // 如果已经抽过奖了
                 if (_this.formItem.isStart) {
                     _this.$message({
-                        type: 'warning',
-                        message: '已经抽过奖了哦',
+                        type: "warning",
+                        message: "已经抽过奖了哦"
                     });
                     return false;
                 }
                 _this.formItem.isStart = true; // 没开始 设置标识开始
-                let awardNumber = _this.randomNum(1, _this.formItem.areaNumber); // 中奖区域
+                let awardNumber = _this.$randomNum(1, _this.formItem.areaNumber); // 中奖区域
                 let singleAngle = _this.formItem.singleAngle; // 每片扇形的角度
                 let endAddAngle = (awardNumber - 1) * singleAngle + (singleAngle / 2) + 360; // 中奖角度
                 const rangeAngle = (Math.floor(Math.random() * 4) + 4) * 360; // 随机旋转几圈再停止
@@ -85,42 +85,36 @@
                             clearInterval(_this.timer);
                             switch (awardNumber) {
                                 case 1:
-                                    _this.$alert('恭喜你获得10金币');
+                                    _this.$alert("恭喜你获得10金币");
                                     break;
                                 case 2:
-                                    _this.$alert('恭喜你获得20金币');
+                                    _this.$alert("恭喜你获得20金币");
                                     break;
                                 case 3:
-                                    _this.$alert('恭喜你获得30金币');
+                                    _this.$alert("恭喜你获得30金币");
                                     break;
                                 case 4:
-                                    _this.$alert('恭喜你获得50金币');
+                                    _this.$alert("恭喜你获得50金币");
                                     break;
                                 case 5:
-                                    _this.$alert('恭喜你获得80金币');
+                                    _this.$alert("恭喜你获得80金币");
                                     break;
                                 case 6:
-                                    _this.$alert('恭喜你获得200金币');
+                                    _this.$alert("恭喜你获得200金币");
                                     break;
                                 default:
-                                    _this.$alert('很遗憾没有中奖');
+                                    _this.$alert("很遗憾没有中奖");
                                     break;
                             }
                         }
                     }
                 }, 1000 / 60);
-            },
-            // 生成随机数的方法
-            randomNum(Min, Max) {
-                let Range = Max - Min;
-                let Rand = Math.random();
-                return Min + Math.round(Rand * Range); // 四舍五入
-            },
+            }
         },
         created() {
             this.initData();
         }
-    }
+    };
 </script>
 
 <style scoped>

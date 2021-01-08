@@ -9,15 +9,14 @@
 </template>
 
 <script>
-
     export default {
         name: "index",
         data() {
             return {
                 ops: {
                     vuescroll: {
-                        mode: 'slide',
-                        sizeStrategy: 'percent',
+                        mode: "slide",
+                        sizeStrategy: "percent",
                         detectResize: true
                     },
                     scrollPanel: {
@@ -26,40 +25,40 @@
                         scrollingX: false,
                         scrollingY: true,
                         speed: 1,
-                        easing: 'easeOutQuint',
-                        verticalNativeBarPos: 'right',
+                        easing: "easeOutQuint",
+                        verticalNativeBarPos: "right",
                         maxHeight: undefined,
-                        maxWidth: undefined,
+                        maxWidth: undefined
                     },
                     rail: {
-                        background: '#01a99a',
+                        background: "#01a99a",
                         opacity: 1,
-                        size: '6px',
+                        size: "6px",
                         specifyBorderRadius: false,
                         gutterOfEnds: null,
-                        gutterOfSide: '2px',
+                        gutterOfSide: "2px",
                         keepShow: false
                     },
                     bar: {
                         showDelay: 10,
                         onlyShowBarOnScroll: false,
                         keepShow: true,
-                        background: '#fff000',
+                        background: "#fff000",
                         opacity: 1,
                         hoverStyle: false,
                         specifyBorderRadius: false,
                         minSize: false,
-                        size: '6px',
-                        disable: false,
+                        size: "6px",
+                        disable: false
                     }
-                },
-            }
+                }
+            };
         },
         methods: {},
         created() {
 
         }
-    }
+    };
 </script>
 
 <style scoped>
@@ -68,12 +67,10 @@
         height: 1000px;
         overflow-y: auto;
         padding: 10px;
-        /*background-color: red;*/
     }
 
     .demo-content {
         width: 100%;
-        /*background-color: #9cb945;*/
     }
 
     .demo-content-text {

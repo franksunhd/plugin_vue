@@ -6,7 +6,7 @@
 <script>
     import 'echarts/map/js/china.js'; // 引入中国地图数据
     import './province'; // 引入各省的地图数据
-    import dataList from "./mock";
+    import dataList from "../../../../mock/index";
 
     export default {
         name: "chinaMap",
@@ -206,13 +206,13 @@
                 let _t = this;
                 // 获取日期
                 let dateList = new Array(); // 74
-                dateList = _t.getDate(dataList);
+                dateList = _t.getDate(dataList.chinaMap);
                 _t.dataOptions.baseOption.timeline.data = dateList;
                 _t.dataOptions.baseOption.timeline.tooltip.formatter = dateList;
                 dateList.forEach((item, index) => {
                     _t.dataOptions.options.push({
                         title: {
-                            text: dataList[index].date + '  ' + dataList[index].news,
+                            text: dataList.chinaMap[index].date + '  ' + dataList.chinaMap[index].news,
                             textStyle: {
                                 color: '#333',
                                 fontFamily: 'MicrosoftYaHei',
@@ -231,7 +231,7 @@
                                 name: 'province', // 浮动框的标题
                                 type: 'map',
                                 geoIndex: 0,
-                                data: dataList[index].data
+                                data: dataList.chinaMap[index].data
                             }
                         ]
                     });

@@ -5,23 +5,23 @@
 </template>
 
 <script>
-    import Recorder from 'recorder-core';
+    import Recorder from "recorder-core";
     // 需要使用到的音频格式编码引擎的js文件统统加载进来
-    import 'recorder-core/src/engine/mp3';
-    import 'recorder-core/src/engine/mp3-engine';
+    import "recorder-core/src/engine/mp3";
+    import "recorder-core/src/engine/mp3-engine";
     // 可选的扩展
-    import 'recorder-core/src/extensions/waveview';
+    import "recorder-core/src/extensions/waveview";
 
     export default {
         name: "Recorder",
         data() {
             return {
                 rcOptions: {
-                    type: 'mp3',
+                    type: "mp3",
                     bitRate: 16,
-                    sampleRate: 16000,
+                    sampleRate: 16000
                 }
-            }
+            };
         },
         methods: {
             // 点击开始录音
@@ -40,23 +40,23 @@
                         onProcess: function (buffers, powerLevel, duration, sampleRate) {
                             console.log(buffers, powerLevel, duration, sampleRate);
                         }
-                    })
+                    });
                     rec.open(() => {
                         resolve(true);
                     }, function (msg, isAllow) {
-                        console.log('msg---', msg);
-                        console.log('isUserNotAllow---', isAllow);
+                        console.log("msg---", msg);
+                        console.log("isUserNotAllow---", isAllow);
                         if (isAllow) {
-                            alert(123)
+                            alert(123);
                         }
                         resolve(false);
-                    })
+                    });
                 });
             }
         },
         created() {
         }
-    }
+    };
 </script>
 
 <style scoped>

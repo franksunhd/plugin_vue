@@ -29,27 +29,29 @@
 </template>
 
 <script>
-    import mockJs from 'mockjs';
+    import mockJs from "mockjs";
+    import mock from "./mock";
 
     export default {
         name: "index",
         data() {
             return {
                 arr: {
-                    a: '',
-                    b: '',
-                    c: '',
-                    d: '',
-                    e: '',
-                    f: ''
+                    a: "",
+                    b: "",
+                    c: "",
+                    d: "",
+                    e: "",
+                    f: ""
                 },
                 str: {
-                    a: '',
-                    b: '',
-                    c: '',
-                    d:''
-                }
-            }
+                    a: "",
+                    b: "",
+                    c: "",
+                    d: ""
+                },
+                list: mock.list
+            };
         },
         methods: {
             getData() {
@@ -58,44 +60,30 @@
                     "a|1-10": "★"
                 });
                 _t.arr.a = a.a;
-
                 let b = mockJs.mock({
                     "number|1-100": 100
                 });
                 _t.arr.b = b.number;
-
                 let c = mockJs.mock({
                     "bool|1": true
                 });
                 _t.arr.c = c.bool;
+                _t.arr.d = mockJs.mock("@hex");
+                _t.arr.e = mockJs.mock("@rgb");
+                _t.arr.f = mockJs.mock("@rgba");
 
-                let hex = mockJs.mock('@hex');
-                _t.arr.d = hex;
-
-                let rgb = mockJs.mock('@rgb');
-                _t.arr.e = rgb;
-
-                let rgba = mockJs.mock('@rgba');
-                _t.arr.f = rgba;
-
-                let paragraph = mockJs.mock('@paragraph');
-                _t.str.a = paragraph;
-
-                let cparagraph = mockJs.mock('@cparagraph');
-                _t.str.b = cparagraph;
-
-                let url = mockJs.mock('@url');
-                _t.str.c = url;
-
-                let county = mockJs.mock('@county(true)');
-                _t.str.d = county;
+                _t.str.a = mockJs.mock("@paragraph");
+                _t.str.b = mockJs.mock("@cparagraph");
+                _t.str.c = mockJs.mock("@url");
+                _t.str.d = mockJs.mock("@county(true)");
             }
         },
         created() {
             let _t = this;
             _t.getData();
+            console.log(_t.list);
         }
-    }
+    };
 </script>
 
 <style scoped>

@@ -34,7 +34,7 @@
 <div id="app"></div>
 <div id="IEPageBox">
     <div id="IEPage">
-        <img id="IE_img" src="/static/IE.png"/>
+        <img id="IE_img" src="/static/IE.png" alt/>
         <div class="IEPageTitle">暂不支持IE9及以下版本</div>
     </div>
 </div>
@@ -42,20 +42,20 @@
 </body>
 </html>
 <script type="text/javascript">
-    function isIEVersion () {
+    function isIEVersion() {
         // 取得浏览器的userAgent字符串
         var userAgent = navigator.userAgent;
         // 判断是否低于IE11浏览器
-        var isIE = userAgent.indexOf('compatible') !== -1 && userAgent.indexOf('MSIE') !== -1;
+        var isIE = userAgent.indexOf("compatible") !== -1 && userAgent.indexOf("MSIE") !== -1;
         // 判断是否Edge浏览器
-        var isEdge = userAgent.indexOf('Edge') !== -1 && !isIE;
+        var isEdge = userAgent.indexOf("Edge") !== -1 && !isIE;
         // 判断是否IE11浏览器
-        var isIE11 = userAgent.indexOf('Trident') !== -1 && userAgent.indexOf('rv:11.0') !== -1;
+        var isIE11 = userAgent.indexOf("Trident") !== -1 && userAgent.indexOf("rv:11.0") !== -1;
         // 如果是低于IE11的浏览器
         if (isIE) {
-            var reIE = new RegExp('MSIE (\\d+\\.\\d+);');
+            var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
             reIE.test(userAgent);
-            var fIEVersion = parseFloat(RegExp['$1']);
+            var fIEVersion = parseFloat(RegExp["$1"]);
             if (fIEVersion === 10) {
                 return true;
             } else {
@@ -77,10 +77,10 @@
     var version = isIEVersion();
 
     if (version) {
-        document.getElementById('app').style.display = 'block';
-        document.getElementById('IEPageBox').style.display = 'none';
+        document.getElementById("app").style.display = "block";
+        document.getElementById("IEPageBox").style.display = "none";
     } else {
-        document.getElementById('app').style.display = 'none';
-        document.getElementById('IEPageBox').style.display = 'block';
+        document.getElementById("app").style.display = "none";
+        document.getElementById("IEPageBox").style.display = "block";
     }
 </script>

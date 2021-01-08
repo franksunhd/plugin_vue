@@ -136,7 +136,7 @@
                     // 次数没用完 次数减1
                     _t.drawTime -= 1;
                     // 新的中奖位置
-                    _t.prize = _t.randomNum(1, 8);
+                    _t.prize = _t.$randomNum(1, 8);
                     console.log('中奖位置---' + _t.prize);
                     // 重新抽奖
                     _t.activityRoll();
@@ -198,13 +198,6 @@
                     index = 1;
                 }
                 _t.index = index;
-            },
-            // 生成随机数的方法
-            randomNum(Min, Max) {
-                let Range = Max - Min;
-                let Rand = Math.random();
-                let num = Min + Math.round(Rand * Range); // 四舍五入
-                return num;
             },
             // 再玩一次
             resultBoxHideFun() {

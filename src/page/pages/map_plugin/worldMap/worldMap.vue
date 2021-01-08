@@ -4,7 +4,7 @@
 
 <script>
     import 'echarts/map/js/world'; // 引入世界地图
-    import nameMap from "./nameMap"; // 引入翻译
+    import worldMap from "../../../../mock/index"; // 引入翻译
 
     export default {
         name: "worldMap",
@@ -100,7 +100,7 @@
                                 borderColor: '#000', // 图形的描边颜色 支持的颜色格式同 color，不支持回调函数
                                 borderType: 'solid' // 描边类型，默认为实线，支持 'solid', 'dashed', 'dotted'
                             },
-                            nameMap: nameMap
+                            nameMap: worldMap.worldMap
                         }
                     ]
                 };
