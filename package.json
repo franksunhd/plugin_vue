@@ -28,7 +28,7 @@
         "lodash": "^4.17.15",
         "mavon-editor": "^2.9.0",
         "mockjs": "^1.1.0",
-        "moment": "^2.26.0",
+        "moment": "^2.29.2",
         "nprogress": "^0.2.0",
         "postcss-px2rem-exclude": "0.0.6",
         "qrcodejs2": "0.0.2",
