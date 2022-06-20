@@ -18,7 +18,7 @@ router.beforeEach((to, from, next) => {
     let menuList = menu.menuList;
     NProgress.start();
     menuList.forEach((item) => {
-        if (item.children) {
+        if (!!item.children) {
             item.children.forEach((val) => {
                 if (val.path === to.path) {
                     document.title = val.name;
@@ -26,6 +26,7 @@ router.beforeEach((to, from, next) => {
                 }
             });
         } else {
+            document.title = !!item.name ? item.name : "";
             next();
         }
     });

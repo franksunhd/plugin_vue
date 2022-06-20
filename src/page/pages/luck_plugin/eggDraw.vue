@@ -131,7 +131,7 @@
     .niu_dan {
         width: 640px;
         height: 1039px;
-        background: #1b1009;
+        background: var(--blackColor);
         margin: 0 auto;
         overflow: hidden;
         position: relative
@@ -158,7 +158,7 @@
         background: url(../../../assets/img/eggDraw/an_go.png) no-repeat;
         background-size: 100% 100%;
         font-size: 18px;
-        color: #fff;
+        color: var(--whiteColor);
         padding-top: 90px;
         text-align: center;
         cursor: pointer;
@@ -166,7 +166,7 @@
 
     .niu_dan .game_num {
         font-size: 20px;
-        color: #e00b37;
+        color: var(--errorColor);
         width: 128px;
         height: 35px;
         line-height: 35px;
@@ -215,7 +215,7 @@
         left: 50%;
         top: 0;
         z-index: 4;
-        background: rgba(0, 0, 0, 0.85);
+        background: var(--opacityBlackColor);
         margin-left: -320px;
     }
 
@@ -226,7 +226,7 @@
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         border-radius: 10px;
-        background: #fff;
+        background: var(--whiteColor);
         margin: 300px auto 0 auto;
     }
 
@@ -244,7 +244,7 @@
 
     .zonj_zezc .jpzs h2 {
         font-size: 36px;
-        color: #ff1a4b;
+        color: var(--errorColor);
         text-align: center;
         line-height: 40px;
         display: flex;

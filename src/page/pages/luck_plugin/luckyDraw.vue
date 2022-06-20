@@ -223,7 +223,7 @@
         width: 700px;
         height: 600px;
         border-radius: 20px;
-        background-color: #B43A11;
+        background-color: var(--errorColor);
         margin: 0 auto;
     }
 
@@ -237,7 +237,7 @@
         position: relative;
         width: 100%;
         height: 98%;
-        background: rgba(254, 213, 72, 1);
+        background: var(--circleColor);
         border-radius: 20px;
         margin: 0 auto;
     }
@@ -255,7 +255,7 @@
         transform: translate(-50%, -50%);
         width: 85%;
         height: 85%;
-        background: rgba(234, 84, 33, 1);
+        background: var(--menuCurrentBg);
         border-radius: 20px;
         padding: 10px 0 0 10px;
         box-sizing: border-box;
@@ -287,7 +287,7 @@
         width: 100%;
         height: 100%;
         border-radius: 20px;
-        background: #ffbfbf;
+        background: var(--mainColor);
         position: absolute;
         top: 0;
         left: 0;
@@ -300,7 +300,7 @@
         width: 100%;
         height: 90%;
         border-radius: 20px;
-        background: #ffeeee;
+        background: var(--whiteColor);
         position: absolute;
         top: 0;
         left: 0;
@@ -310,7 +310,7 @@
     .drawMainBox td .box .text {
         width: 100%;
         font-size: 30px;
-        color: #B43A11;
+        color: var(--errorColor);
         position: absolute;
         top: 50%;
         left: 50%;
@@ -330,11 +330,11 @@
     }
 
     .drawMainBox .active .box {
-        background: #ffd213;
+        background: var(--boxColor);
     }
 
     .drawMainBox .active .box:before {
-        background: #ffe462;
+        background: var(--boxActiveColor);
     }
 
     .drawMainBox .start-btn .b {
@@ -344,14 +344,14 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 10;
-        color: #fff;
+        color: var(--whiteColor);
         font-size: 30px;
         font-weight: bold;
         display: inline-block;
     }
 
     .drawMainBox .start-btn .box {
-        background: #C74000;
+        background: var(--errorColor);
     }
 
     .drawMainBox .start-btn .box:before {
@@ -359,14 +359,14 @@
     }
 
     .drawMainBox .start-btn .box {
-        color: #ffe461;
+        color: var(--boxActiveColor);
         font-size: 20px;
         width: 100%;
         height: 100%;
         text-align: center;
         position: absolute;
         border-radius: 20px;
-        background: #db2332;
+        background: var(--errorColor);
     }
 
     /* 弹窗部分 */
@@ -376,7 +376,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(0, 0, 0, 0.7);
+        background-color: var(--opacityBlackColor);
     }
 
     .activityResultBox {
@@ -409,16 +409,16 @@
         bottom: 5%;
         transform: translateX(-50%);
         font-size: 30px;
-        color: #fff;
+        color: var(--whiteColor);
         text-align: center;
         background: linear-gradient(360deg, rgba(253, 130, 44, 1) 0%, rgba(255, 233, 56, 1) 100%);
-        box-shadow: 5px 5px 0 rgba(211, 114, 35, 0.67);
+        box-shadow: 5px 5px 0 var(--conChildTitleColor);
         border-radius: 20px;
     }
 
     .aNotLuckyTitle {
         margin-top: 50px;
-        color: #fff;
+        color: var(--whiteColor);
         font-size: 30px;
         font-weight: bold;
     }

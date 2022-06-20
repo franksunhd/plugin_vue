@@ -9,17 +9,43 @@
             <el-button size="mini" type="primary" @click="setContent">设置内容</el-button>
         </div>
         <div id="wangEditor"></div>
+
+        <div>
+            <the-rich-text
+            v-model="data"
+            :container="toolbar"
+            action="http://api.pay-star.com/admin/images"
+            :headers="{ 'company-token': '4P6snTNhfADVykzxYkLAvs' }"></the-rich-text>
+        </div>
     </div>
 </template>
 
 <script>
     import E from 'wangEditor';
+    import Quill from 'quill';
+    // quill图片可拖拽上传
+    // import { ImageDrop } from 'quill-image-drop-module';
 
     export default {
         name: 'wangEditor',
         data () {
             return {
                 editor: null, // 编辑器实例
+
+                toolbar: [
+                    ['bold', 'italic', 'underline', 'strike'],
+                    [{ color: [] }, { background: [] }],
+                    ['link', 'image'],
+                    ['blockquote', 'code-block'],
+                    [{ align: [] }],
+                    [{ list: 'ordered' }, { list: 'bullet' }],
+                    [{ script: 'sub' }, { script: 'super' }],
+                    // [{ header: 1 }, { header: 2 }],
+                    // [{ header: [1, 2, 3, 4, 5, 6, false] }],
+                    [{ size: ['small', false, 'large', 'huge'] }],
+                    [{ font: [] }],
+                    // [{ indent: '-1' }, { indent: '+1' }],
+                ],
             };
         },
         methods: {

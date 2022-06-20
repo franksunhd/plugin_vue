@@ -1,7 +1,7 @@
 <template>
     <div class="homeBox">
         <div class="marginBottom20">
-            <div class="title">
+            <div class="title" style="height: auto !important;">
                 <span class="marginRight50">{{$t("isLanguage")}}：{{navigatorItem.language}}</span>
                 <span class="marginRight50">{{$t("isToCookies")}}：{{navigatorItem.cookieEnabled}}</span>
                 <span class="marginRight50">{{$t("isOnLine")}}：{{navigatorItem.onLine}}</span>
@@ -62,13 +62,13 @@
     }
 
     .title {
-        color: #2D64B3;
+        color: var(--conTitleColor);
     }
 
     .childrenTitle {
         display: inline-block;
         margin-left: 30px;
-        color: #9cb945;
+        color: var(--conChildTitleColor);
         cursor: pointer;
     }
 </style>

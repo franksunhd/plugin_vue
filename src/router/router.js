@@ -91,7 +91,7 @@ import waterfall from "../page/pages/mobile/waterfall";
 import vantPage from "../page/pages/mobile/vantPage/index";
 // 加解密
 import Crypto from "../page/pages/global_plugin/crypto/index";
-// 倒计时
+// 房价计算
 import Countdown from "../page/pages/game_plugin/Countdown";
 // 加班费
 import overtimePay from "../page/pages/game_plugin/overtimePay";
@@ -99,6 +99,19 @@ import overtimePay from "../page/pages/game_plugin/overtimePay";
 import nprogress from "../page/pages/game_plugin/nprogress";
 // mock
 import mock from "../page/pages/game_plugin/mock";
+// 鼠标点击
+import mouseClick from "../page/pages/game_plugin/mouseClick";
+// 交叉正负轴
+import barNegative from "../page/pages/eCharts/bar-negative";
+// 七色小花
+import drawCircle from "../page/pages/eCharts/drawCircle";
+// vue-pdf 预览
+import vuePdf from "../page/pages/pc_plugin/vuePdf";
+// 其他
+import pageOne from "../page/pages/otherPage/pageOne";
+import pageTwo from "../page/pages/otherPage/pageTwo";
+// 相册
+import viewerjs from "../page/pages/pc_plugin/viewerjs";
 
 let companyName = common.companyName;
 
@@ -153,9 +166,16 @@ export const routers = [
             {path: "/" + companyName + "/Countdown", name: "Countdown", component: Countdown},
             {path: "/" + companyName + "/overtimePay", name: "overtimePay", component: overtimePay},
             {path: "/" + companyName + "/nprogress", name: "nprogress", component: nprogress},
-            {path: "/" + companyName + "/mock", name: "mock", component: mock}
-        
-        
+            {path: "/" + companyName + "/mock", name: "mock", component: mock},
+            {path: "/" + companyName + "/mouseClick", name: "mouseClick", component: mouseClick},
+            {path: "/" + companyName + "/barNegative", name: "barNegative", component: barNegative},
+            {path: "/" + companyName + "/drawCircle", name: "drawCircle", component: drawCircle},
+            {path: "/" + companyName + "/vuePdf", name: "vuePdf", component: vuePdf},
+            {path: "/" + companyName + "/pageOne", name: "pageOne", component: pageOne},
+            {path: "/" + companyName + "/viewerjs", name: "viewerjs", component: viewerjs},
+            {path: "/" + companyName + "/pageTwo", name: "pageTwo", component: pageTwo},
+            
+            
         ]
     },
     {path: "/loveTeeth", name: "loveTeeth", component: loveTeeth},

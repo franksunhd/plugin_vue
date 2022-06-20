@@ -99,6 +99,6 @@
     }
 
     span.active {
-        color: red;
+        color: var(--errorColor);
     }
 </style>

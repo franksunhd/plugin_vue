@@ -10,13 +10,23 @@
                 <span class="fontSize">{{!!nowTime.min ? nowTime.min : "--"}}分</span>
                 <span class="fontSize">{{!!nowTime.sec ? nowTime.sec : "--"}}秒</span>
             </div>
-            <el-select class="el-app-header-select" v-model="defaultLang" @change="changeLang">
-                <el-option
-                    v-for="(item,index) in languageList"
-                    :key="index"
-                    :label="item.name"
-                    :value="item.code"/>
-            </el-select>
+            <div>
+                <el-select size="small" class="languageSelect marginRight20" v-model="defaultTheme"
+                           @change="changeTheme">
+                    <el-option
+                        v-for="(item,index) in themeList"
+                        :key="index"
+                        :label="item.name"
+                        :value="item.code"/>
+                </el-select>
+                <el-select size="small" class="languageSelect" v-model="defaultLang" @change="changeLang">
+                    <el-option
+                        v-for="(item,index) in languageList"
+                        :key="index"
+                        :label="item.name"
+                        :value="item.code"/>
+                </el-select>
+            </div>
         </div>
         <div class="elAside" :class="isShow ? 'elAside_old' : 'elAside_new'">
             <menuBox :isShow="isShow" @isShow="isShowFun"/>
@@ -41,10 +51,15 @@
         data() {
             return {
                 isShow: false,
-                defaultLang: "",
+                defaultLang: sessionStorage.getItem("plugin_language") || "zh_CN", // 默认语言
+                defaultTheme: sessionStorage.getItem("plugin_theme") || "light", // 默认主题
                 languageList: [
                     {name: "简体中文", code: "zh_CN"},
                     {name: "EN", code: "en"}
+                ],
+                themeList: [
+                    {name: "深色模式", code: "dark"},
+                    {name: "浅色模式", code: "light"}
                 ],
                 nowTime: {
                     year: "", // 年
@@ -62,7 +77,6 @@
         methods: {
             ...mapMutations(["changeLanguage"]),
             isShowFun(val) {
-                console.log(val);
             },
             // 切换语言
             changeLang(val) {
@@ -71,6 +85,12 @@
                 // 不刷新页面修改语言
                 this.$i18n.locale = val;
             },
+            // 切换主题
+            changeTheme(val) {
+                sessionStorage.setItem("plugin_theme", val);
+                window.location.reload();
+            },
+            // 获取当前时间
             getCurrentTime() {
                 let _this = this;
                 let nowTime = new Date();
@@ -83,6 +103,7 @@
                     sec: _this.getDoubleNum(nowTime.getSeconds()) // 秒
                 };
             },
+            // 不够补0
             getDoubleNum(num) {
                 if (num - 0 < 10) {
                     num = "0" + num;
@@ -92,8 +113,6 @@
         },
         created() {
             let _this = this;
-            // _this.defaultLang = _this.language;
-            _this.defaultLang = sessionStorage.getItem("plugin_language") || "zh_CN";
             _this.getCurrentTime();
             setInterval(function () {
                 _this.getCurrentTime();
@@ -117,7 +136,7 @@
             font-size: 0;
             padding: 0 20px;
             height: 80px !important;
-            background-color: #229399;
+            background-color: var(--mainColor);
             line-height: 80px !important;
             display: flex;
             flex-direction: row;
@@ -126,7 +145,7 @@
 
             .title {
                 font-size: 26px;
-                color: #fff;
+                color: var(--whiteColor);
                 display: flex;
                 flex-direction: row;
                 justify-content: flex-start;
@@ -135,6 +154,23 @@
 
             .fontSize {
                 font-size: 22px;
+            }
+
+            /deep/ .languageSelect {
+                width: 150px;
+
+                .el-input__inner {
+                    background-color: transparent;
+                    color: var(--whiteColor);
+                    font-weight: bolder;
+                    border-color: var(--whiteColor);
+                }
+
+                .el-select,
+                .el-input,
+                .el-select__caret {
+                    color: var(--whiteColor);
+                }
             }
         }
 
@@ -161,7 +197,7 @@
             bottom: 0;
             z-index: 1;
             padding-bottom: 80px;
-            background-color: rgb(84, 92, 100);
+            background-color: var(--menuBg);
 
             /deep/ .el-submenu .el-menu-item {
                 min-width: auto;
@@ -176,7 +212,7 @@
                 right: 0;
                 line-height: 60px;
                 height: 60px;
-                background-color: #e0e0e0;
+                background-color: var(--mainColor);
                 text-align: center;
                 display: flex;
                 justify-content: center;
@@ -185,6 +221,7 @@
                 .iconItem {
                     font-size: 26px;
                     line-height: normal;
+                    color: var(--whiteColor);
                 }
             }
         }

@@ -6,7 +6,8 @@ export default [
         path: "/" + common.companyName + "/index",
         icon: "el-icon-s-home",
         name: "首页",
-        isSubMenu: false
+        isSubMenu: false,
+        children: null
     },
     // PC插件
     {
@@ -60,6 +61,18 @@ export default [
             {
                 path: "/" + common.companyName + "/vueTyper",
                 name: "打字效果",
+                icon: "el-icon-bottom-right",
+                isSubMenu: false
+            },
+            {
+                path: "/" + common.companyName + "/vuePdf",
+                name: "pdf文件预览",
+                icon: "el-icon-bottom-right",
+                isSubMenu: false
+            },
+            {
+                path: "/" + common.companyName + "/viewerjs",
+                name: "相册",
                 icon: "el-icon-bottom-right",
                 isSubMenu: false
             }
@@ -311,7 +324,7 @@ export default [
             },
             {
                 path: "/" + common.companyName + "/Countdown",
-                name: "倒计时",
+                name: "房价计算",
                 icon: "el-icon-bottom-right",
                 isSubMenu: false
             },
@@ -332,6 +345,12 @@ export default [
                 name: "mock",
                 icon: "el-icon-bottom-right",
                 isSubMenu: false
+            },
+            {
+                path: "/" + common.companyName + "/mouseClick",
+                name: "鼠标点击",
+                icon: "el-icon-bottom-right",
+                isSubMenu: false
             }
         ]
     },
@@ -339,7 +358,7 @@ export default [
     {
         path: "/loveTeeth",
         name: "C端页面",
-        icon: "el-icon-s-home",
+        icon: "el-icon-s-help",
         isSubMenu: true,
         children: [
             {
@@ -357,6 +376,48 @@ export default [
             {
                 path: "/vantPage",
                 name: "vant组件",
+                icon: "el-icon-bottom-right",
+                isSubMenu: false
+            }
+        ]
+    },
+    // eCharts
+    {
+        path: "/" + common.companyName + "/eCharts",
+        name: "图表",
+        icon: "el-icon-s-help",
+        isSubMenu: true,
+        children: [
+            {
+                path: "/" + common.companyName + "/barNegative",
+                name: "eCharts交叉正负轴",
+                icon: "el-icon-bottom-right",
+                isSubMenu: false
+            },
+            {
+                path: "/" + common.companyName + "/drawCircle",
+                name: "七色小花",
+                icon: "el-icon-bottom-right",
+                isSubMenu: false
+            }
+        ]
+    },
+    // 其他
+    {
+        path: "/" + common.companyName + "/others",
+        name: "其他",
+        icon: "el-icon-s-help",
+        isSubMenu: true,
+        children: [
+            {
+                path: "/" + common.companyName + "/pageOne",
+                name: "其他项一",
+                icon: "el-icon-bottom-right",
+                isSubMenu: false
+            },
+            {
+                path: "/" + common.companyName + "/pageTwo",
+                name: "其他项二",
                 icon: "el-icon-bottom-right",
                 isSubMenu: false
             }

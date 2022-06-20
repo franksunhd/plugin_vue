@@ -53,6 +53,13 @@ function isiOS() {
     return isiOS;
 }
 
+// 获取root下的变量名称值
+function getRootVal(key) {
+    // 读取 root 变量
+    let root = getComputedStyle(document.documentElement);
+    return root.getPropertyValue(key).trim();
+}
+
 
 export default {
     companyName,
@@ -60,5 +67,6 @@ export default {
     getLanguage,
     getType,
     isAndroid,
-    isiOS
+    isiOS,
+    getRootVal
 };

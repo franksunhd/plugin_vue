@@ -64,12 +64,12 @@
             word-break: break-all;
 
             .old {
-                color: #00a1d6;
+                color: var(--cryptoOldColor);
                 font-weight: bold;
             }
 
             .new {
-                color: #6ce26c;
+                color: var(--cryptoNewColor);
                 font-weight: bold;
             }
         }

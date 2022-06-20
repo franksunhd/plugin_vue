@@ -45,29 +45,6 @@ import "swiper/css/swiper.css";
 // 引入vConsole
 import VConsole from "vconsole";
 
-import VueProgressBar from "vue-progressbar";
-
-const options = {
-    color: "#229399", // 成功颜色
-    failedColor: "red", // 失败颜色
-    thickness: "15px", // 进度条宽度
-    // 速度
-    transition: {
-        speed: "0.2s",
-        opacity: "0.6s",
-        termination: 300
-    },
-    autoRevert: true,
-    location: "top", // 位置
-    inverse: true,
-    position: "relative" // 定位 relative absolute fixed
-};
-Vue.use(VueProgressBar, options);
-
-
-if (process.env.NODE_ENV !== "production") {
-    new VConsole();
-}
 // vue-scroll
 import vueScroll from "vuescroll";
 import "vuescroll/dist/vuescroll.css";
@@ -81,6 +58,8 @@ import api from "./api/index";
 import "./config/aMap";
 // 引入vant
 import "./config/vantJS";
+// 引入进度条
+import "./config/VueProgressBar";
 // 引入过滤函数
 import "./config/formatNum";
 // 公用方法

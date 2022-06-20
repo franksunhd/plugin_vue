@@ -1,0 +1,19 @@
+/* 浅色模式 */
+:root {
+    --mainColor: #9966ff; /*主色调*/
+    --whiteColor: #fff; /*白色调*/
+    --menuBg: #409EFF; /*导航栏色调*/
+    --menuCurrentBg: #409EFF; /*导航栏当前背景色调*/
+    --menuActiveText: #fff; /*导航栏选中文字色调*/
+    --conTitleColor: #2D64B3; /*内容标题文字色调*/
+    --conChildTitleColor: #9cb945; /*内容文字色调*/
+    --circleColor: #FFFF00; /*圆形中心色调*/
+    --errorColor: #f00; /*爆红的色调*/
+    --grayColor: #999; /*灰色色调*/
+    --cryptoOldColor: #00a1d6; /*加密部分色调*/
+    --cryptoNewColor: #6ce26c; /*加密部分色调*/
+    --opacityBlackColor: rgba(0, 0, 0, 0.85); /*透明黑*/
+    --blackColor: #1b1009; /*黑*/
+    --boxColor: #ffd213;
+    --boxActiveColor: #ffe462;
+}

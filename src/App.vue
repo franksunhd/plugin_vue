@@ -8,6 +8,12 @@
     export default {
         name: "App",
         created() {
+            let theme = sessionStorage.getItem("plugin_theme") || "light";
+            if (!!theme) {
+                require("./assets/theme/base_" + theme + ".css");
+            } else {
+                require("./assets/theme/base_light.css");
+            }
             //在页面加载时读取sessionStorage里的状态信息
             if (sessionStorage.getItem("pluginVueStore")) {
                 try {
