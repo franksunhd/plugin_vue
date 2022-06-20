@@ -1,4 +1,4 @@
-# plugin_vue
+# plugin_vue 插件练习项目
 
 > A Vue.js project
 
