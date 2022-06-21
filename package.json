@@ -24,6 +24,7 @@
         "html2canvas": "^1.0.0-rc.5",
         "jquery": "^3.5.1",
         "js-cookies": "^1.0.4",
+        "leaflet": "^1.8.0",
         "lib-flexible": "^0.3.2",
         "lodash": "^4.17.15",
         "mavon-editor": "^2.9.0",

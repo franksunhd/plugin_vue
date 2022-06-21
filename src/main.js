@@ -65,6 +65,7 @@ import "./config/formatNum";
 // 公用方法
 import commonJS from "./config/common";
 
+
 Vue.use(vueBus);
 Vue.use(myButton);
 Vue.use(markdownEditor);

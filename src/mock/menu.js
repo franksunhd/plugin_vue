@@ -75,6 +75,12 @@ export default [
                 name: "相册",
                 icon: "el-icon-bottom-right",
                 isSubMenu: false
+            },
+            {
+                path: "/" + common.companyName + "/leaflet",
+                name: "leaflet地图",
+                icon: "el-icon-bottom-right",
+                isSubMenu: false
             }
         ]
     },

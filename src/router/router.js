@@ -112,6 +112,8 @@ import pageOne from "../page/pages/otherPage/pageOne";
 import pageTwo from "../page/pages/otherPage/pageTwo";
 // 相册
 import viewerjs from "../page/pages/pc_plugin/viewerjs";
+// leaflet 地图
+import leaflet from "../page/pages/pc_plugin/leafletMap/leaflet";
 
 let companyName = common.companyName;
 
@@ -174,8 +176,7 @@ export const routers = [
             {path: "/" + companyName + "/pageOne", name: "pageOne", component: pageOne},
             {path: "/" + companyName + "/viewerjs", name: "viewerjs", component: viewerjs},
             {path: "/" + companyName + "/pageTwo", name: "pageTwo", component: pageTwo},
-            
-            
+            {path: "/" + companyName + "/leaflet", name: "leaflet", component: leaflet}
         ]
     },
     {path: "/loveTeeth", name: "loveTeeth", component: loveTeeth},
