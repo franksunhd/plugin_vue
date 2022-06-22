@@ -55,7 +55,7 @@ const menuList = [
         isSubMenu: false
     },
     {
-        path: companyName + "/dyForm",
+        path: companyName + "/elFormBox",
         name: "动态表单",
         icon: "el-icon-bottom-right",
         isSubMenu: false
