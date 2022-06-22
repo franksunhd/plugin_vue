@@ -73,9 +73,12 @@
                 let i = 0;
                 while (i++ < 7) {
                     let c = this.getColor();
-                    ctx.sector(250, 200, 40, 30, i * 50, i * 50 + 30, c, 1.5);
+                    ctx.sector(250, 300, 40, 30, i * 50, i * 50 + 30, c, 1.5);
+
+                    ctx.sector(450, 150, 80, 30, i * 50, i * 50 + 30, c, 1.5);
                 }
-                ctx.circle(250, 200, 7, _this.circleColor);
+                ctx.circle(250, 300, 7, _this.circleColor);
+                ctx.circle(450, 150, 12, _this.circleColor);
             }
 
         },

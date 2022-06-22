@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: "mock",
+        name: "mockBox",
         data() {
             return {
                 list: []
@@ -32,7 +32,7 @@
     };
 </script>
 
-<style scoped>
+<style scoped lang="less">
     .contentBox {
         padding: 10px;
         display: inline-block;

@@ -43,7 +43,8 @@
         components: {pdf},
         data() {
             return {
-                url: "http://image.cache.timepack.cn/nodejs.pdf",
+                // 在线转换地址: https://www.aconvert.com/cn/pdf/
+                url: "https://s30.aconvert.com/convert/p3r68-cdx67/aai77-wv0qz.pdf",
                 pageNum: 1,
                 pageTotalNum: 1,
                 pageRotate: 0,

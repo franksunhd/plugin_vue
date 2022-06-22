@@ -43,7 +43,8 @@
                 myMarkers: "",
                 polygons: [],
                 myPolygons: "",
-
+                landIcon: require("../../../../assets/img/map/land.png"),
+                landIcon_new: require("../../../../assets/img/map/zbj1.png"),
                 drawPolyline: "", // 绘制多边形对象
                 drawControl: "", // 地图工具条
                 drawNum: 0, // 0是画地块,大于0是障碍物
@@ -141,7 +142,7 @@
                 _this.deletePoint();
                 // 标记点
                 let myIcon = L.icon({
-                    iconUrl: require("../../../../assets/img/map/land.png"), // icon 地址
+                    iconUrl: _this.landIcon, // icon 地址
                     iconSize: [25] // icon大小
                 });
                 let moreArr = [
@@ -170,7 +171,7 @@
                 ];
                 // 标记点
                 let myIcon = L.icon({
-                    iconUrl: require("../../../../assets/img/map/land.png"), // icon 地址
+                    iconUrl: _this.landIcon, // icon 地址
                     iconSize: [25], // icon大小
                     iconAnchor: [12.5, 30]
                 });
@@ -344,7 +345,7 @@
                 let _this = this;
                 // 标记点
                 let myIcon = L.icon({
-                    iconUrl: require("../../../../assets/img/map/land.png"), // icon 地址
+                    iconUrl: _this.landIcon, // icon 地址
                     iconSize: [25] // icon大小
                 });
                 let lng = _this.randomNum(20, 53);
@@ -494,13 +495,13 @@
             _getDistance(pxA, pyA, pxB, pyB) {
                 return Math.sqrt(Math.pow(pxA - pxB, 2) + Math.pow(pyA - pyB, 2));
             },
-            _addMarker(callback) {
+            _addMarker() {
                 if (this._marker) {
                     this.stopPlay();
                     this._marker.remove();
                 }
                 let myIcon = L.icon({
-                    iconUrl: require("../../../../assets/img/map/zbj1.png"),
+                    iconUrl: this.landIcon_new,
                     iconSize: [15],
                     iconAnchor: [10, 30]
                 });

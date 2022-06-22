@@ -3,7 +3,7 @@
 </template>
 
 <script>
-    import 'echarts/map/js/world'; // 引入世界地图
+    import "echarts/map/js/world"; // 引入世界地图
     import worldMap from "../../../../mock/index"; // 引入翻译
 
     export default {
@@ -11,8 +11,8 @@
         data() {
             return {
                 // myChart对象
-                myChart: null,
-            }
+                myChart: null
+            };
         },
         methods: {
             // 绘制地图
@@ -21,23 +21,24 @@
                 let options = {
                     title: {
                         show: true,
-                        text: '模拟世界肺炎效果',
+                        text: "模拟世界肺炎效果",
                         top: 20,
-                        left: 'center', // 值: 'left', 'center', 'right' 同上
+                        left: "center", // 值: 'left', 'center', 'right' 同上
                         textStyle: {
                             fontSize: 24,
-                            fontWeight: 600,
+                            fontWeight: 600
                         }
                     },
                     tooltip: {
                         show: true,
                         formatter: function (e, t, n) {
-                            return e.name + "：" + e.value
+                            let name = !!worldMap.worldMap[e.name] ? worldMap.worldMap[e.name] : e.name;
+                            return name + "：" + (e.value !== undefined && e.value !== null && !isNaN(e.value) ? e.value : 0);
                         }
                     },
                     grid: {
-                        right: '0',
-                        top: '20%',
+                        right: "0",
+                        top: "20%"
                     },
                     visualMap: {
                         show: true,
@@ -86,21 +87,24 @@
                     },
                     series: [
                         {
-                            type: 'map', // 类型
-                            name: '模拟世界肺炎效果',
-                            mapType: 'world', // 地图类型
+                            type: "map", // 类型
+                            name: "模拟世界肺炎效果",
+                            mapType: "world", // 地图类型
                             roam: true,
                             label: {
                                 show: false // 是否显示对应地名
                             },
                             // 地图区域的多边形 图形样式
                             itemStyle: {
-                                areaColor: '#f2d5ad', // 地图区域的颜色 如果设置了visualMap，areaColor属性将不起作用
+                                areaColor: "#f2d5ad", // 地图区域的颜色 如果设置了visualMap，areaColor属性将不起作用
                                 borderWidth: 0.5, // 描边线宽 为 0 时无描边
-                                borderColor: '#000', // 图形的描边颜色 支持的颜色格式同 color，不支持回调函数
-                                borderType: 'solid' // 描边类型，默认为实线，支持 'solid', 'dashed', 'dotted'
+                                borderColor: "#000", // 图形的描边颜色 支持的颜色格式同 color，不支持回调函数
+                                borderType: "solid" // 描边类型，默认为实线，支持 'solid', 'dashed', 'dotted'
                             },
-                            nameMap: worldMap.worldMap
+                            nameMap: worldMap.worldMap,
+                            data: [
+                                {name: "中国", value: 100}
+                            ]
                         }
                     ]
                 };
@@ -110,7 +114,7 @@
         },
         mounted() {
             let _t = this;
-            _t.myChart = _t.$echarts.init(document.getElementById('worldMap'));
+            _t.myChart = _t.$echarts.init(document.getElementById("worldMap"));
             _t.drawMap();
             window.addEventListener("resize", () => {
                 _t.myChart.resize();
@@ -119,7 +123,7 @@
         destroyed() {
             this.myChart = null;
         }
-    }
+    };
 </script>
 
 <style scoped>

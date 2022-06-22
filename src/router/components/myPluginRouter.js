@@ -54,13 +54,7 @@ const routers = [
         path: companyName + "/toJson",
         name: "toJson",
         component: () => import(/* webpackChunkName: "toJson" */ "../../page/pages/my_plugin/toJson/toJson")
-    },
-    // 动态表单
-    // {
-    //     path: companyName + "/dyForm",
-    //     name: "dyForm",
-    //     component: () => import(/* webpackChunkName: "dyForm" */ "../../page/pages/my_plugin/dy_form/dyForm.vue")
-    // }
+    }
 ];
 
 export default routers;

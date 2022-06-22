@@ -3,7 +3,6 @@
  */
 // 引入配置
 import common from "../../config/common";
-import mock from "../../page/pages/game_plugin/mock";
 // 路由前缀
 let companyName = common.companyName;
 
@@ -34,9 +33,9 @@ const routers = [
     },
     // mock
     {
-        path: companyName + "/mock",
-        name: "mock",
-        component: () => import(/* webpackChunkName: "mock" */"../../page/pages/game_plugin/mock")
+        path: companyName + "/mockBox",
+        name: "mockBox",
+        component: () => import(/* webpackChunkName: "mockBox" */"../../page/pages/game_plugin/mockBox")
     },
     // 鼠标点击
     {

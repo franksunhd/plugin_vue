@@ -40,7 +40,6 @@
         created() {
             this.menuList = menu.menuList;
             this.navigatorItem = navigator;
-            console.log(navigator);
         }
     };
 </script>

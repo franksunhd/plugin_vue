@@ -5,7 +5,7 @@
 
 
 <script>
-    import 'echarts-wordcloud'; // 引入词云组件
+    import "echarts-wordcloud"; // 引入词云组件
     import dataList from "../../../../mock/index"; // 引入mock数据
 
     export default {
@@ -16,47 +16,47 @@
                 myChart: null,
                 // 配置项
                 dataOptions: {
-                    backgroundColor: '#fff',
+                    backgroundColor: "#fff",
                     title: {
-                        text: '词云图-各APP文章数量',
-                        x: 'center',
+                        text: "词云图-各APP文章数量",
+                        x: "center",
                         y: 20
                     },
                     tooltip: {
-                        trigger: 'item',
+                        trigger: "item",
                         textStyle: {
                             fontSize: 15
                         },
                         formatter: params => {
-                            const {name, value} = params
-                            return `平台：${name} <br/>数量：${value}`
+                            const {name, value} = params;
+                            return `平台：${name} <br/>数量：${value}`;
                         }
                     },
                     series: [{
-                        type: 'wordCloud',
+                        type: "wordCloud",
                         gridSize: 20,
-                        shape: 'diamond', // circle, diamond
+                        shape: "diamond", // circle, diamond
                         sizeRange: [12, 50],
                         rotationRange: [30, 120], // 旋转角度
                         textStyle: {
                             normal: {
                                 color: () => {
-                                    return 'rgb(' + [
+                                    return "rgb(" + [
                                         Math.round(Math.random() * 160),
                                         Math.round(Math.random() * 160),
                                         Math.round(Math.random() * 160)
-                                    ].join(',') + ')';
+                                    ].join(",") + ")";
                                 }
                             },
                             emphasis: {
                                 shadowBlur: 10,
-                                shadowColor: '#222'
+                                shadowColor: "#222"
                             }
                         },
                         data: dataList.worldCloud
                     }]
                 }
-            }
+            };
         },
         methods: {
             // 绘图
@@ -66,7 +66,7 @@
         },
         mounted() {
             let _t = this;
-            _t.myChart = _t.$echarts.init(document.getElementById('wordCloud'));
+            _t.myChart = _t.$echarts.init(document.getElementById("wordCloud"));
             _t.drawWarp();
             _t.myChart.setOption(_t.dataOptions);
 
@@ -77,7 +77,7 @@
         destroyed() {
             this.myChart = null;
         }
-    }
+    };
 </script>
 
 <style scoped>

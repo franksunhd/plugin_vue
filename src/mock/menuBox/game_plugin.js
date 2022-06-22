@@ -31,8 +31,8 @@ const menuList = [
         isSubMenu: false
     },
     {
-        path: companyName + "/mock",
-        name: "mock",
+        path: companyName + "/mockBox",
+        name: "生成随机数",
         icon: "el-icon-bottom-right",
         isSubMenu: false
     },
