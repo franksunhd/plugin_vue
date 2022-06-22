@@ -111,9 +111,15 @@ import vuePdf from "../page/pages/pc_plugin/vuePdf";
 import pageOne from "../page/pages/otherPage/pageOne";
 import pageTwo from "../page/pages/otherPage/pageTwo";
 // 相册
-import viewerjs from "../page/pages/pc_plugin/viewerjs";
+import viewerJs from "../page/pages/pc_plugin/viewerJs";
 // leaflet 地图
 import leaflet from "../page/pages/pc_plugin/leafletMap/leaflet";
+/*------ elementUI 部分 start -----*/
+// 表单
+import elForm from "../page/pages/pc_plugin/ElementUI/elForm";
+
+/*------ elementUI 部分 end -----*/
+
 
 let companyName = common.companyName;
 
@@ -174,9 +180,11 @@ export const routers = [
             {path: "/" + companyName + "/drawCircle", name: "drawCircle", component: drawCircle},
             {path: "/" + companyName + "/vuePdf", name: "vuePdf", component: vuePdf},
             {path: "/" + companyName + "/pageOne", name: "pageOne", component: pageOne},
-            {path: "/" + companyName + "/viewerjs", name: "viewerjs", component: viewerjs},
+            {path: "/" + companyName + "/viewerJs", name: "viewerJs", component: viewerJs},
             {path: "/" + companyName + "/pageTwo", name: "pageTwo", component: pageTwo},
-            {path: "/" + companyName + "/leaflet", name: "leaflet", component: leaflet}
+            {path: "/" + companyName + "/leaflet", name: "leaflet", component: leaflet},
+            {path: "/" + companyName + "/elFormBox", name: "elForm", component: elForm}
+
         ]
     },
     {path: "/loveTeeth", name: "loveTeeth", component: loveTeeth},

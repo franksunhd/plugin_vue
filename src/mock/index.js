@@ -1,6 +1,6 @@
-// 图片地址
+// 相册图片地址
 import imgUrl from "./imgUrl";
-// 导航
+// 左侧导航
 import menuList from "./menu";
 // 中国地图
 import chinaMap from "./chinaMap";
@@ -12,9 +12,9 @@ import worldCloud from "./wordCloud";
 import sunMap from "./sunMap";
 // 转json
 import toJSON from "./toJSON";
-//
+// 疫情海螺图
 import conchMap from "./conchMap";
-// Icon
+// vanT 组件 Icon
 import IconList from "./Icon";
 
 export default {

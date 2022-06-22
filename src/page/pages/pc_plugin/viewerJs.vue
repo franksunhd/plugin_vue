@@ -15,7 +15,7 @@
     import imgData from "../../../mock/index";
 
     export default {
-        name: "viewerjs",
+        name: "viewerJs",
         data() {
             return {
                 imgArr: imgData.imgUrl

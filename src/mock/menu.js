@@ -71,7 +71,7 @@ export default [
                 isSubMenu: false
             },
             {
-                path: "/" + common.companyName + "/viewerjs",
+                path: "/" + common.companyName + "/viewerJs",
                 name: "相册",
                 icon: "el-icon-bottom-right",
                 isSubMenu: false
@@ -82,6 +82,21 @@ export default [
                 icon: "el-icon-bottom-right",
                 isSubMenu: false
             }
+        ]
+    },
+    // ElementUI
+    {
+        path: "/" + common.companyName + "/element_plugin",
+        name: "ElementUI",
+        icon: "el-icon-s-help",
+        isSubMenu: true,
+        children: [
+            {
+                path: "/" + common.companyName + "/elFormBox",
+                name: "form表单",
+                icon: "el-icon-bottom-right",
+                isSubMenu: false
+            },
         ]
     },
     // 移动端插件

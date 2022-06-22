@@ -1,5 +1,5 @@
 export default [
-    {name: "美国", Confirmed: 85840, Dead: 1296},
+    {name: "美国", Confirmed: 858401, Dead: 1296},
     {name: "意大利", Confirmed: 80589, Dead: 8215},
     {name: "西班牙", Confirmed: 57786, Dead: 4365},
     {name: "德国", Confirmed: 43938, Dead: 26},
