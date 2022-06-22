@@ -7,12 +7,13 @@ import common from "../config/common";
 let companyName = common.companyName;
 
 const routers = [
+    // 其他项一
     {
         path: companyName + "/pageOne",
         name: "pageOne",
         component: () => import(/* webpackChunkName: "pageOne" */ "../page/pages/otherPage/pageOne")
     },
-
+    // 分屏
     {
         path: companyName + "/pageTwo",
         name: "pageTwo",

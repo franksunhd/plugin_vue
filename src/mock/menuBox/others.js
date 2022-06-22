@@ -14,7 +14,7 @@ const menuList = [
     },
     {
         path: companyName + "/pageTwo",
-        name: "其他项二",
+        name: "分屏",
         icon: "el-icon-bottom-right",
         isSubMenu: false
     }
