@@ -21,39 +21,39 @@
 </template>
 
 <script>
-    import ClipboardJS from 'clipboard';
+    import ClipboardJS from "clipboard";
 
     export default {
-        name: 'clipboard',
-        data () {
+        name: "clipboard",
+        data() {
             return {
                 formItem: {
-                    origin: 'https://www.baidu.com',
-                    value: ''
+                    origin: "https://www.baidu.com",
+                    value: ""
                 },
-                clipboard: null,
+                clipboard: null
             };
         },
-        created () {
+        created() {
             let _t = this;
-            _t.clipboard = new ClipboardJS('.btn');
-            _t.clipboard.on('success', function (e) {
+            _t.clipboard = new ClipboardJS(".btn");
+            _t.clipboard.on("success", function (e) {
                 // e.action  e.text   e.trigger
-                if (e.action === 'copy') {
+                if (e.action === "copy") {
                     _t.$message({
-                        type: 'success',
-                        message: '复制成功'
+                        type: "success",
+                        message: "复制成功"
                     });
                     _t.value = e.text.trim();
                 }
                 e.clearSelection();
             });
 
-            _t.clipboard.on('error', function (e) {
+            _t.clipboard.on("error", function (e) {
                 // e.action   e.trigger
             });
         },
-        destroyed () {
+        destroyed() {
             let _t = this;
             _t.clipboard.destroy();
         }

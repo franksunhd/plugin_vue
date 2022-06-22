@@ -1,5 +1,5 @@
 // 路由中嵌套的级别名称
-let companyName = "yUser";
+let companyName = "/yUser";
 
 // 生成随机数的方法
 function randomNum(Min, Max) {

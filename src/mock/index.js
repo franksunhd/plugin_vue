@@ -1,7 +1,7 @@
 // 相册图片地址
 import imgUrl from "./imgUrl";
 // 左侧导航
-import menuList from "./menu";
+import menuList from "./menuBox/menu";
 // 中国地图
 import chinaMap from "./chinaMap";
 // 世界地图

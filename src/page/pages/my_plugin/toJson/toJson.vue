@@ -34,7 +34,7 @@
 </template>
 
 <script>
-    import jsonData from "../../../../mock/index";
+    import jsonData from "../../../../mock";
 
     export default {
         name: "toJson",

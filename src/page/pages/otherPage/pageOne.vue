@@ -1,8 +1,12 @@
 <template>
     <div class="pageOneBox">
-        <p>{{str}}</p>
-        <p>{{str.replace(/(.{4}).*/, "$1*")}}</p>
-        <p>{{compareVersion("2.0.2.1","2.0.8")}}</p>
+        <p>原始字符串：{{str}}</p>
+        <p>正则字符串：{{str.replace(/(.{4}).*/, "$1***")}}</p>
+        <p><br></p>
+        <p>比较版本号</p>
+        <p>num1：{{num1}} </p>
+        <p>num2：{{num2}}</p>
+        <p>num1 < num2 ：{{compareVersion(num1,num2)}}</p>
     </div>
 </template>
 
@@ -11,7 +15,9 @@
         name: "pageOne",
         data() {
             return {
-                str: "你好你都唔到呢哦对"
+                str: "你好你都唔到呢哦对",
+                num1: "2.0.2.1",
+                num2: "2.0.8"
             };
         },
         methods: {
@@ -40,5 +46,9 @@
 <style scoped lang="less">
     .pageOneBox {
         font-size: 20px !important;
+
+        p {
+            font-size: 30px;
+        }
     }
 </style>

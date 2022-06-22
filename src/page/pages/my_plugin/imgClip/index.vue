@@ -42,7 +42,7 @@
 </template>
 
 <script>
-    import SelectBox from './SelectBox';
+    import SelectBox from './selectBox';
 
     export default {
         name: "index",

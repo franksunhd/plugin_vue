@@ -51,7 +51,7 @@
                 loadedRatio: 0,
                 curPageNum: 0,
                 isLoading: false,
-                scale: 100, //放大系数
+                scale: 100 // 放大系数
             };
         },
         methods: {
