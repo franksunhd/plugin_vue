@@ -1,26 +1,26 @@
 import common from "../config/common";
 // PC插件部分
-import pcPluginRouter from "./pcPluginRouter";
+import pcPluginRouter from "./components/pcPluginRouter";
 // elementUI 部分
-import elementUIRouter from "./elementUIRouter";
+import elementUIRouter from "./components/elementUIRouter";
 // 移动端
-import mobilePluginRouter from "./mobilePluginRouter";
+import mobilePluginRouter from "./components/mobilePluginRouter";
 // 封装组件
-import myPluginRouter from "./myPluginRouter";
+import myPluginRouter from "./components/myPluginRouter";
 // 全局方法组件
-import globalPluginRouter from "./globalPluginRouter";
+import globalPluginRouter from "./components/globalPluginRouter";
 // 地图集合组件
-import mapPluginRouter from "./mapPluginRouter";
+import mapPluginRouter from "./components/mapPluginRouter";
 // 抽奖集合组件
-import luckPluginRouter from "./luckPluginRouter";
+import luckPluginRouter from "./components/luckPluginRouter";
 // 游戏场
-import gamePluginRouter from "./gamePluginRouter";
+import gamePluginRouter from "./components/gamePluginRouter";
 // 图表集合
-import eChartsRouter from "./eChartsRouter";
+import eChartsRouter from "./components/eChartsRouter";
 // 其他组件
-import otherPageRouter from "./otherPageRouter";
+import otherPageRouter from "./components/otherPageRouter";
 // C端页面
-import cPageRouter from "./cPageRouter";
+import cPageRouter from "./components/cPageRouter";
 
 let companyName = common.companyName;
 

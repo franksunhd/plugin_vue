@@ -2,7 +2,7 @@
  * 其他模块 页面的路由配置
  */
 // 引入配置
-import common from "../config/common";
+import common from "../../config/common";
 // 路由前缀
 let companyName = common.companyName;
 
@@ -11,13 +11,13 @@ const routers = [
     {
         path: companyName + "/pageOne",
         name: "pageOne",
-        component: () => import(/* webpackChunkName: "pageOne" */ "../page/pages/otherPage/pageOne")
+        component: () => import(/* webpackChunkName: "pageOne" */ "../../page/pages/otherPage/pageOne")
     },
     // 分屏
     {
         path: companyName + "/pageTwo",
         name: "pageTwo",
-        component: () => import(/* webpackChunkName: "pageOne" */ "../page/pages/otherPage/pageTwo")
+        component: () => import(/* webpackChunkName: "pageOne" */ "../../page/pages/otherPage/pageTwo")
     }
 ];
 
