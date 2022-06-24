@@ -33,7 +33,7 @@
     import mock from "./mock";
 
     export default {
-        name: "index",
+        name: "mockJS",
         data() {
             return {
                 arr: {

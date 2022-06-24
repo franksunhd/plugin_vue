@@ -11,38 +11,38 @@
 
 <script>
     export default {
-        name: 'index',
-        data () {
+        name: "index",
+        data() {
             return {
-                msg: '',
-                cookies: ''
+                msg: "",
+                cookies: ""
             };
         },
         methods: {
             // 设置cookies
-            set () {
+            set() {
                 let _t = this;
-                _t.$cookies.setItem('name', 'frank sun');
-                _t.msg = '设置成功';
+                _t.$cookies.setItem("name", "frank sun");
+                _t.msg = "设置成功";
             },
             // 获取cookies
-            get () {
+            get() {
                 let _t = this;
-                _t.cookies = _t.$cookies.getItem('name');
+                _t.cookies = _t.$cookies.getItem("name");
                 if (_t.cookies) {
-                    _t.msg = '获取成功';
+                    _t.msg = "获取成功";
                 } else {
-                    _t.msg = '获取失败';
+                    _t.msg = "获取失败";
                 }
             },
             // 删除cookies
-            del () {
+            del() {
                 let _t = this;
-                _t.$cookies.removeItem('name');
-                _t.cookies = '';
-                _t.msg = '删除成功';
+                _t.$cookies.removeItem("name");
+                _t.cookies = "";
+                _t.msg = "删除成功";
             }
-        },
+        }
     };
 </script>
 

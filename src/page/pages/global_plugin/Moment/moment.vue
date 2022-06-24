@@ -38,11 +38,11 @@
 </template>
 
 <script>
-    import moment from 'moment';
+    import moment from "moment";
 
     export default {
-        name: 'moment',
-        data () {
+        name: "moment",
+        data() {
             return {
                 // 当前时间 时间戳
                 nowTime: null,
@@ -51,7 +51,7 @@
                 // 相对时间
                 relative: {
                     startHour: null,
-                    endHour: null,
+                    endHour: null
                 },
                 // 日历时间
                 calendar: {
@@ -64,42 +64,42 @@
                     g: null,
                     h: null,
                     i: null,
-                    j: null,
+                    j: null
                 }
             };
         },
         methods: {
             // 设置语言
-            setLanguage (val) {
-                if (val !== undefined && val !== null && val !== '') {
+            setLanguage(val) {
+                if (val !== undefined && val !== null && val !== "") {
                     moment.locale(val);
                 }
             }
         },
-        created () {
+        created() {
             let _t = this;
             _t.timer = setInterval(function () {
                 // 实时更新现在时间
                 _t.nowTime = new Date().getTime();
 
                 // 计算相对时间
-                _t.relative.startHour = moment().startOf('hour').fromNow();
-                _t.relative.endHour = moment().endOf('hour').fromNow();
+                _t.relative.startHour = moment().startOf("hour").fromNow();
+                _t.relative.endHour = moment().endOf("hour").fromNow();
 
                 // 日历时间
-                _t.calendar.a = moment().subtract(1, 'days').calendar();  // 昨天10:53
-                _t.calendar.b = moment().subtract(2, 'days').calendar();  // 往前推2天 10:53
-                _t.calendar.c = moment().subtract(3, 'days').calendar();  // 往前推3天 10:53
-                _t.calendar.d = moment().subtract(6, 'days').calendar();  // 往前推6天 10:53
-                _t.calendar.e = moment().subtract(7, 'days').calendar();  // 往前推7天 10:53
-                _t.calendar.f = moment().add(1, 'days').calendar();       // 明天10:53
-                _t.calendar.g = moment().add(2, 'days').calendar();       // 往后推2天 10:53
-                _t.calendar.h = moment().add(3, 'days').calendar();       // 往后推3天 10:53
-                _t.calendar.i = moment().add(6, 'days').calendar();       // 往后推6天 10:53
-                _t.calendar.j = moment().add(7, 'days').calendar();       // 往后推7天 10:53
+                _t.calendar.a = moment().subtract(1, "days").calendar();  // 昨天10:53
+                _t.calendar.b = moment().subtract(2, "days").calendar();  // 往前推2天 10:53
+                _t.calendar.c = moment().subtract(3, "days").calendar();  // 往前推3天 10:53
+                _t.calendar.d = moment().subtract(6, "days").calendar();  // 往前推6天 10:53
+                _t.calendar.e = moment().subtract(7, "days").calendar();  // 往前推7天 10:53
+                _t.calendar.f = moment().add(1, "days").calendar();       // 明天10:53
+                _t.calendar.g = moment().add(2, "days").calendar();       // 往后推2天 10:53
+                _t.calendar.h = moment().add(3, "days").calendar();       // 往后推3天 10:53
+                _t.calendar.i = moment().add(6, "days").calendar();       // 往后推6天 10:53
+                _t.calendar.j = moment().add(7, "days").calendar();       // 往后推7天 10:53
             }, 1000);
         },
-        destroyed () {
+        destroyed() {
             let _t = this;
             _t.timer = null;
         }

@@ -42,7 +42,7 @@ const routers = [
         path: companyName + "/crypto",
         name: "Crypto",
         component: () => import(/* webpackChunkName: "Crypto" */"../../page/pages/global_plugin/crypto/index")
-    },
+    }
 ];
 
 export default routers;

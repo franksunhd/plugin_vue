@@ -6,12 +6,12 @@
 
 <script>
     export default {
-        name: 'childBus',
+        name: "childBus",
         methods: {
             // 发送信息
-            sendMessage () {
+            sendMessage() {
                 let _t = this;
-                _t.$bus.emit('getMenu', true);
+                _t.$bus.emit("getMenu", true);
             }
         }
     };

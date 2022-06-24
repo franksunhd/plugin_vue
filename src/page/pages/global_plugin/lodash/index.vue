@@ -13,20 +13,19 @@
 
 <script>
 
-
     export default {
         name: "index",
         data() {
             return {
-                arrA: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, false, null, undefined, NaN, ''],
+                arrA: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, false, null, undefined, NaN, ""],
                 arrB: [2, 7, 10, 13],
                 arrC: [],
                 arrD: [],
                 arrE: [],
                 arrF: [],
                 arrG: [],
-                arrH: [],
-            }
+                arrH: []
+            };
         },
         methods: {
             getData() {
@@ -44,7 +43,7 @@
             let _t = this;
             _t.getData();
         }
-    }
+    };
 </script>
 
 <style scoped>
