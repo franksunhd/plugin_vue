@@ -2,7 +2,7 @@ import common from "../config/common";
 // PC插件部分
 import pcPluginRouter from "./components/pcPluginRouter";
 // elementUI 部分
-// import elementUIRouter from "./components/elementUIRouter";
+import elementUIRouter from "./components/elementUIRouter";
 // 移动端
 // import mobilePluginRouter from "./components/mobilePluginRouter";
 // 封装组件
@@ -40,7 +40,7 @@ export const routers = [
                 component: () => import(/* webpackChunkName: "Home" */"../page/pages/Home")
             },
             ...pcPluginRouter, // PC插件
-            // ...elementUIRouter, // elementUI 部分
+            ...elementUIRouter, // elementUI 部分
             // ...mobilePluginRouter, // 移动端组件
             // ...myPluginRouter, // 封装组件
             // ...globalPluginRouter, // 全局方法组件

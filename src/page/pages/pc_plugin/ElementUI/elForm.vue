@@ -1,7 +1,7 @@
 <template>
     <div class="elFormBox">
         <el-form :model="dynamicValidateForm" inline ref="dynamicValidateForm" label-width="70px"
-                 size="small" class="demo-dynamic">
+                 class="demo-dynamic">
             <el-row>
                 <el-col :span="12">
                     <el-form-item
@@ -34,7 +34,7 @@
                             <el-input v-model="domain.value" type="text" style="width: 200px;"/>
                         </el-form-item>
                         <el-form-item v-if="index === 0" label-width="0">
-                            <el-button type="success" @click.prevent="addDomain">
+                            <el-button size="mini" type="success" @click.prevent="addDomain">
                                 新增
                             </el-button>
                         </el-form-item>

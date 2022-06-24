@@ -4,7 +4,11 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "pro-build": "vue-cli-service build --mode production",
+    "beta": "vue-cli-service build --mode beta",
+    "gray-serve": "vue-cli-service serve --mode gray",
+    "gray-build": "vue-cli-service build --mode gray"
   },
   "dependencies": {
     "@wangeditor/editor": "^5.1.1",

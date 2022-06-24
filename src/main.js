@@ -11,7 +11,7 @@ import "./assets/css/common.css";
 // 引入ElementUI
 import "./config/elementAndI18n";
 // 引入国际化语言
-import i18n from "./lang/index";
+import i18n from "./lang/i18n";
 // 引入vuex
 import store from "./store/index";
 // 引入vue的markdown编辑器
