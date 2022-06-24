@@ -11,20 +11,20 @@
                 <span class="fontSize">{{!!nowTime.sec ? nowTime.sec : "--"}}秒</span>
             </div>
             <div>
-                <el-select size="small" class="languageSelect marginRight20" v-model="defaultTheme"
+                <el-select class="languageSelect marginRight20" v-model="defaultTheme"
                            @change="changeTheme">
                     <el-option
-                        v-for="(item,index) in themeList"
-                        :key="index"
-                        :label="item.name"
-                        :value="item.code"/>
+                            v-for="(item,index) in themeList"
+                            :key="index"
+                            :label="item.name"
+                            :value="item.code"/>
                 </el-select>
-                <el-select size="small" class="languageSelect" v-model="defaultLang" @change="changeLang">
+                <el-select class="languageSelect" v-model="defaultLang" @change="changeLang">
                     <el-option
-                        v-for="(item,index) in languageList"
-                        :key="index"
-                        :label="item.name"
-                        :value="item.code"/>
+                            v-for="(item,index) in languageList"
+                            :key="index"
+                            :label="item.name"
+                            :value="item.code"/>
                 </el-select>
             </div>
         </div>

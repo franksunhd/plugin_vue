@@ -1,46 +1,46 @@
 <template>
     <div class="pdfBox">
-        <pdf ref="pdf"
-             :src="url"
-             :page="pageNum"
-             :rotate="pageRotate"
-             @click="nextPage"
-             @progress="progress($event)"
-             @page-loaded="pageLoaded($event)"
-             @num-pages="pageTotalNum=$event"
-             @error="pdfError($event)"
-             @link-clicked="page = $event"/>
-        <div class="pdf-tab">
-            <el-button type="default" @click.stop="prePage">
-                上一页
-            </el-button>
-            <el-button type="primary" @click.stop="nextPage">
-                下一页
-            </el-button>
-            <el-button type="warning" @click.stop="clock">
-                顺时针
-            </el-button>
-            <el-button type="default" @click.stop="counterClock">
-                逆时针
-            </el-button>
-            <el-button type="primary" @click="scaleD">
-                放大
-            </el-button>
-            <el-button class="default" @click="scaleX">
-                缩小
-            </el-button>
-            <div>{{ pageNum }}/{{ pageTotalNum }}</div>
-            <div>加载: {{ curPageNum }}</div>
-        </div>
+<!--        <pdf ref="pdf"-->
+<!--             :src="url"-->
+<!--             :page="pageNum"-->
+<!--             :rotate="pageRotate"-->
+<!--             @click="nextPage"-->
+<!--             @progress="progress($event)"-->
+<!--             @page-loaded="pageLoaded($event)"-->
+<!--             @num-pages="pageTotalNum=$event"-->
+<!--             @error="pdfError($event)"-->
+<!--             @link-clicked="page = $event"/>-->
+<!--        <div class="pdf-tab">-->
+<!--            <el-button type="default" @click.stop="prePage">-->
+<!--                上一页-->
+<!--            </el-button>-->
+<!--            <el-button type="primary" @click.stop="nextPage">-->
+<!--                下一页-->
+<!--            </el-button>-->
+<!--            <el-button type="warning" @click.stop="clock">-->
+<!--                顺时针-->
+<!--            </el-button>-->
+<!--            <el-button type="default" @click.stop="counterClock">-->
+<!--                逆时针-->
+<!--            </el-button>-->
+<!--            <el-button type="primary" @click="scaleD">-->
+<!--                放大-->
+<!--            </el-button>-->
+<!--            <el-button class="default" @click="scaleX">-->
+<!--                缩小-->
+<!--            </el-button>-->
+<!--            <div>{{ pageNum }}/{{ pageTotalNum }}</div>-->
+<!--            <div>加载: {{ curPageNum }}</div>-->
+<!--        </div>-->
     </div>
 </template>
 
 <script>
-    import pdf from "vue-pdf";
+    // import pdf from "vue-pdf";
 
     export default {
         name: "vuePdf",
-        components: {pdf},
+        // components: {pdf},
         data() {
             return {
                 // 在线转换地址: https://www.aconvert.com/cn/pdf/
@@ -106,7 +106,7 @@
             }
         },
         mounted() {
-            this.isLoading = true;
+            // this.isLoading = true;
         }
     };
 </script>

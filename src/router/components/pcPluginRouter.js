@@ -57,10 +57,10 @@ const routers = [
     },
     // vue-pdf 预览
     {
-        path: companyName + "/vuePdf",
-        name: "vuePdf",
-        component: () => import(/* webpackChunkName: "vuePdf" */"../../page/pages/pc_plugin/vuePdf")
-    },
+    path: companyName + "/vuePdf",
+    name: "vuePdf",
+    component: () => import(/* webpackChunkName: "vuePdf" */"../../page/pages/pc_plugin/vuePdf")
+},
     // 相册
     {
         path: companyName + "/viewerJs",

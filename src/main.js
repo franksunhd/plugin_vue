@@ -1,7 +1,5 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from "vue";
-import App from "./App";
+import App from "./App.vue";
 import router from "./router";
 // 兼容性
 import "babel-polyfill";
@@ -51,7 +49,7 @@ import "vuescroll/dist/vuescroll.css";
 // 打字机效果
 import Typewriter from "vue-typewriter";
 // echarts
-import echarts from "echarts";
+import * as echarts from "echarts";
 // 引入api
 import api from "./api/index";
 // 高德地图
@@ -62,9 +60,9 @@ import "./config/vantJS";
 import "./config/VueProgressBar";
 // 引入过滤函数
 import "./config/formatNum";
+
 // 公用方法
 import commonJS from "./config/common";
-
 
 Vue.use(vueBus);
 Vue.use(myButton);
@@ -88,12 +86,11 @@ Object.keys(custom).forEach(key => {
     Vue.filter(key, custom[key]);
 });
 
-/* eslint-disable no-new */
 new Vue({
-    el: "#app",
     router,
+    store,
     i18n,
-    store: store,
-    components: {App},
-    template: "<App/>"
-});
+    render: function (h) {
+        return h(App);
+    }
+}).$mount("#app");

@@ -21,7 +21,9 @@
 </template>
 
 <script>
-    import E from "wangEditor";
+    // 如果项目启动报错，需要安装wangEditor,命令在README.md中
+    import {createEditor, createToolbar} from "@wangeditor/editor";
+    import "@wangeditor/editor/dist/css/style.css";
     import Quill from "quill";
     // quill图片可拖拽上传
     // import { ImageDrop } from 'quill-image-drop-module';
@@ -59,9 +61,9 @@
         },
         mounted() {
             let _t = this;
-            let editor = new E("#wangEditor");
-            _t.editor = editor;
-            _t.editor.create();
+            // let editor = new E("#wangEditor");
+            // _t.editor = editor;
+            // _t.editor.create();
         }
     };
 </script>

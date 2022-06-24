@@ -29,6 +29,17 @@
             window.addEventListener("beforeunload", () => {
                 sessionStorage.setItem("pluginVueStore", JSON.stringify(this.$store.state));
             });
+        },
+        mounted() {
+            const baseSize = 12;
+            function setRem() {
+                const scale = document.documentElement.clientWidth / 375;
+                document.documentElement.style.fontSize = baseSize * Math.min(scale, 2) + "px";
+            }
+            setRem();
+            window.addEventListener("resize", () => {
+                setRem();
+            });
         }
     };
 </script>
