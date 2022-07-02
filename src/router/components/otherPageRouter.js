@@ -17,7 +17,7 @@ const routers = [
     {
         path: companyName + "/pageTwo",
         name: "pageTwo",
-        component: () => import(/* webpackChunkName: "pageOne" */ "../../page/pages/otherPage/pageTwo")
+        component: () => import(/* webpackChunkName: "pageTwo" */ "../../page/pages/otherPage/pageTwo")
     }
 ];
 
