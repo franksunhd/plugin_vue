@@ -18,6 +18,12 @@ const routers = [
         path: companyName + "/pageTwo",
         name: "pageTwo",
         component: () => import(/* webpackChunkName: "pageTwo" */ "../../page/pages/otherPage/pageTwo")
+    },
+    // JSON数据解析
+    {
+        path: companyName + "/pageJSON",
+        name: "pageJSON",
+        component: () => import(/* webpackChunkName: "pageJSON" */ "../../page/pages/otherPage/pageJSON")
     }
 ];
 

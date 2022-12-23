@@ -17,6 +17,12 @@ const menuList = [
         name: "分屏",
         icon: "el-icon-bottom-right",
         isSubMenu: false
+    },
+    {
+        path: companyName + "/pageJSON",
+        name: "JSON解析",
+        icon: "el-icon-bottom-right",
+        isSubMenu: false
     }
 ];
 export default menuList;
