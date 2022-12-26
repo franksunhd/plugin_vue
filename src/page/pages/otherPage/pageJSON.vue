@@ -21,13 +21,15 @@
 <script>
     import mockJSON from "../../../mock/mockJSON.json";
     import mockJSONArr from "../../../mock/mockJSONArr.json";
+    import mockJSONData from "../../../mock/mockJSONData.json";
 
     export default {
         name: "pageJSON",
         data() {
             return {
                 // textarea: JSON.stringify(mockJSON),
-                textarea: JSON.stringify(mockJSONArr),
+                // textarea: JSON.stringify(mockJSONArr),
+                textarea: JSON.stringify(mockJSONData),
                 tableList: [],
                 returnKey: "request",
                 ObjType: {
