@@ -23,6 +23,12 @@ const menuList = [
         name: "JSON解析",
         icon: "el-icon-bottom-right",
         isSubMenu: false
-    }
+    },
+    {
+        path: companyName + "/pageThree",
+        name: "花费",
+        icon: "el-icon-bottom-right",
+        isSubMenu: false
+    },
 ];
 export default menuList;

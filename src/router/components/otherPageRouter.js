@@ -24,7 +24,13 @@ const routers = [
         path: companyName + "/pageJSON",
         name: "pageJSON",
         component: () => import(/* webpackChunkName: "pageJSON" */ "../../page/pages/otherPage/pageJSON")
-    }
+    },
+    // 花费
+    {
+        path: companyName + "/pageThree",
+        name: "pageThree",
+        component: () => import(/* webpackChunkName: "pageTwo" */ "../../page/pages/otherPage/pageThree")
+    },
 ];
 
 export default routers;
