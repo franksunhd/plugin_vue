@@ -48,7 +48,7 @@
                 dataList.push({date: item, money: 1.34, status: "gj"}); // 永丰--科学园(公交)
                 dataList.push({date: item, money: 0, status: "dt_1"}); // 科学园--南邵(地铁)
             });
-            let initMoney_1 = 5, initMoney_2 = 4;
+            let initMoney_1 = 5, initMoney_2 = 4, sumGj = 0;
             dataList.forEach((item) => {
                 if (item.status === "dt_1" || item.status === "dt_2") {
                     if (sumMoney < 100) {
@@ -58,9 +58,12 @@
                     } else {
                         item.money = ((item.status === "dt_1" ? initMoney_1 : initMoney_2) * 0.5);
                     }
+                    sumMoney += item.money;
+                } else {
+                    sumGj += item.money;
                 }
-                sumMoney += item.money;
             });
+            sumMoney += sumGj;
             sumMoney = Math.floor(sumMoney * 100) / 100;
             this.sumMoney = sumMoney;
             this.dataList = dataList;
