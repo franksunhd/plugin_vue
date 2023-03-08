@@ -1,6 +1,6 @@
 import axios from "axios";
 
-let root = "https://scrmsit.taikang.com/api/";
+let root = "";
 
 function apiAxios(method, url, params, success) {
     axios({
