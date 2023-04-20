@@ -35,6 +35,12 @@ const menuList = [
         name: "vue自定义滚动条",
         icon: "el-icon-bottom-right",
         isSubMenu: false
+    },
+    {
+        path: companyName + "/getIP",
+        name: "获取IP地址",
+        icon: "el-icon-bottom-right",
+        isSubMenu: false
     }
 ];
 export default menuList;

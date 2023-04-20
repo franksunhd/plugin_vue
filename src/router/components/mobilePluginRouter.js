@@ -36,6 +36,12 @@ const routers = [
         path: companyName + "/vueScroll",
         name: "vueScroll",
         component: () => import( /* webpackChunkName: "vueScroll" */ "../../page/pages/mobile_plugin/vueScroll/index")
+    },
+    // getIP
+    {
+        path: companyName + "/getIP",
+        name: "getIP",
+        component: () => import(/* webpackChunkName: "getIP" */"../../page/pages/mobile_plugin/getIP/getIP")
     }
 ];
 

@@ -29,8 +29,8 @@ const routers = [
     {
         path: companyName + "/pageThree",
         name: "pageThree",
-        component: () => import(/* webpackChunkName: "pageTwo" */ "../../page/pages/otherPage/pageThree")
-    },
+        component: () => import(/* webpackChunkName: "pageThree" */ "../../page/pages/otherPage/pageThree")
+    }
 ];
 
 export default routers;
