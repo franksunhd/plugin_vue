@@ -30,7 +30,13 @@ const routers = [
         path: companyName + "/pageThree",
         name: "pageThree",
         component: () => import(/* webpackChunkName: "pageThree" */ "../../page/pages/otherPage/pageThree")
-    }
+    },
+    // 链接生成二维码
+    {
+        path: companyName + "/codeImg",
+        name: "codeImg",
+        component: () => import(/* webpackChunkName: "codeImg" */ "../../page/pages/otherPage/codeImg")
+    },
 ];
 
 export default routers;

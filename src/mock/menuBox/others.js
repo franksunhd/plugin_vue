@@ -30,5 +30,11 @@ const menuList = [
         icon: "el-icon-bottom-right",
         isSubMenu: false
     },
+    {
+        path: companyName + "/codeImg",
+        name: "链接生成二维码",
+        icon: "el-icon-bottom-right",
+        isSubMenu: false
+    },
 ];
 export default menuList;
