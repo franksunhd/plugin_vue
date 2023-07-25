@@ -110,6 +110,23 @@
                                 text: "被保人分享U25-信创"
                             }
                         ]
+                    },
+                    {
+                        label: "个养专区",
+                        children: [
+                            {
+                                label: "个养专区--test",
+                                value: "http://o2stest.e-chinalife.com:7007/o2s/o2s-mall-web/pages/endowmentSection/Index?linkCode=0001004000080000051"
+                            },
+                            {
+                                label: "个养专区--testWC",
+                                value: "http://o2stest.e-chinalife.com:7008/o2s/o2s-mall-web/pages/endowmentSection/Index?linkCode=0001013600241000509"
+                            },
+                            {
+                                label: "个养专区--Blue",
+                                value: "http://o2stest.e-chinalife.com:7018/o2s/o2s-mall-web/pages/endowmentSection/Index?linkCode=0001000100020000034"
+                            }
+                        ]
                     }
                 ],
                 qrCodeBox: null
