@@ -37,6 +37,12 @@ const routers = [
         name: "codeImg",
         component: () => import(/* webpackChunkName: "codeImg" */ "../../page/pages/otherPage/codeImg")
     },
+    // 鼠标全屏移动
+    {
+        path: companyName + "/mouseScreen",
+        name: "mouseScreen",
+        component: () => import(/* webpackChunkName: "mouseScreen" */ "../../page/pages/otherPage/mouseScreen")
+    },
 ];
 
 export default routers;

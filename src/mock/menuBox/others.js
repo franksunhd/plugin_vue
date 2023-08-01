@@ -36,5 +36,11 @@ const menuList = [
         icon: "el-icon-bottom-right",
         isSubMenu: false
     },
+    {
+        path: companyName + "/mouseScreen",
+        name: "鼠标全屏",
+        icon: "el-icon-bottom-right",
+        isSubMenu: false
+    },
 ];
 export default menuList;
