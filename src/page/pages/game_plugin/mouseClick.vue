@@ -38,7 +38,7 @@
                 });
                 $("#mouseClickBox").append($i);
                 $i.animate({
-                    "top": y - 180,
+                    "top": y - 180, // 180 为消失距离
                     "opacity": 0
                 }, 1500, function () {
                     $i.remove();

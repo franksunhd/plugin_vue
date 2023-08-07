@@ -34,6 +34,11 @@
                                 label: "个人养老险(1575)--信创环境",
                                 value: "http://o2stest.e-chinalife.com:7008/o2s/o2s-longterm-web/homeIndex?productCode=P000000101575&linkCode=0001010400230000419&uuid=BE57D045ECB044ACA08BD6331F3F6E05&sourceEcno=&sourceOpenid=&ecno=0304865465467934&openid=1998220304865465467&outerNet=1&ecssInfo=#wechat_redirect",
                                 text: "个养信创"
+                            },
+                            {
+                                label: "个人养老险(1575)--TEST环境",
+                                value: "http://o2stest.e-chinalife.com:7007/o2s/o2s-longterm-web/homeIndex?productCode=P000000101575&linkCode=0001006500130000088&uuid=BE57D045ECB044ACA08BD6331F3F6E05&sourceEcno=&sourceOpenid=&ecno=0304865465467934&openid=1998220304865465461&outerNet=1&ecssInfo=#wechat_redirect",
+                                text: "个养TEST"
                             }
                         ]
                     },
@@ -45,6 +50,11 @@
                                 label: "3280养老险--信创环境",
                                 value: "http://o2stest.e-chinalife.com:7008/o2s/o2s-longterm-web/homeIndex?productCode=P000000063280&linkCode=0001010400230000419&uuid=BE57D045ECB044ACA08BD6331F3F6E05&sourceEcno=&sourceOpenid=&ecno=0304865465467934&openid=0000001105&outerNet=1&ecssInfo=#wechat_redirect",
                                 text: "3280养老险--信创环境"
+                            },
+                            {
+                                label: "3280养老险--TEST环境",
+                                value: "http://o2stest.e-chinalife.com:7007/o2s/o2s-longterm-web/homeIndex?productCode=P000000063280&linkCode=0001006500130000088&uuid=BE57D045ECB044ACA08BD6331F3F6E05&sourceEcno=&sourceOpenid=&ecno=0304865465467934&openid=0000001105&outerNet=1&ecssInfo=#wechat_redirect",
+                                text: "3280养老险--TEST环境"
                             }
                         ]
                     },
@@ -77,12 +87,17 @@
                                 label: "少儿年金(SS2)--信创环境",
                                 value: "http://o2stest.e-chinalife.com:7008/o2s/o2s-longterm-web/homeIndex?productCode=P000000101663&linkCode=0001010400230000419&uuid=32A0D648219B47EDACD7B3FF3F4215D3&sourceEcno=&sourceOpenid=&ecno=0000001103&openid=0000001105&outerNet=1&ecssInfo=#wechat_redirect",
                                 text: "少儿年金(SS2)--信创环境"
+                            },
+                            {
+                                label: "少儿年金(SS2)--TEST环境",
+                                value: "http://o2stest.e-chinalife.com:7007/o2s/o2s-longterm-web/homeIndex?productCode=P000000102002&linkCode=0001006500130000088&uuid=32A0D648219B47EDACD7B3FF3F4215D3&sourceEcno=&sourceOpenid=&ecno=0000001103&openid=0000001105&outerNet=1&ecssInfo=#wechat_redirect",
+                                text: "少儿年金(SS2)--TEST环境"
                             }
                         ]
                     },
                     // 数字看板
                     {
-                        label: "数字看板--Test",
+                        label: "数字看板",
                         children: [
                             {
                                 label: "数字看板(日报)--Test",
@@ -97,6 +112,21 @@
                             {
                                 label: "数字看板(年报)--Test",
                                 value: "http://o2stest.e-chinalife.com:7007/o2s/o2s-iums-web/compQueryMgt/excBusinessBoard/mobile/year?code=&queryFrom=11",
+                                text: "数字看板(年报)--Test"
+                            },
+                            {
+                                label: "数字看板(日报)--生产",
+                                value: "https://group.e-chinalife.com/o2s/o2s-iums-web/compQueryMgt/excBusinessBoard/mobile/day?code=&queryFrom=11&currentDate=2023-01-01",
+                                text: "数字看板(日报)--Test"
+                            },
+                            {
+                                label: "数字看板(月报)--生产",
+                                value: "https://group.e-chinalife.com/o2s/o2s-iums-web/compQueryMgt/excBusinessBoard/mobile/month?code=&queryFrom=11&currentDate=2023-01",
+                                text: "数字看板(月报)--Test"
+                            },
+                            {
+                                label: "数字看板(年报)--生产",
+                                value: "https://group.e-chinalife.com/o2s/o2s-iums-web/compQueryMgt/excBusinessBoard/mobile/year?code=&queryFrom=11",
                                 text: "数字看板(年报)--Test"
                             }
                         ]
