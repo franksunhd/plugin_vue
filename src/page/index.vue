@@ -97,7 +97,7 @@
                 _this.nowTime = {
                     year: nowTime.getFullYear(), // 年
                     month: _this.getDoubleNum(nowTime.getMonth() + 1), // 月
-                    day: _this.getDoubleNum(nowTime.getDay()), // 日
+                    day: _this.getDoubleNum(nowTime.getDate()), // 日
                     hour: _this.getDoubleNum(nowTime.getHours()), // 时
                     min: _this.getDoubleNum(nowTime.getMinutes()), // 分
                     sec: _this.getDoubleNum(nowTime.getSeconds()) // 秒
