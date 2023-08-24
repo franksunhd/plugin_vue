@@ -2,7 +2,7 @@
     <div>
         <div style="margin-bottom: 10px;font-size: 20px;">选择链接：</div>
         <div>
-            <el-select v-model="testXC" size="medium" style="width: 100%;">
+            <el-select v-model="testXC" filterable size="medium" style="width: 100%;">
                 <el-option-group v-for="(item,index) in testXCList" :key="index" :label="item.label">
                     <el-option v-for="(val,i) in item.children" :key="i" :label="val.label"
                                :value="val.value"></el-option>
@@ -100,6 +100,17 @@
                             },
                         ]
                     },
+                    // 守护星
+                    {
+                        label: "守护星",
+                        children: [
+                            {
+                                label: "守护星--TEST环境",
+                                value: "http://o2stest.e-chinalife.com:7007/o2s/o2s-longterm-web/homeIndex?productCode=P000000101493&linkCode=0001006500130000088&uuid=32A0D648219B47EDACD7B3FF3F4215D3&sourceEcno=&sourceOpenid=&ecno=0000001103&openid=0000001105&outerNet=1&ecssInfo=#wechat_redirect",
+                                text: "少儿年金(SS2)--信创环境"
+                            },
+                        ]
+                    },
                     // 数字看板
                     {
                         label: "数字看板",
@@ -171,7 +182,16 @@
                                 value: "http://o2stest.e-chinalife.com:7018/o2s/o2s-longterm-web/payRecord?appOrderEntrance=true&linkCode=0001002900031000045"
                             }
                         ]
-                    }
+                    },
+                    {
+                        label: "商城首页",
+                        children: [
+                            {
+                                label: "商城首页--TEST",
+                                value: "http://o2stest.e-chinalife.com:7007/o2s/o2s-mall-web/pages/homeMgt/Index?linkCode=0001004000080000051"
+                            }
+                        ]
+                    },
                 ],
                 qrCodeBox: null
             };
